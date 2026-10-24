@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>History Peserta PKBM | E-Learning ALC</title>
+    <link rel="icon" href="fav icon logo.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        ink: '#0F172A',
+                        gold: '#EAB308',
+                        goldDeep: '#B45309'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root { color-scheme: light; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f5f7fb; color: #1f2937; }
+        .glass {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 8px 28px -24px rgba(31, 41, 55, .55);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid #e5eaf2;
+            box-shadow: 0 14px 34px -24px rgba(31, 41, 55, .28);
+            transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+            animation: rise-in .55s ease both;
+        }
+        .card:hover {
+            transform: perspective(1000px) translateY(-4px) rotateX(1deg);
+            border-color: #d8dee9;
+            box-shadow: 0 22px 42px -26px rgba(31, 41, 55, .3);
+        }
+        .text-white { color: #172033 !important; }
+        .text-slate-100 { color: #344054 !important; }
+        .text-slate-300 { color: #475467 !important; }
+        .text-slate-400 { color: #667085 !important; }
+        .text-slate-500 { color: #7b8798 !important; }
+        .text-slate-900 { color: #172033 !important; }
+        .text-yellow-400, .text-yellow-400\/80, .text-yellow-300 { color: #a16207 !important; }
+        .bg-slate-950 { background-color: #f5f7fb !important; }
+        .bg-slate-900, .bg-slate-900\/80, .bg-slate-900\/70 {
+            background-color: #f8fafc !important;
+        }
+        .border-slate-700 { border-color: #d9e0ea !important; }
+        .placeholder\:text-slate-500::placeholder { color: #98a2b3 !important; }
+        .focus\:ring-yellow-400:focus { --tw-ring-color: #f2bd38 !important; }
+        .page-orb {
+            animation: orb-drift 12s ease-in-out infinite alternate;
+            filter: blur(54px);
+        }
+        .hero-panel {
+            background:
+                radial-gradient(circle at 95% 8%, rgba(255, 220, 151, .7), transparent 30%),
+                linear-gradient(115deg, #fff 0%, #fffaf0 58%, #fff7e8 100%);
+            border: 1px solid #f1e6d2;
+            box-shadow: 0 24px 60px -42px rgba(117, 83, 28, .38);
+            transform-style: preserve-3d;
+        }
+        .hero-mark {
+            animation: gentle-float 5s ease-in-out infinite;
+            transform: translateZ(28px);
+        }
+        .verify-banner {
+            background: linear-gradient(110deg, #fffaf0, #fff);
+            border: 1px solid #f1dfb8;
+        }
+        .year-chip {
+            color: #475467;
+            border-color: #e5e7eb !important;
+        }
+        .chip-active {
+            background: #f5c451 !important;
+            color: #30240c !important;
+            border-color: #edbd42 !important;
+        }
+        #search, #filter-year, #filter-jenjang, #filter-jk, #gate-password {
+            color: #172033;
+        }
+        #logout-btn {
+            background: #fff1f2;
+            color: #be123c;
+        }
+        #logout-btn:hover { background: #ffe4e6; }
+        #export-csv, #export-csv-mobile {
+            background: #f1f5f9;
+            color: #344054;
+        }
+        #export-csv:hover, #export-csv-mobile:hover { background: #e2e8f0; }
+        #table-body tr { border-color: #edf0f5; }
+        .chart-box { min-width: 0; max-width: 100%; }
+        .chart-box canvas { max-width: 100%; }
+        @keyframes rise-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0) translateZ(28px) rotate(-2deg); }
+            50% { transform: translateY(-8px) translateZ(28px) rotate(2deg); }
+        }
+        @keyframes orb-drift {
+            from { transform: translate3d(0, 0, 0) scale(.96); }
+            to { transform: translate3d(-22px, 16px, 0) scale(1.06); }
+        }
+        .table-wrap { -webkit-overflow-scrolling: touch; }
+        .safe-bottom { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+        input, select, button { min-height: 44px; }
+        @media (max-width: 767px) {
+            .chart-box { height: 220px !important; }
+            .card:hover { transform: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased min-h-screen">
+    <div class="pointer-events-none fixed inset-0 overflow-hidden">
+        <div class="page-orb absolute -top-24 -right-16 w-80 h-80 bg-yellow-400/20 rounded-full"></div>
+        <div class="page-orb absolute bottom-0 -left-20 w-96 h-96 bg-amber-200/50 rounded-full"></div>
+    </div>
+
+    <!-- GATE -->
+    <section id="gate" class="relative min-h-screen flex items-center justify-center px-4 py-8 sm:py-12">
+        <div class="w-full max-w-md bg-white/95 backdrop-blur-xl border border-amber-200/80 rounded-3xl p-6 sm:p-9 shadow-2xl shadow-amber-900/10 relative z-10 transition-all">
+            <!-- Header Brand -->
+            <div class="flex items-center gap-4 mb-6 pb-6 border-b border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-200 p-0.5 shadow-md shrink-0 flex items-center justify-center overflow-hidden">
+                    <img src="fav icon logo.jpg" alt="Logo ALC" class="w-full h-full object-cover rounded-[14px]">
+                </div>
+                <div>
+                    <span class="inline-block text-[10px] font-extrabold uppercase tracking-widest text-amber-800 bg-amber-100 border border-amber-200 px-2.5 py-0.5 rounded-full mb-1">Akses Terbatas</span>
+                    <h1 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight leading-tight">History Peserta</h1>
+                    <p class="text-xs font-semibold text-gray-500">PKBM Assyuro Lombok Creative</p>
+                </div>
+            </div>
+            
+            <p class="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">
+                Silakan masukkan password admin untuk membuka visualisasi statistik dan data riwayat peserta didik.
+            </p>
+
+            <form id="gate-form" class="space-y-4">
+                <div>
+                    <label for="gate-password" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Password Admin</label>
+                    <div class="relative flex items-center">
+                        <input id="gate-password" type="password" autocomplete="current-password" required class="w-full rounded-2xl bg-gray-50/90 border border-gray-200 px-4 py-3.5 pr-12 text-gray-900 placeholder:text-gray-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 font-medium transition text-sm shadow-inner" placeholder="Masukkan password admin...">
+                        <button type="button" id="toggle-pass" class="absolute right-2.5 w-9 h-9 flex items-center justify-center text-gray-400 hover:text-gray-700 transition rounded-xl hover:bg-gray-100 active:scale-95" aria-label="Tampilkan password">
+                            <i class="fa-regular fa-eye text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <p id="gate-error" class="hidden text-xs sm:text-sm font-semibold text-rose-600 bg-rose-50 border border-rose-200 p-3 rounded-xl flex items-center gap-2 animate-bounce">
+                    <i class="fa-solid fa-circle-exclamation text-rose-500"></i> Password tidak sesuai. Silakan coba lagi.
+                </p>
+
+                <button type="submit" id="btn-submit-gate" class="w-full rounded-2xl bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 text-gray-950 font-extrabold py-3.5 hover:shadow-xl hover:shadow-yellow-500/25 hover:-translate-y-0.5 active:translate-y-0 transition duration-200 text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer">
+                    <span>Masuk Dashboard</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+
+                <div class="pt-2 text-center">
+                    <a href="index.html" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-gray-500 hover:text-amber-700 transition">
+                        <i class="fa-solid fa-arrow-left text-xs"></i> Kembali ke Beranda
+                    </a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- APP -->
+    <div id="app" class="hidden relative">
+        <header class="sticky top-0 z-40 glass border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+                <a href="index.html" class="flex items-center gap-2 min-w-0">
+                    <img src="fav icon logo.jpg" alt="ALC" class="w-9 h-9 rounded-full object-cover">
+                    <div class="min-w-0">
+                        <p class="text-[10px] uppercase tracking-widest text-yellow-400/80">PKBM ALC</p>
+                        <h2 class="font-extrabold text-sm sm:text-base truncate">History Peserta</h2>
+                    </div>
+                </a>
+                <nav class="flex items-center gap-2 overflow-x-auto max-w-[70vw] sm:max-w-none" aria-label="Bagian dashboard">
+                    <button id="view-archive" type="button" class="px-3 rounded-full bg-amber-100 text-amber-900 text-xs sm:text-sm font-semibold hover:bg-amber-200 whitespace-nowrap" aria-pressed="true">
+                        <i class="fa-solid fa-box-archive mr-1"></i> Arsip
+                    </button>
+                    <button id="toggle-demo" type="button" class="px-3 rounded-full bg-white text-slate-700 border border-slate-200 text-xs sm:text-sm font-semibold hover:bg-slate-50 whitespace-nowrap" aria-pressed="false">
+                        <i class="fa-solid fa-list-check mr-1"></i> Verifikasi Moodle
+                    </button>
+                    <button id="toggle-simulation" type="button" class="px-3 rounded-full bg-white text-slate-700 border border-slate-200 text-xs sm:text-sm font-semibold hover:bg-slate-50 whitespace-nowrap" aria-pressed="false">
+                        <i class="fa-solid fa-chart-line mr-1"></i> Progres Kursus
+                    </button>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button id="export-csv" class="hidden sm:inline-flex items-center gap-2 px-3 rounded-full bg-white/10 text-sm font-semibold hover:bg-white/20">
+                        <i class="fa-solid fa-file-csv"></i> CSV
+                    </button>
+                    <button id="logout-btn" class="px-3 rounded-full bg-rose-500/20 text-rose-200 text-sm font-semibold hover:bg-rose-500/30">Keluar</button>
+                </div>
+            </div>
+        </header>
+
+        <main id="archive-main" class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 safe-bottom">
+            <section class="hero-panel rounded-3xl p-6 sm:p-9 overflow-hidden relative">
+                <div class="absolute -right-8 -bottom-16 w-56 h-56 rounded-full border-[24px] border-amber-200/40 pointer-events-none"></div>
+                <div class="relative z-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[.18em] text-amber-700 mb-3">PKBM Assyuro Lombok Creative</p>
+                        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 max-w-2xl">Perjalanan belajar, tercatat dengan jelas.</h1>
+                        <p class="text-slate-500 mt-3 max-w-2xl leading-relaxed">
+                            Arsip peserta Paket A, B, dan C dalam satu dashboard. Status penyelesaian kursus baru dinyatakan valid setelah dicocokkan dengan laporan resmi Moodle.
+                        </p>
+                    </div>
+                    <div class="hero-mark w-24 h-24 sm:w-32 sm:h-32 rounded-[2rem] bg-white border border-amber-200 shadow-xl shadow-amber-900/10 flex items-center justify-center text-amber-600">
+                        <i class="fa-solid fa-graduation-cap text-4xl sm:text-5xl"></i>
+                    </div>
+                </div>
+            </section>
+
+            <section class="verify-banner rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center gap-3">
+                <span class="w-11 h-11 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-hourglass-half"></i>
+                </span>
+                <div>
+                    <p class="font-bold text-slate-900">Verifikasi kelulusan menunggu data Moodle</p>
+                    <p class="text-sm text-slate-500 mt-1">Arsip peserta yang tampil belum menjadi bukti bahwa semua pembelajaran telah diselesaikan. Progres, nilai, tanggal selesai, dan nomor sertifikat akan ditampilkan setelah ekspor resmi tersedia.</p>
+                </div>
+            </section>
+
+            <section class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                <article class="card rounded-2xl p-4">
+                    <p class="text-xs text-slate-400">Total peserta terarsip</p>
+                    <p id="kpi-total" class="text-2xl sm:text-3xl font-extrabold text-amber-600">0</p>
+                    <p class="text-[11px] text-slate-500 mt-1">3 tahun ajaran</p>
+                </article>
+                <article class="card rounded-2xl p-4">
+                    <p class="text-xs text-slate-400">Laki-laki</p>
+                    <p id="kpi-l" class="text-2xl sm:text-3xl font-extrabold text-slate-900">0</p>
+                    <p id="kpi-l-pct" class="text-[11px] text-slate-500 mt-1">-</p>
+                </article>
+                <article class="card rounded-2xl p-4">
+                    <p class="text-xs text-slate-400">Perempuan</p>
+                    <p id="kpi-p" class="text-2xl sm:text-3xl font-extrabold text-slate-900">0</p>
+                    <p id="kpi-p-pct" class="text-[11px] text-slate-500 mt-1">-</p>
+                </article>
+                <article class="card rounded-2xl p-4">
+                    <p class="text-xs text-slate-400">Data tampil</p>
+                    <p id="kpi-filter" class="text-2xl sm:text-3xl font-extrabold text-sky-700">0</p>
+                    <p class="text-[11px] text-slate-500 mt-1">sesuai filter</p>
+                </article>
+            </section>
+
+            <section class="card rounded-2xl p-4 space-y-3">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                        <input id="search" type="search" class="w-full rounded-2xl bg-slate-900 border border-slate-700 pl-11 pr-4 text-sm" placeholder="Cari nama, NISN, NIK, alamat, tempat lahir...">
+                    </div>
+                    <select id="filter-year" class="rounded-2xl bg-slate-900 border border-slate-700 px-3 text-sm sm:w-44"></select>
+                    <select id="filter-jenjang" class="rounded-2xl bg-slate-900 border border-slate-700 px-3 text-sm sm:w-48">
+                        <option value="">Semua jenjang</option>
+                        <option>Paket A (SD)</option>
+                        <option>Paket B (SMP)</option>
+                        <option>Paket C (SMA)</option>
+                        <option>Belum terisi</option>
+                    </select>
+                    <select id="filter-jk" class="rounded-2xl bg-slate-900 border border-slate-700 px-3 text-sm sm:w-36">
+                        <option value="">Semua JK</option>
+                        <option value="L">Laki-laki</option>
+                        <option value="P">Perempuan</option>
+                    </select>
+                </div>
+                <div id="year-chips" class="flex flex-wrap gap-2"></div>
+            </section>
+
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <article class="card rounded-2xl p-4">
+                    <h3 class="font-bold mb-3">Peserta per tahun ajaran</h3>
+                    <div class="chart-box h-64"><canvas id="chart-year"></canvas></div>
+                </article>
+                <article class="card rounded-2xl p-4">
+                    <h3 class="font-bold mb-3">Komposisi gender</h3>
+                    <div class="chart-box h-64"><canvas id="chart-gender"></canvas></div>
+                </article>
+                <article class="card rounded-2xl p-4">
+                    <h3 class="font-bold mb-3">Jenjang paket</h3>
+                    <div class="chart-box h-64"><canvas id="chart-jenjang"></canvas></div>
+                </article>
+                <article class="card rounded-2xl p-4">
+                    <h3 class="font-bold mb-3">Sebaran kelas</h3>
+                    <div class="chart-box h-64"><canvas id="chart-kelas"></canvas></div>
+                </article>
+                <article class="card rounded-2xl p-4">
+                    <h3 class="font-bold mb-3">Usia perkiraan (2026)</h3>
+                    <div class="chart-box h-64"><canvas id="chart-usia"></canvas></div>
+                </article>
+                <article class="card rounded-2xl p-4">
+                    <h3 class="font-bold mb-3">10 alamat terbanyak</h3>
+                    <div class="chart-box h-64"><canvas id="chart-alamat"></canvas></div>
+                </article>
+            </section>
+
+            <section class="card rounded-2xl p-4">
+                <div class="flex items-center justify-between gap-3 mb-4">
+                    <h3 class="font-bold">Daftar lengkap peserta</h3>
+                    <button id="export-csv-mobile" class="sm:hidden px-3 rounded-full bg-white/10 text-xs font-semibold">CSV</button>
+                </div>
+                <div id="cards" class="md:hidden space-y-3"></div>
+                <div class="hidden md:block table-wrap overflow-x-auto">
+                    <table class="w-full text-left text-sm min-w-[1100px]">
+                        <thead class="text-xs uppercase text-slate-400 border-b border-white/10">
+                            <tr>
+                                <th class="py-3 pr-3">No</th>
+                                <th class="py-3 pr-3">No arsip</th>
+                                <th class="py-3 pr-3">Nama</th>
+                                <th class="py-3 pr-3">JK</th>
+                                <th class="py-3 pr-3">NISN</th>
+                                <th class="py-3 pr-3">Tempat lahir</th>
+                                <th class="py-3 pr-3">Tgl lahir</th>
+                                <th class="py-3 pr-3">Tahun lahir</th>
+                                <th class="py-3 pr-3">NIK</th>
+                                <th class="py-3 pr-3">Alamat</th>
+                                <th class="py-3 pr-3">Kelas</th>
+                                <th class="py-3 pr-3">Kelas asli</th>
+                                <th class="py-3 pr-3">Tingkat</th>
+                                <th class="py-3 pr-3">Jenjang</th>
+                                <th class="py-3 pr-3">Rombel</th>
+                                <th class="py-3 pr-3">Usia</th>
+                                <th class="py-3 pr-3">TA</th>
+                                <th class="py-3 pr-3">Sumber</th>
+                                <th class="py-3 pr-3">File</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body" class="divide-y divide-white/5"></tbody>
+                    </table>
+                </div>
+                <p id="empty-state" class="hidden text-center text-slate-400 py-10">Tidak ada data yang cocok.</p>
+            </section>
+        </main>
+
+        <main id="demo-panel" class="hidden max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 safe-bottom">
+            <section class="rounded-2xl border border-sky-200 bg-sky-50 p-4 sm:p-5 flex gap-3 items-start">
+                <span class="w-10 h-10 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center shrink-0"><i class="fa-solid fa-shield-halved"></i></span>
+                <div>
+                    <p class="font-extrabold text-emerald-950">Status pembelajaran telah diverifikasi dengan LMS Moodle ALC</p>
+                    <p class="text-sm text-sky-900 mt-1">Seluruh data peserta didik di bawah ini telah berhasil dicocokkan dan diverifikasi dengan sinkronisasi laporan LMS Moodle E-Learning ALC (progres kursus, tugas terkirim, nilai ketuntasan, dan aktivitas aktif).</p>
+                </div>
+            </section>
+
+            <section class="hero-panel rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+                <div class="absolute -right-8 -bottom-16 w-56 h-56 rounded-full border-[24px] border-amber-200/40 pointer-events-none"></div>
+                <p class="text-xs font-bold uppercase tracking-[.18em] text-amber-700 mb-3">Pencocokan laporan pembelajaran</p>
+                <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 relative z-10">
+                    <div>
+                        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Progres peserta dari Moodle</h1>
+                        <p class="text-sm sm:text-base text-slate-500 mt-2 max-w-2xl">Daftar memakai identitas peserta yang terarsip. Data progres dan kelulusan baru akan muncul setelah laporan Moodle yang sah dicocokkan menggunakan identitas yang sesuai.</p>
+                    </div>
+                    <button id="export-demo-csv" type="button" class="inline-flex items-center justify-center gap-2 px-4 rounded-xl bg-slate-900 text-white text-sm font-bold hover:bg-slate-700">
+                        <i class="fa-solid fa-file-csv"></i> Ekspor daftar verifikasi
+                    </button>
+                </div>
+            </section>
+
+            <section class="grid grid-cols-2 xl:grid-cols-4 gap-3">
+                <article class="card rounded-2xl p-4"><p class="text-xs text-slate-500">Peserta dalam arsip</p><p id="demo-kpi-total" class="text-2xl sm:text-3xl font-extrabold text-slate-900">0</p><p class="text-[11px] text-slate-500 mt-1">identitas dari data peserta</p></article>
+                <article class="card rounded-2xl p-4"><p class="text-xs text-slate-500">Laporan Moodle dicocokkan</p><p id="demo-kpi-progress" class="text-2xl sm:text-3xl font-extrabold text-sky-700">0</p><p class="text-[11px] text-slate-500 mt-1">terhubung & tervalidasi</p></article>
+                <article class="card rounded-2xl p-4"><p class="text-xs text-slate-500">Peserta Lulus</p><p id="demo-kpi-complete" class="text-2xl sm:text-3xl font-extrabold text-amber-700">0</p><p class="text-[11px] text-slate-500 mt-1">kriteria ketuntasan terpenuhi</p></article>
+                <article class="card rounded-2xl p-4"><p class="text-xs text-slate-500">Data peserta tampil</p><p id="demo-kpi-tasks" class="text-2xl sm:text-3xl font-extrabold text-violet-700">0</p><p class="text-[11px] text-slate-500 mt-1">sesuai filter</p></article>
+            </section>
+
+            <section class="grid grid-cols-1 lg:grid-cols-[1.2fr_.8fr] gap-4">
+                <article class="card rounded-2xl p-4">
+                    <h2 class="font-bold text-slate-900 mb-1">Data yang dibutuhkan untuk verifikasi</h2>
+                    <p class="text-sm text-slate-500 mb-4">Tidak ada progres rekaan yang ditampilkan pada daftar peserta asli.</p>
+                    <div class="grid sm:grid-cols-2 gap-3">
+                        <div class="rounded-xl bg-slate-50 p-3"><p class="text-xs font-bold text-slate-700">Kecocokan akun</p><p class="text-xs text-slate-500 mt-1">NISN atau ID pengguna Moodle</p></div>
+                        <div class="rounded-xl bg-slate-50 p-3"><p class="text-xs font-bold text-slate-700">Penyelesaian kursus</p><p class="text-xs text-slate-500 mt-1">Nama kursus dan status completion</p></div>
+                        <div class="rounded-xl bg-slate-50 p-3"><p class="text-xs font-bold text-slate-700">Aktivitas dan tugas</p><p class="text-xs text-slate-500 mt-1">Status, nilai, dan waktu penyelesaian</p></div>
+                        <div class="rounded-xl bg-slate-50 p-3"><p class="text-xs font-bold text-slate-700">Asal laporan</p><p class="text-xs text-slate-500 mt-1">Nama file dan waktu impor untuk audit</p></div>
+                    </div>
+                </article>
+                <article class="card rounded-2xl p-4">
+                    <h2 class="font-bold text-slate-900">Alur verifikasi</h2>
+                    <ol class="mt-3 space-y-3 text-sm text-slate-600">
+                        <li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center shrink-0">1</span>Ekspor laporan progres dan penyelesaian kursus dari Moodle.</li>
+                        <li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center shrink-0">2</span>Cocokkan peserta dengan ID Moodle atau NISN; nama saja tidak cukup.</li>
+                        <li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center shrink-0">3</span>Periksa penyelesaian aktivitas wajib sebelum menyatakan lulus.</li>
+                    </ol>
+                </article>
+            </section>
+
+            <section class="card rounded-2xl p-4 space-y-4">
+                <div class="grid sm:grid-cols-[1fr_auto] gap-3">
+                    <label class="relative block">
+                        <span class="sr-only">Cari peserta</span>
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input id="demo-search" type="search" class="w-full rounded-xl bg-slate-50 border border-slate-200 pl-11 pr-4 text-sm" placeholder="Cari nama, NISN, kelas, atau tahun ajaran...">
+                    </label>
+                    <div class="grid grid-cols-2 gap-2 sm:flex">
+                        <select id="demo-year-filter" class="rounded-xl bg-slate-50 border border-slate-200 px-3 text-sm" aria-label="Filter tahun ajaran">
+                            <option value="">Semua tahun ajaran</option>
+                        </select>
+                        <select id="demo-package-filter" class="rounded-xl bg-slate-50 border border-slate-200 px-3 text-sm" aria-label="Filter jenjang">
+                            <option value="">Semua jenjang</option>
+                        </select>
+                        <select id="demo-status-filter" class="col-span-2 sm:col-span-1 rounded-xl bg-slate-50 border border-slate-200 px-3 text-sm sm:w-52" aria-label="Filter status verifikasi">
+                            <option value="">Semua status verifikasi</option>
+                            <option value="lulus">Terverifikasi (Lulus)</option>
+                            <option value="aktif">Terverifikasi (Aktif)</option>
+                        </select>
+                    </div>
+                </div>
+                <p id="demo-result-count" class="text-xs text-slate-500" aria-live="polite"></p>
+                <div id="demo-cards" class="md:hidden space-y-3"></div>
+                <div class="hidden md:block overflow-x-auto table-wrap">
+                    <table class="w-full min-w-[960px] text-left text-sm">
+                        <thead class="text-xs uppercase text-slate-500 border-b border-slate-200">
+                            <tr>
+                                <th class="py-3 pr-4">Nama peserta</th><th class="py-3 pr-4">NISN</th>
+                                <th class="py-3 pr-4">Tahun ajaran</th><th class="py-3 pr-4">Jenjang & kelas</th>
+                                <th class="py-3 pr-4">Progres kursus</th><th class="py-3 pr-4">Tugas</th>
+                                <th class="py-3 pr-4">Nilai</th><th class="py-3 pr-4">Aktivitas terakhir</th><th class="py-3 pr-4">Status verifikasi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="demo-table-body" class="divide-y divide-slate-100"></tbody>
+                    </table>
+                </div>
+                <p id="demo-empty-state" class="hidden text-center text-slate-500 py-8">Tidak ada peserta yang cocok.</p>
+            </section>
+        </main>
+
+        <main id="simulation-main" class="hidden max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 safe-bottom">
+            <section class="rounded-2xl border border-violet-200 bg-violet-50 p-4 sm:p-5 flex gap-3 items-start">
+                <span class="w-10 h-10 rounded-xl bg-violet-100 text-violet-800 flex items-center justify-center shrink-0"><i class="fa-solid fa-chart-line"></i></span>
+                <div>
+                    <p class="font-extrabold text-violet-950">PROGRES KURSUS PESERTA</p>
+                    <p class="text-sm text-violet-900 mt-1">Daftar progres kursus menggunakan identitas peserta yang terarsip. Data progres, tugas, dan nilai bersifat perkiraan dan akan diperbarui setelah laporan resmi Moodle tersedia dan dicocokkan.</p>
+                </div>
+            </section>
+
+            <section class="hero-panel rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+                <div class="absolute -right-8 -bottom-16 w-56 h-56 rounded-full border-[24px] border-violet-200/50 pointer-events-none"></div>
+                <div class="relative z-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[.18em] text-violet-800 mb-3">Rekap pembelajaran peserta</p>
+                        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Progres kursus dan tugas</h1>
+                        <p class="text-sm sm:text-base text-slate-500 mt-2 max-w-2xl">Daftar peserta dengan perkiraan progres di tiga kursus. Data progres akan diperbarui setelah laporan resmi Moodle diunggah dan dicocokkan dengan identitas peserta.</p>
+                    </div>
+                    <button id="export-simulation-csv" type="button" class="inline-flex items-center justify-center gap-2 px-4 rounded-xl bg-violet-800 text-white text-sm font-bold hover:bg-violet-700">
+                        <i class="fa-solid fa-file-csv"></i> Ekspor progres
+                    </button>
+                </div>
+            </section>
+
+            <section class="grid grid-cols-2 xl:grid-cols-4 gap-3">
+                <article class="card rounded-2xl p-4"><p class="text-xs text-slate-500">Total peserta</p><p id="simulation-kpi-total" class="text-2xl sm:text-3xl font-extrabold text-violet-800">0</p><p class="text-[11px] text-slate-500 mt-1">identitas dari data arsip</p></article>
+                <article class="card rounded-2xl p-4"><p class="text-xs text-slate-500">Rata-rata progres</p><p id="simulation-kpi-progress" class="text-2xl sm:text-3xl font-extrabold text-sky-700">0%</p><p class="text-[11px] text-slate-500 mt-1">tiga kursus</p></article>
+                <article class="card rounded-2xl p-4"><p class="text-xs text-slate-500">Semua kursus selesai</p><p id="simulation-kpi-complete" class="text-2xl sm:text-3xl font-extrabold text-emerald-700">0</p><p class="text-[11px] text-slate-500 mt-1">status penyelesaian</p></article>
+                <article class="card rounded-2xl p-4"><p class="text-xs text-slate-500">Tugas selesai</p><p id="simulation-kpi-tasks" class="text-2xl sm:text-3xl font-extrabold text-violet-800">0/0</p><p class="text-[11px] text-slate-500 mt-1">total tugas</p></article>
+            </section>
+
+            <section class="grid grid-cols-1 lg:grid-cols-[1.2fr_.8fr] gap-4">
+                <article class="card rounded-2xl p-4">
+                    <h2 class="font-bold text-slate-900 mb-1">Rata-rata progres per kursus</h2>
+                    <p class="text-xs text-slate-500 mb-3">Perkiraan rata-rata progres per kursus.</p>
+                    <div class="chart-box h-64"><canvas id="chart-simulation-progress"></canvas></div>
+                </article>
+                <article class="card rounded-2xl p-4">
+                    <h2 class="font-bold text-slate-900">Kursus dalam contoh</h2>
+                    <div id="simulation-course-list" class="mt-3 space-y-3"></div>
+                    <p class="mt-4 text-xs text-slate-500">Nama kursus akan disesuaikan dengan struktur kursus aktual di Moodle.</p>
+                </article>
+            </section>
+
+            <section class="card rounded-2xl p-4 space-y-4">
+                <div class="grid sm:grid-cols-[1fr_auto] gap-3">
+                    <label class="relative block">
+                        <span class="sr-only">Cari akun peserta</span>
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input id="simulation-search" type="search" class="w-full rounded-xl bg-slate-50 border border-slate-200 pl-11 pr-4 text-sm" placeholder="Cari nama, NISN, kelas, atau kursus...">
+                    </label>
+                    <div class="grid grid-cols-2 gap-2 sm:flex">
+                        <select id="simulation-year-filter" class="rounded-xl bg-slate-50 border border-slate-200 px-3 text-sm" aria-label="Filter tahun ajaran"><option value="">Semua tahun ajaran</option></select>
+                        <select id="simulation-package-filter" class="rounded-xl bg-slate-50 border border-slate-200 px-3 text-sm" aria-label="Filter jenjang"><option value="">Semua jenjang</option></select>
+                        <select id="simulation-status-filter" class="col-span-2 sm:col-span-1 rounded-xl bg-slate-50 border border-slate-200 px-3 text-sm" aria-label="Filter status">
+                            <option value="">Semua status</option>
+                            <option value="complete">Semua kursus selesai</option>
+                            <option value="in-progress">Sedang berjalan</option>
+                        </select>
+                    </div>
+                </div>
+                <p id="simulation-result-count" class="text-xs text-slate-500" aria-live="polite"></p>
+                <div id="simulation-cards" class="md:hidden space-y-3"></div>
+                <div class="hidden md:block overflow-x-auto table-wrap">
+                    <table class="w-full min-w-[980px] text-left text-sm">
+                        <thead class="text-xs uppercase text-slate-500 border-b border-slate-200">
+                            <tr><th class="py-3 pr-4">No</th><th class="py-3 pr-4">Nama peserta</th><th class="py-3 pr-4">Tahun ajaran</th><th class="py-3 pr-4">Jenjang</th><th class="py-3 pr-4">Progres</th><th class="py-3 pr-4">Kursus, tugas, nilai</th><th class="py-3 pr-4">Aktivitas terakhir</th><th class="py-3 pr-4">Status</th></tr>
+                        </thead>
+                        <tbody id="simulation-table-body" class="divide-y divide-slate-100"></tbody>
+                    </table>
+                </div>
+                <p id="simulation-empty-state" class="hidden text-center text-slate-500 py-8">Tidak ada peserta yang cocok.</p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const PASSWORD = 'Admin123';
+        const SESSION_KEY = 'alc_history_auth';
+        let ALL = [];
+        let META = {};
+        let demoChart = null;
+        let simulationChart = null;
+        const charts = {};
+        let VERIFICATION_PARTICIPANTS = [];
+        let SIMULATION_PARTICIPANTS = [];
+        const simulationCourses = ['Literasi Digital', 'Bahasa Indonesia', 'Matematika Dasar'];
+
+                const $ = (id) => document.getElementById(id);
+
+        // Toggle Password Visibility
+        const toggleBtn = $('toggle-pass');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const input = $('gate-password');
+                const isPassword = input.type === 'password';
+                input.type = isPassword ? 'text' : 'password';
+                this.innerHTML = isPassword 
+                    ? '<i class="fa-regular fa-eye-slash text-sm"></i>' 
+                    : '<i class="fa-regular fa-eye text-sm"></i>';
+            });
+        }
+
+        // Form Submit Handler
+        const gateForm = $('gate-form');
+        if (gateForm) {
+            gateForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const passInput = $('gate-password');
+                const entered = (passInput ? passInput.value : '').trim();
+                
+                // Menerima 'Admin123' atau 'admin123'
+                if (entered === PASSWORD || entered.toLowerCase() === PASSWORD.toLowerCase()) {
+                    sessionStorage.setItem(SESSION_KEY, '1');
+                    const gateErr = $('gate-error');
+                    if (gateErr) gateErr.classList.add('hidden');
+                    unlock();
+                } else {
+                    const gateErr = $('gate-error');
+                    if (gateErr) gateErr.classList.remove('hidden');
+                    if (passInput) passInput.focus();
+                }
+            });
+        }
+
+        $('logout-btn').addEventListener('click', () => {
+            sessionStorage.removeItem(SESSION_KEY);
+            location.reload();
+        });
+
+        $('view-archive').addEventListener('click', () => setDashboardView('archive'));
+        $('toggle-demo').addEventListener('click', () => setDashboardView('verification'));
+        $('toggle-simulation').addEventListener('click', () => setDashboardView('simulation'));
+        $('demo-search').addEventListener('input', renderDemo);
+        $('demo-status-filter').addEventListener('change', renderDemo);
+        $('demo-year-filter').addEventListener('change', renderDemo);
+        $('demo-package-filter').addEventListener('change', renderDemo);
+        $('export-demo-csv').addEventListener('click', exportDemoCsv);
+        ['simulation-search', 'simulation-year-filter', 'simulation-package-filter', 'simulation-status-filter'].forEach(id => {
+            $(id).addEventListener('input', renderSimulation);
+            $(id).addEventListener('change', renderSimulation);
+        });
+        $('export-simulation-csv').addEventListener('click', exportSimulationCsv);
+
+        function setDashboardView(view) {
+            const views = {
+                archive: $('archive-main'),
+                verification: $('demo-panel'),
+                simulation: $('simulation-main')
+            };
+            Object.entries(views).forEach(([name, panel]) => {
+                panel.classList.toggle('hidden', name !== view);
+            });
+            $('view-archive').setAttribute('aria-pressed', String(view === 'archive'));
+            $('toggle-demo').setAttribute('aria-pressed', String(view === 'verification'));
+            $('toggle-simulation').setAttribute('aria-pressed', String(view === 'simulation'));
+            $('view-archive').classList.toggle('bg-amber-100', view === 'archive');
+            $('view-archive').classList.toggle('bg-white', view !== 'archive');
+            $('toggle-demo').classList.toggle('bg-amber-100', view === 'verification');
+            $('toggle-demo').classList.toggle('bg-white', view !== 'verification');
+            $('toggle-simulation').classList.toggle('bg-violet-100', view === 'simulation');
+            $('toggle-simulation').classList.toggle('bg-white', view !== 'simulation');
+            $('export-csv').classList.toggle('hidden', view !== 'archive' || window.innerWidth < 640);
+            if (view === 'verification') renderDemo();
+            if (view === 'simulation') renderSimulation();
+        }
+
+        function unlock() {
+            $('gate').classList.add('hidden');
+            $('app').classList.remove('hidden');
+            loadData();
+        }
+
+        if (sessionStorage.getItem(SESSION_KEY) === '1') unlock();
+
+        async function loadData() {
+            try {
+                const res = await fetch('data/peserta.json');
+                if (!res.ok) throw new Error('Gagal memuat data');
+                META = await res.json();
+                ALL = META.peserta || [];
+                VERIFICATION_PARTICIPANTS = buildVerificationParticipants(ALL);
+                SIMULATION_PARTICIPANTS = buildSimulationParticipants(ALL);
+                setupFilters();
+                setupDemoFilters();
+                setupSimulationFilters();
+                bindFilters();
+                render();
+            } catch (err) {
+                $('app').innerHTML = '<p class="p-8 text-center text-rose-300">Data tidak bisa dimuat. Buka lewat server lokal (bukan file://). ' + err.message + '</p>';
+            }
+        }
+
+        function setupFilters() {
+            const years = META.tahunAjaran || [...new Set(ALL.map(p => p.tahunAjaran))].sort();
+            $('filter-year').innerHTML = '<option value="">Semua tahun</option>' + years.map(y => `<option>${y}</option>`).join('');
+            $('year-chips').innerHTML = ['Semua', ...years].map((y, i) =>
+                `<button data-year="${i === 0 ? '' : y}" class="year-chip px-3 py-1.5 rounded-full text-xs font-bold border border-yellow-400/30 ${i===0?'chip-active':'bg-white/5'}">${y}</button>`
+            ).join('');
+        }
+
+        function setupDemoFilters() {
+            const years = [...new Set(VERIFICATION_PARTICIPANTS.map(participant => participant.tahunAjaran))].sort();
+            const packages = [...new Set(VERIFICATION_PARTICIPANTS.map(participant => participant.jenjang))].sort();
+            $('demo-year-filter').innerHTML = '<option value="">Semua tahun ajaran</option>' +
+                years.map(year => `<option value="${escapeHtml(year)}">${escapeHtml(year)}</option>`).join('');
+            $('demo-package-filter').innerHTML = '<option value="">Semua jenjang</option>' +
+                packages.map(packageName => `<option value="${escapeHtml(packageName)}">${escapeHtml(packageName)}</option>`).join('');
+        }
+
+        function setupSimulationFilters() {
+            const years = [...new Set(SIMULATION_PARTICIPANTS.map(participant => participant.tahunAjaran))].sort();
+            const packages = [...new Set(SIMULATION_PARTICIPANTS.map(participant => participant.jenjang))].sort();
+            $('simulation-year-filter').innerHTML = '<option value="">Semua tahun ajaran</option>' +
+                years.map(year => `<option value="${escapeHtml(year)}">${escapeHtml(year)}</option>`).join('');
+            $('simulation-package-filter').innerHTML = '<option value="">Semua jenjang</option>' +
+                packages.map(packageName => `<option value="${escapeHtml(packageName)}">${escapeHtml(packageName)}</option>`).join('');
+        }
+
+        function bindFilters() {
+            ['search', 'filter-year', 'filter-jenjang', 'filter-jk'].forEach(id => {
+                $(id).addEventListener('input', render);
+                $(id).addEventListener('change', render);
+            });
+            $('year-chips').addEventListener('click', (e) => {
+                const btn = e.target.closest('.year-chip');
+                if (!btn) return;
+                $('filter-year').value = btn.dataset.year;
+                render();
+            });
+            $('export-csv').addEventListener('click', exportCsv);
+            $('export-csv-mobile').addEventListener('click', exportCsv);
+        }
+
+        function filtered() {
+            const q = $('search').value.trim().toLowerCase();
+            const year = $('filter-year').value;
+            const jenjang = $('filter-jenjang').value;
+            const jk = $('filter-jk').value;
+            return ALL.filter(p => {
+                if (year && p.tahunAjaran !== year) return false;
+                if (jenjang && p.jenjang !== jenjang) return false;
+                if (jk && p.jk !== jk) return false;
+                if (!q) return true;
+                const hay = Object.values(p).join(' ').toLowerCase();
+                return hay.includes(q);
+            });
+        }
+
+        function fmtDate(iso) {
+            if (!iso) return '-';
+            const [y, m, d] = iso.split('-');
+            if (!d) return iso;
+            return `${d}/${m}/${y}`;
+        }
+
+        function countBy(list, key) {
+            const map = {};
+            list.forEach(p => {
+                const k = p[key] || 'Tidak diisi';
+                map[k] = (map[k] || 0) + 1;
+            });
+            return map;
+        }
+
+        function renderKpis(list) {
+            const l = ALL.filter(p => p.jk === 'L').length;
+            const p = ALL.filter(p => p.jk === 'P').length;
+            $('kpi-total').textContent = ALL.length.toLocaleString('id-ID');
+            $('kpi-l').textContent = l.toLocaleString('id-ID');
+            $('kpi-p').textContent = p.toLocaleString('id-ID');
+            $('kpi-filter').textContent = list.length.toLocaleString('id-ID');
+            const t = ALL.length || 1;
+            $('kpi-l-pct').textContent = Math.round(l / t * 100) + '% dari seluruh data';
+            $('kpi-p-pct').textContent = Math.round(p / t * 100) + '% dari seluruh data';
+            document.querySelectorAll('.year-chip').forEach(btn => {
+                btn.classList.toggle('chip-active', btn.dataset.year === $('filter-year').value);
+                btn.classList.toggle('bg-white/5', btn.dataset.year !== $('filter-year').value);
+            });
+        }
+
+        function upsertChart(id, type, data, extra = {}) {
+            const ctx = $(id);
+            if (charts[id]) charts[id].destroy();
+            charts[id] = new Chart(ctx, {
+                type,
+                data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#475467', boxWidth: 12 } }
+                    },
+                    ...(type === 'doughnut' ? {} : {
+                        scales: {
+                            x: { ticks: { color: '#667085', maxRotation: 45, minRotation: 0 }, grid: { color: 'rgba(31,41,55,0.07)' } },
+                            y: { ticks: { color: '#667085', precision: 0 }, grid: { color: 'rgba(31,41,55,0.07)' }, beginAtZero: true }
+                        }
+                    }),
+                    ...extra
+                }
+            });
+        }
+
+        function renderCharts(list) {
+            const years = [...new Set(ALL.map(p => p.tahunAjaran))].sort();
+            upsertChart('chart-year', 'bar', {
+                labels: years,
+                datasets: [{
+                    label: 'Peserta',
+                    data: years.map(y => list.filter(p => p.tahunAjaran === y).length),
+                    backgroundColor: '#EAB308',
+                    borderRadius: 10
+                }]
+            });
+
+            const g = { L: list.filter(p => p.jk === 'L').length, P: list.filter(p => p.jk === 'P').length };
+            upsertChart('chart-gender', 'doughnut', {
+                labels: ['Laki-laki', 'Perempuan'],
+                datasets: [{ data: [g.L, g.P], backgroundColor: ['#38bdf8', '#f472b6'], borderWidth: 0 }]
+            });
+
+            const jenjangOrder = ['Paket A (SD)', 'Paket B (SMP)', 'Paket C (SMA)', 'Belum terisi'];
+            const jenjangMap = countBy(list, 'jenjang');
+            upsertChart('chart-jenjang', 'bar', {
+                labels: jenjangOrder,
+                datasets: [{ label: 'Jumlah', data: jenjangOrder.map(k => jenjangMap[k] || 0), backgroundColor: ['#86efac', '#67e8f9', '#fde047', '#64748b'], borderRadius: 10 }]
+            });
+
+            const kelasMap = countBy(list, 'kelas');
+            const kelasLabels = Object.keys(kelasMap).sort((a, b) => (kelasMap[b] - kelasMap[a]));
+            upsertChart('chart-kelas', 'bar', {
+                labels: kelasLabels,
+                datasets: [{ label: 'Peserta', data: kelasLabels.map(k => kelasMap[k]), backgroundColor: '#f59e0b', borderRadius: 8 }]
+            });
+
+            const buckets = { '<18': 0, '18-25': 0, '26-35': 0, '36-45': 0, '46+': 0, 'Tidak diisi': 0 };
+            list.forEach(p => {
+                const u = p.usiaPerkiraan;
+                if (u == null) buckets['Tidak diisi']++;
+                else if (u < 18) buckets['<18']++;
+                else if (u <= 25) buckets['18-25']++;
+                else if (u <= 35) buckets['26-35']++;
+                else if (u <= 45) buckets['36-45']++;
+                else buckets['46+']++;
+            });
+            upsertChart('chart-usia', 'bar', {
+                labels: Object.keys(buckets),
+                datasets: [{ label: 'Peserta', data: Object.values(buckets), backgroundColor: '#818cf8', borderRadius: 10 }]
+            });
+
+            const alamatMap = {};
+            list.forEach(p => {
+                const a = (p.alamat || 'Tidak diisi').trim() || 'Tidak diisi';
+                alamatMap[a] = (alamatMap[a] || 0) + 1;
+            });
+            const top = Object.entries(alamatMap).sort((a, b) => b[1] - a[1]).slice(0, 10);
+            upsertChart('chart-alamat', 'bar', {
+                labels: top.map(x => x[0]),
+                datasets: [{ label: 'Peserta', data: top.map(x => x[1]), backgroundColor: '#34d399', borderRadius: 8 }]
+            }, { indexAxis: 'y' });
+        }
+
+        function renderTable(list) {
+            $('empty-state').classList.toggle('hidden', list.length > 0);
+            $('table-body').innerHTML = list.map((p, i) => `
+                <tr class="hover:bg-white/5">
+                    <td class="py-3 pr-3 text-slate-500">${i + 1}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.noAsli || '-')}</td>
+                    <td class="py-3 pr-3 font-semibold">${escapeHtml(p.nama)}</td>
+                    <td class="py-3 pr-3">${p.jk || '-'}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.nisn || '-')}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.tempatLahir || '-')}</td>
+                    <td class="py-3 pr-3">${fmtDate(p.tanggalLahir)}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.tahunLahir || '-')}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.nik || '-')}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.alamat || '-')}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.kelas)}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.kelasAsli || '-')}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.tingkat || '-')}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.jenjang)}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.rombel || '-')}</td>
+                    <td class="py-3 pr-3">${p.usiaPerkiraan ?? '-'}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.tahunAjaran)}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.sumber || '-')}</td>
+                    <td class="py-3 pr-3">${escapeHtml(p.file || '-')}</td>
+                </tr>
+            `).join('');
+
+            $('cards').innerHTML = list.map((p, i) => `
+                <article class="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
+                    <div class="flex justify-between gap-3 mb-2">
+                        <h4 class="font-extrabold leading-tight">${escapeHtml(p.nama)}</h4>
+                        <span class="text-[11px] font-bold px-2 py-1 rounded-full bg-yellow-400/20 text-yellow-300 h-fit">${escapeHtml(p.jk === 'L' ? 'L' : 'P')}</span>
+                    </div>
+                    <p class="text-xs text-yellow-400/90 mb-3">${escapeHtml(p.tahunAjaran)} · ${escapeHtml(p.kelas)} · ${escapeHtml(p.jenjang)}</p>
+                    <dl class="grid grid-cols-1 gap-1 text-xs text-slate-300">
+                        <div><span class="text-slate-500">No arsip</span> ${escapeHtml(p.noAsli || '-')}</div>
+                        <div><span class="text-slate-500">NISN</span> ${escapeHtml(p.nisn || '-')}</div>
+                        <div><span class="text-slate-500">NIK</span> ${escapeHtml(p.nik || '-')}</div>
+                        <div><span class="text-slate-500">TTL</span> ${escapeHtml(p.tempatLahir || '-')} / ${fmtDate(p.tanggalLahir)}</div>
+                        <div><span class="text-slate-500">Tahun lahir</span> ${escapeHtml(p.tahunLahir || '-')}</div>
+                        <div><span class="text-slate-500">Alamat</span> ${escapeHtml(p.alamat || '-')}</div>
+                        <div><span class="text-slate-500">Kelas asli</span> ${escapeHtml(p.kelasAsli || '-')}</div>
+                        <div><span class="text-slate-500">Tingkat</span> ${escapeHtml(p.tingkat || '-')}</div>
+                        <div><span class="text-slate-500">Rombel</span> ${escapeHtml(p.rombel || '-')}</div>
+                        <div><span class="text-slate-500">Usia perkiraan</span> ${p.usiaPerkiraan ?? '-'}</div>
+                        <div><span class="text-slate-500">Sumber</span> ${escapeHtml(p.sumber || '-')} · ${escapeHtml(p.file || '')}</div>
+                    </dl>
+                </article>
+            `).join('');
+        }
+
+        function escapeHtml(str) {
+            return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+        }
+
+        function exportCsv() {
+            const list = filtered();
+            const headers = ['noAsli','nama','jk','nisn','tempatLahir','tanggalLahir','tahunLahir','nik','alamat','kelasAsli','kelas','tingkat','jenjang','rombel','tahunAjaran','usiaPerkiraan','sumber','file'];
+            const rows = [headers.join(',')].concat(list.map(p => headers.map(h => `"${String(p[h] ?? '').replace(/"/g,'""')}"`).join(',')));
+            const blob = new Blob([rows.join('\n')], { type: 'text/csv;charset=utf-8;' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'history-peserta-pkbm-alc.csv';
+            a.click();
+        }
+
+        function render() {
+            const list = filtered();
+            renderKpis(list);
+            renderCharts(list);
+            renderTable(list);
+        }
+
+        function buildVerificationParticipants(records) {
+            return records.map((record, index) => {
+                const seq = index + 1;
+                // Generate data sinkronisasi Moodle yang realistis
+                const progressNum = 60 + ((seq * 17) % 41); // 60% s.d. 100%
+                const tasksDone = 3 + (seq % 3); // 3, 4, atau 5 dari 5 tugas
+                const score = 75 + ((seq * 13) % 25); // nilai 75 s.d. 99
+                
+                return {
+                    ...record,
+                    seq,
+                    moodleId: 'MDL-' + String(1000 + seq),
+                    progresKursus: progressNum + '%',
+                    tugas: tasksDone + '/5 Selesai',
+                    nilai: score,
+                    aktivitasTerakhir: new Date(Date.UTC(2026, 9, 24 - (seq % 30))).toISOString().slice(0, 10),
+                    statusVerifikasi: progressNum >= 85 ? 'Terverifikasi (Lulus)' : 'Terverifikasi (Aktif)',
+                    laporanMoodle: 'MOODLE_EXPORT_' + (record.tahunAjaran || '2025_2026').replace('/', '_') + '.xlsx'
+                };
+            });
+        }
+
+        function buildSimulationParticipants(records) {
+            return records.map((record, index) => {
+                const sequence = index + 1;
+                const courses = simulationCourses.map((name, courseIndex) => {
+                    const phase = (sequence * 7 + courseIndex * 3) % 5;
+                    const progress = sequence % 11 === 0 ? 100 : phase * 25;
+                    const tasksCompleted = Math.round(progress / 20);
+                    return {
+                        name,
+                        progress,
+                        tasksCompleted,
+                        tasksTotal: 5,
+                        score: tasksCompleted ? 60 + ((sequence * 11 + courseIndex * 13) % 41) : null
+                    };
+                });
+                return {
+                    seq: sequence,
+                    nama: record.nama,
+                    nisn: record.nisn || '',
+                    nik: record.nik || '',
+                    jk: record.jk || '',
+                    kelas: record.kelas || '',
+                    tahunAjaran: record.tahunAjaran || 'Tidak diketahui',
+                    jenjang: record.jenjang || 'Belum terisi',
+                    lastActivity: new Date(Date.UTC(2026, 9, 24 - (sequence % 75))).toISOString().slice(0, 10),
+                    courses
+                };
+            });
+        }
+
+        function filteredDemoProgress() {
+            const query = $('demo-search').value.trim().toLowerCase();
+            const status = $('demo-status-filter').value;
+            const year = $('demo-year-filter').value;
+            const packageName = $('demo-package-filter').value;
+            return VERIFICATION_PARTICIPANTS.filter(participant => {
+                if (status === 'lulus' && !participant.statusVerifikasi.includes('Lulus')) return false;
+                if (status === 'aktif' && !participant.statusVerifikasi.includes('Aktif')) return false;
+                if (year && participant.tahunAjaran !== year) return false;
+                if (packageName && participant.jenjang !== packageName) return false;
+                return !query || [
+                    participant.nama,
+                    participant.nisn,
+                    participant.nik,
+                    participant.alamat,
+                    participant.kelas,
+                    participant.kelasAsli,
+                    participant.tahunAjaran,
+                    participant.jenjang
+                ].join(' ').toLowerCase().includes(query);
+            });
+        }
+
+        function renderDemo() {
+            const participants = filteredDemoProgress();
+            const total = VERIFICATION_PARTICIPANTS.length;
+            const completedCount = VERIFICATION_PARTICIPANTS.filter(p => p.statusVerifikasi.includes('Lulus')).length;
+            
+            $('demo-kpi-total').textContent = total.toLocaleString('id-ID');
+            $('demo-kpi-progress').textContent = total.toLocaleString('id-ID');
+            $('demo-kpi-complete').textContent = completedCount.toLocaleString('id-ID');
+            $('demo-kpi-tasks').textContent = participants.length.toLocaleString('id-ID');
+            $('demo-result-count').textContent = `${participants.length} dari ${total} peserta terverifikasi dengan sistem LMS Moodle ALC`;
+            $('demo-empty-state').classList.toggle('hidden', participants.length > 0);
+
+            $('demo-table-body').innerHTML = participants.map(participant => {
+                const isLulus = participant.statusVerifikasi.includes('Lulus');
+                const badge = isLulus
+                    ? '<span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800 shadow-sm"><i class="fa-solid fa-circle-check text-emerald-600"></i> Terverifikasi (Lulus)</span>'
+                    : '<span class="inline-flex items-center gap-1.5 rounded-full border border-sky-300 bg-sky-50 px-3 py-1 text-xs font-bold text-sky-800 shadow-sm"><i class="fa-solid fa-clock-rotate-left text-sky-600"></i> Terverifikasi (Aktif)</span>';
+                
+                const pct = parseInt(participant.progresKursus) || 75;
+                return `<tr class="hover:bg-amber-50/40 transition">
+                    <td class="py-3.5 pr-4 font-bold text-slate-900">${escapeHtml(participant.nama)}</td>
+                    <td class="py-3.5 pr-4 font-mono text-xs text-slate-600">${escapeHtml(participant.nisn || participant.moodleId)}</td>
+                    <td class="py-3.5 pr-4 text-xs font-semibold text-slate-700">${escapeHtml(participant.tahunAjaran || '-')}</td>
+                    <td class="py-3.5 pr-4 text-xs font-medium">${escapeHtml(participant.jenjang || '-')} · ${escapeHtml(participant.kelas || '-')}</td>
+                    <td class="py-3.5 pr-4">
+                        <div class="min-w-28">
+                            <div class="flex justify-between text-xs font-bold mb-1">
+                                <span class="text-slate-700">${participant.progresKursus}</span>
+                                <span class="text-emerald-700 text-[10px]">Tervalidasi</span>
+                            </div>
+                            <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-amber-400 to-emerald-500 rounded-full" style="width:${pct}%"></div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="py-3.5 pr-4 text-xs font-bold text-slate-700"><i class="fa-solid fa-list-check text-amber-500 mr-1.5"></i>${escapeHtml(participant.tugas)}</td>
+                    <td class="py-3.5 pr-4"><span class="px-2 py-0.5 rounded-lg bg-yellow-100 text-amber-900 font-extrabold text-xs">${participant.nilai}</span></td>
+                    <td class="py-3.5 pr-4 text-xs text-slate-500">${fmtDate(participant.aktivitasTerakhir)}</td>
+                    <td class="py-3.5 pr-4">${badge}</td>
+                </tr>`;
+            }).join('');
+
+            $('demo-cards').innerHTML = participants.map(participant => {
+                const isLulus = participant.statusVerifikasi.includes('Lulus');
+                const badge = isLulus
+                    ? '<span class="rounded-full bg-emerald-50 border border-emerald-200 px-2.5 py-1 text-[11px] font-extrabold text-emerald-800">LULUS</span>'
+                    : '<span class="rounded-full bg-sky-50 border border-sky-200 px-2.5 py-1 text-[11px] font-extrabold text-sky-800">AKTIF</span>';
+
+                return `<article class="rounded-2xl border border-amber-200 bg-white p-4 shadow-sm hover:shadow-md transition">
+                    <div class="flex justify-between items-start gap-3">
+                        <div>
+                            <h3 class="font-extrabold text-slate-900">${escapeHtml(participant.nama)}</h3>
+                            <p class="font-mono text-xs text-slate-500 mt-0.5">NISN: ${escapeHtml(participant.nisn || participant.moodleId)}</p>
+                        </div>
+                        ${badge}
+                    </div>
+                    <p class="text-xs font-semibold text-amber-800 mt-2">${escapeHtml(participant.tahunAjaran || '-')} · ${escapeHtml(participant.jenjang || '-')} · ${escapeHtml(participant.kelas || '-')}</p>
+                    <div class="mt-3 rounded-xl bg-slate-50 p-3 text-xs text-slate-600 space-y-2">
+                        <div class="flex justify-between items-center"><span class="text-slate-500">Progres Moodle</span><span class="font-bold text-slate-900">${participant.progresKursus}</span></div>
+                        <div class="flex justify-between items-center"><span class="text-slate-500">Tugas Terkumpul</span><span class="font-bold text-slate-900">${escapeHtml(participant.tugas)}</span></div>
+                        <div class="flex justify-between items-center"><span class="text-slate-500">Nilai Akhir</span><span class="font-extrabold text-amber-700">${participant.nilai}</span></div>
+                        <div class="flex justify-between items-center"><span class="text-slate-500">Aktivitas Terakhir</span><span class="font-medium text-slate-700">${fmtDate(participant.aktivitasTerakhir)}</span></div>
+                    </div>
+                </article>`;
+            }).join('');
+        }
+
+        function exportDemoCsv() {
+            const headers = ['nama','nisn','tahunAjaran','jenjang','kelas','progresMoodle','statusTugas','nilai','aktivitasTerakhir','statusVerifikasi'];
+            const rows = [headers.join(',')];
+            filteredDemoProgress().forEach(participant => {
+                const values = [participant.nama, participant.nisn || participant.moodleId, participant.tahunAjaran, participant.jenjang, participant.kelas, participant.progresKursus, participant.tugas, participant.nilai, participant.aktivitasTerakhir, participant.statusVerifikasi];
+                rows.push(values.map(value => `"${String(value).replace(/"/g, '""')}"`).join(','));
+            });
+            const blob = new Blob(['\uFEFF', rows.join('\n')], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'daftar-peserta-terverifikasi-moodle-alc.csv';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function getSimulationMetrics(participant) {
+            const completedCourses = participant.courses.filter(course => course.progress === 100).length;
+            const progress = Math.round(participant.courses.reduce((sum, course) => sum + course.progress, 0) / participant.courses.length);
+            const completedTasks = participant.courses.reduce((sum, course) => sum + course.tasksCompleted, 0);
+            const totalTasks = participant.courses.reduce((sum, course) => sum + course.tasksTotal, 0);
+            return {
+                completedCourses,
+                totalCourses: participant.courses.length,
+                progress,
+                completedTasks,
+                totalTasks,
+                complete: completedCourses === participant.courses.length
+            };
+        }
+
+        function filteredSimulationParticipants() {
+            const query = $('simulation-search').value.trim().toLowerCase();
+            const year = $('simulation-year-filter').value;
+            const jenjang = $('simulation-package-filter').value;
+            const status = $('simulation-status-filter').value;
+            return SIMULATION_PARTICIPANTS.filter(participant => {
+                const metrics = getSimulationMetrics(participant);
+                if (year && participant.tahunAjaran !== year) return false;
+                if (jenjang && participant.jenjang !== jenjang) return false;
+                if (status === 'complete' && !metrics.complete) return false;
+                if (status === 'in-progress' && metrics.complete) return false;
+                return !query || [
+                    participant.nama,
+                    participant.nisn,
+                    participant.nik,
+                    participant.kelas,
+                    participant.tahunAjaran,
+                    participant.jenjang,
+                    ...participant.courses.map(course => course.name)
+                ].join(' ').toLowerCase().includes(query);
+            });
+        }
+
+        function renderSimulation() {
+            const participants = filteredSimulationParticipants();
+            const courseCount = SIMULATION_PARTICIPANTS.reduce((sum, participant) => sum + participant.courses.length, 0);
+            const progressTotal = SIMULATION_PARTICIPANTS.reduce((sum, participant) =>
+                sum + participant.courses.reduce((courseSum, course) => courseSum + course.progress, 0), 0);
+            const completedCount = SIMULATION_PARTICIPANTS.filter(participant => getSimulationMetrics(participant).complete).length;
+            const completedTasks = SIMULATION_PARTICIPANTS.reduce((sum, participant) => sum + getSimulationMetrics(participant).completedTasks, 0);
+            const taskCount = SIMULATION_PARTICIPANTS.reduce((sum, participant) => sum + getSimulationMetrics(participant).totalTasks, 0);
+
+            $('simulation-kpi-total').textContent = SIMULATION_PARTICIPANTS.length.toLocaleString('id-ID');
+            $('simulation-kpi-progress').textContent = `${Math.round(progressTotal / courseCount)}%`;
+            $('simulation-kpi-complete').textContent = completedCount.toLocaleString('id-ID');
+            $('simulation-kpi-tasks').textContent = `${completedTasks}/${taskCount}`;
+            $('simulation-result-count').textContent = `${participants.length} dari ${SIMULATION_PARTICIPANTS.length} peserta`;
+            $('simulation-empty-state').classList.toggle('hidden', participants.length > 0);
+
+            $('simulation-course-list').innerHTML = simulationCourses.map((name, index) => {
+                const average = Math.round(SIMULATION_PARTICIPANTS.reduce((sum, participant) =>
+                    sum + participant.courses[index].progress, 0) / SIMULATION_PARTICIPANTS.length);
+                return `<div class="rounded-xl bg-slate-50 p-3"><div class="flex justify-between gap-2 text-sm"><span class="font-bold text-slate-700">${escapeHtml(name)}</span><span class="font-semibold text-violet-800">${average}%</span></div><div class="h-2 bg-white rounded-full mt-2 overflow-hidden"><div class="h-full bg-violet-500 rounded-full" style="width:${average}%"></div></div></div>`;
+            }).join('');
+
+            $('simulation-table-body').innerHTML = participants.map(participant => {
+                const metrics = getSimulationMetrics(participant);
+                const courseDetails = participant.courses.map(course =>
+                    `<div class="py-1.5 min-w-44"><div class="flex justify-between gap-2"><span class="font-semibold">${escapeHtml(course.name)}</span><span>${course.progress}%</span></div><div class="h-1.5 bg-slate-100 rounded-full mt-1 overflow-hidden"><div class="h-full bg-violet-400 rounded-full" style="width:${course.progress}%"></div></div><p class="text-xs text-slate-500 mt-1">Tugas ${course.tasksCompleted}/${course.tasksTotal} · nilai ${course.score ?? '-'}</p></div>`
+                ).join('');
+                const status = metrics.complete ? 'Selesai' : 'Berjalan';
+                return `<tr>
+                    <td class="py-3 pr-4 font-mono text-xs font-bold text-violet-800">${escapeHtml(participant.nisn || String(participant.seq).padStart(4,'0'))}</td>
+                    <td class="py-3 pr-4 font-semibold">${escapeHtml(participant.nama)}</td>
+                    <td class="py-3 pr-4">${escapeHtml(participant.tahunAjaran)}</td>
+                    <td class="py-3 pr-4">${escapeHtml(participant.jenjang)}</td>
+                    <td class="py-3 pr-4"><div class="min-w-24"><div class="flex justify-between text-xs"><span>${metrics.progress}%</span><span class="text-violet-700">progres</span></div><div class="h-2 bg-slate-100 rounded-full mt-1 overflow-hidden"><div class="h-full bg-sky-500 rounded-full" style="width:${metrics.progress}%"></div></div></div></td>
+                    <td class="py-3 pr-4">${courseDetails}</td>
+                    <td class="py-3 pr-4">${fmtDate(participant.lastActivity)}</td>
+                    <td class="py-3 pr-4"><span class="rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-xs font-bold text-violet-900">${status}</span></td>
+                </tr>`;
+            }).join('');
+
+            $('simulation-cards').innerHTML = participants.map(participant => {
+                const metrics = getSimulationMetrics(participant);
+                const status = metrics.complete ? 'Selesai' : 'Berjalan';
+                return `<article class="rounded-2xl border border-violet-200 bg-white p-4 shadow-sm">
+                    <div class="flex justify-between items-start gap-3"><div><p class="font-mono text-xs font-bold text-violet-800">NISN: ${escapeHtml(participant.nisn || '-')}</p><h3 class="font-extrabold text-slate-900 mt-1">${escapeHtml(participant.nama)}</h3></div><span class="rounded-full bg-violet-50 border border-violet-200 px-2 py-1 text-[10px] font-extrabold text-violet-900">${escapeHtml(participant.jk === 'L' ? 'L' : 'P')}</span></div>
+                    <p class="text-xs text-slate-500 mt-2">${escapeHtml(participant.tahunAjaran)} · ${escapeHtml(participant.jenjang)} · ${metrics.progress}% progres</p>
+                    <div class="h-2 bg-slate-100 rounded-full mt-2 overflow-hidden"><div class="h-full bg-sky-500 rounded-full" style="width:${metrics.progress}%"></div></div>
+                    <div class="mt-3 space-y-2">${participant.courses.map(course => `<div class="rounded-xl bg-slate-50 p-3"><div class="flex justify-between gap-2 text-xs"><span class="font-bold text-slate-700">${escapeHtml(course.name)}</span><span>${course.progress}%</span></div><p class="text-xs text-slate-500 mt-1">Tugas ${course.tasksCompleted}/${course.tasksTotal} · nilai ${course.score ?? '-'}</p></div>`).join('')}</div>
+                    <p class="mt-3 text-xs font-bold text-violet-800">${status}</p>
+                </article>`;
+            }).join('');
+
+            if (simulationChart) simulationChart.destroy();
+            simulationChart = new Chart($('chart-simulation-progress'), {
+                type: 'bar',
+                data: {
+                    labels: simulationCourses,
+                    datasets: [{
+                        label: 'Rata-rata progres',
+                        data: simulationCourses.map((_, index) => Math.round(
+                            SIMULATION_PARTICIPANTS.reduce((sum, participant) => sum + participant.courses[index].progress, 0) / SIMULATION_PARTICIPANTS.length
+                        )),
+                        backgroundColor: ['#eab54f', '#76a9c8', '#9a8fca'],
+                        borderRadius: 9,
+                        maxBarThickness: 48
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { labels: { color: '#475467' } } },
+                    scales: {
+                        x: { ticks: { color: '#667085' }, grid: { display: false } },
+                        y: { min: 0, max: 100, ticks: { color: '#667085', callback: value => `${value}%` }, grid: { color: 'rgba(31,41,55,0.07)' } }
+                    }
+                }
+            });
+        }
+
+                function exportSimulationCsv() {
+            const headers = ['nama','nisn','tahunAjaran','jenjang','kelas','kursus','progres','tugasSelesai','totalTugas','nilai','aktivitasTerakhir','status'];
+            const rows = [headers.join(',')];
+            filteredSimulationParticipants().forEach(participant => {
+                const metrics = getSimulationMetrics(participant);
+                participant.courses.forEach(course => {
+                    const values = [participant.nama, participant.nisn || '', participant.tahunAjaran, participant.jenjang, participant.kelas || '', course.name, course.progress, course.tasksCompleted, course.tasksTotal, course.score ?? '', participant.lastActivity, metrics.complete ? 'Semua kursus selesai' : 'Sedang berjalan'];
+                    rows.push(values.map(value => `"${String(value).replace(/"/g, '""')}"`).join(','));
+                });
+            });
+            const blob = new Blob(['\uFEFF', rows.join('\n')], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'progres-kursus-peserta-pkbm-alc.csv';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

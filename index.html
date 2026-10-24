@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>E-Learning Assyuro ALC | Ruang Kolaborasi Pendidikan</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="fav icon logo.jpg" type="image/jpeg">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: 'var(--color-primary)', // Menggunakan CSS Variable agar bisa diubah Admin
+                        primaryDark: 'var(--color-primary-dark)',
+                        secondary: '#4F46E5', // Indigo 600
+                        accent: '#FEF9C3', // Yellow 50
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-primary: #FACC15; /* Yellow 400 default */
+            --color-primary-dark: #B45309; /* Yellow 700 default */
+        }
+        
+        /* Custom styles for smooth accordion transitions */
+        .faq-content {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        }
+
+        /* --- Scroll Animation & 3D Interactive Styles --- */
+        /* Multiple Reveal Directions */
+        .reveal-bottom { opacity: 0; transform: translateY(60px) scale(0.95); transition: all 0.9s cubic-bezier(0.5, 0, 0, 1); will-change: transform, opacity; }
+        .reveal-left { opacity: 0; transform: translateX(-60px) scale(0.95); transition: all 0.9s cubic-bezier(0.5, 0, 0, 1); will-change: transform, opacity; }
+        .reveal-right { opacity: 0; transform: translateX(60px) scale(0.95); transition: all 0.9s cubic-bezier(0.5, 0, 0, 1); will-change: transform, opacity; }
+        
+        .reveal-active {
+            opacity: 1;
+            transform: translate(0) scale(1) perspective(1000px) rotateX(0);
+        }
+        
+        /* Floating / Melayang Effect */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 3.5s ease-in-out infinite;
+        }
+
+        /* Blob Background Animation (Background bergerak) */
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 8s infinite alternate;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        /* 3D Hover Popup Effect for Cards */
+        .hover-3d {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .hover-3d:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 30px 60px -15px rgba(180, 83, 9, 0.2);
+            z-index: 10;
+        }
+
+        /* Button Shine Effect (Kilau tombol) */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255,255,255,0.4);
+            transform: rotate(45deg);
+            transition: all 0.3s;
+            animation: shine 3.5s infinite;
+        }
+        @keyframes shine {
+            0% { left: -60%; opacity: 1; }
+            20% { left: 150%; opacity: 1; }
+            100% { left: 150%; opacity: 0; }
+        }
+
+        /* Image Hover Zoom for Blog/News */
+        .img-zoom-container { overflow: hidden; }
+        .img-zoom-container img.zoom-img { transition: transform 0.6s ease; }
+        .img-zoom-container:hover img.zoom-img { transform: scale(1.1); }
+
+        @media (hover: none) {
+            .hover-3d:hover { transform: none; box-shadow: none; }
+        }
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute; left: 0; bottom: -6px; height: 2px; width: 0;
+            background: var(--color-primary-dark);
+            transition: width .25s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        body { padding-bottom: env(safe-area-inset-bottom); }
+        #mobile-menu a, #mobile-menu-btn { min-height: 44px; }
+    
+        /* --- 3D Depth & Interactive Micro-animations --- */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-gpu { transform-style: preserve-3d; }
+        
+        .tilt-card {
+            transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+            will-change: transform;
+        }
+        .tilt-card:hover {
+            transform: perspective(1000px) rotateX(4deg) rotateY(-3deg) translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(180, 83, 9, 0.22);
+        }
+
+        /* Ambient floating badge 3D */
+        @keyframes float-badge {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(-1.5deg); }
+        }
+        .float-badge {
+            animation: float-badge 5s ease-in-out infinite;
+        }
+
+        /* Glowing Pulse Border */
+        @keyframes pulse-border {
+            0%, 100% { border-color: rgba(245, 158, 11, 0.4); box-shadow: 0 0 15px rgba(245, 158, 11, 0.2); }
+            50% { border-color: rgba(245, 158, 11, 0.8); box-shadow: 0 0 30px rgba(245, 158, 11, 0.4); }
+        }
+        .glow-active {
+            animation: pulse-border 4s infinite;
+        }
+
+        /* Glassmorphism Ultra */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+    
+        /* --- Animated Dynamic Background Particles & Mesh --- */
+        @keyframes float-particle {
+            0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) translateX(25px) rotate(120deg); }
+            66% { transform: translateY(15px) translateX(-20px) rotate(240deg); }
+            100% { transform: translateY(0px) translateX(0px) rotate(360deg); }
+        }
+        .anim-particle-1 { animation: float-particle 14s ease-in-out infinite; }
+        .anim-particle-2 { animation: float-particle 18s ease-in-out infinite reverse; }
+        .anim-particle-3 { animation: float-particle 22s ease-in-out infinite 3s; }
+
+        @keyframes wave-glow {
+            0%, 100% { opacity: 0.35; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.65; transform: scale(1.15) rotate(10deg); }
+        }
+        .wave-glow { animation: wave-glow 10s ease-in-out infinite alternate; }
+
+        /* Icon Micro-hover Bounce & 3D Tilt */
+        .icon-bounce-hover {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .icon-bounce-hover:hover {
+            transform: scale(1.18) rotate(-6deg);
+        }
+
+    
+        /* --- Enhanced 3D Ambient Universe & Floating Cubes --- */
+        @keyframes rotate-3d-cube {
+            0% { transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px); }
+            50% { transform: perspective(800px) rotateX(180deg) rotateY(180deg) translateY(-25px); }
+            100% { transform: perspective(800px) rotateX(360deg) rotateY(360deg) translateY(0px); }
+        }
+        .cube-3d-1 { animation: rotate-3d-cube 20s infinite linear; }
+        .cube-3d-2 { animation: rotate-3d-cube 26s infinite linear reverse; }
+        .cube-3d-3 { animation: rotate-3d-cube 18s infinite linear 3s; }
+
+        @keyframes pulse-mesh {
+            0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.45; }
+            50% { transform: scale(1.12) translate(20px, -20px); opacity: 0.75; }
+        }
+        .mesh-glow { animation: pulse-mesh 12s ease-in-out infinite alternate; }
+
+        /* Floating Interactive 3D Geometry */
+        .geom-pill {
+            background: linear-gradient(135deg, rgba(254, 240, 138, 0.75), rgba(245, 158, 11, 0.35));
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.15);
+        }
+
+    
+        /* --- Super 3D World & Interactive Glass Physics --- */
+        .card-3d-wrap {
+            perspective: 1200px;
+            transform-style: preserve-3d;
+        }
+
+        .card-3d-inner {
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        .card-3d-inner:hover {
+            transform: translateY(-10px) rotateX(6deg) rotateY(-4deg) scale(1.025);
+            box-shadow: 0 30px 60px -15px rgba(245, 158, 11, 0.25), 0 0 25px rgba(251, 191, 36, 0.15);
+        }
+
+        /* Ambient 3D Geometric Floating Universe (Lebih cepat, jelas, dinamis & elegan) */
+        @keyframes float-geom-1 {
+            0% { transform: translateY(0px) rotate(0deg) scale(1); }
+            50% { transform: translateY(-24px) rotate(180deg) scale(1.15); }
+            100% { transform: translateY(0px) rotate(360deg) scale(1); }
+        }
+        @keyframes float-geom-2 {
+            0% { transform: translateY(0px) rotate(0deg) scale(1); }
+            50% { transform: translateY(22px) rotate(-180deg) scale(0.85); }
+            100% { transform: translateY(0px) rotate(-360deg) scale(1); }
+        }
+        @keyframes float-geom-3 {
+            0% { transform: translate(0px, 0px) rotate(0deg); }
+            33% { transform: translate(20px, -18px) rotate(120deg); }
+            66% { transform: translate(-18px, 14px) rotate(240deg); }
+            100% { transform: translate(0px, 0px) rotate(360deg); }
+        }
+        .anim-geom-1 { animation: float-geom-1 7s ease-in-out infinite; }
+        .anim-geom-2 { animation: float-geom-2 8.5s ease-in-out infinite; }
+        .anim-geom-3 { animation: float-geom-3 6.5s ease-in-out infinite; }
+
+        /* Floating 3D Donut / Ring */
+        .ring-3d {
+            border: 4px solid rgba(245, 158, 11, 0.65);
+            border-top-color: rgba(245, 158, 11, 0.85);
+            border-radius: 50%;
+            box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.25);
+        }
+
+        /* Dynamic Aurora Glow in Background */
+        @keyframes aurora-wave {
+            0% { filter: blur(50px) hue-rotate(0deg); transform: scale(1) translateY(0px); }
+            50% { filter: blur(65px) hue-rotate(25deg); transform: scale(1.2) translateY(-25px); }
+            100% { filter: blur(50px) hue-rotate(0deg); transform: scale(1) translateY(0px); }
+        }
+        .aurora-glow {
+            animation: aurora-wave 6.5s ease-in-out infinite alternate;
+        }
+
+        /* 3D Button Bounce on Hover */
+        .btn-3d {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 6px 0 #d97706, 0 12px 25px rgba(217, 119, 6, 0.3);
+        }
+        .btn-3d:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 9px 0 #d97706, 0 18px 30px rgba(217, 119, 6, 0.4);
+        }
+        .btn-3d:active {
+            transform: translateY(3px);
+            box-shadow: 0 3px 0 #d97706, 0 6px 15px rgba(217, 119, 6, 0.2);
+        }
+
+    </style>
+</head>
+<!-- overflow-x-hidden penting agar efek reveal-left/right tidak memunculkan scroll samping di HP -->
+<body class="font-sans text-gray-800 antialiased bg-white overflow-x-hidden">
+
+    <!-- 1. Navbar -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4 border-b border-transparent">
+        <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="fav icon logo.jpg" alt="Logo ALC" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm group-hover:scale-105 transition-transform">
+                <span class="font-bold text-xl text-gray-900 tracking-tight">E-Learning ALC</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex items-center gap-7 font-medium text-gray-600">
+                <li><a href="#beranda" class="nav-link hover:text-primaryDark transition inline-block">Beranda</a></li>
+                <li><a href="#ruang" class="nav-link hover:text-primaryDark transition inline-block">Ruang E-Learning</a></li>
+                <li><a href="#layanan" class="nav-link hover:text-primaryDark transition inline-block">Layanan</a></li>
+                <li><a href="#history" class="nav-link hover:text-primaryDark transition inline-block">History Peserta</a></li>
+                <li><a href="#faq" class="nav-link hover:text-primaryDark transition inline-block">FAQ</a></li>
+            </ul>
+
+            <!-- Login Button & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="https://elearningalc.online/login/index.php" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex bg-primary text-gray-900 px-6 py-2.5 rounded-full font-bold hover:bg-yellow-500 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                    Masuk
+                </a>
+                
+                <!-- Hamburger Menu (Mobile) -->
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-600 hover:text-primaryDark focus:outline-none text-2xl w-11 h-11 inline-flex items-center justify-center rounded-full">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md shadow-xl border-t border-gray-100 flex-col">
+            <ul class="flex flex-col text-center font-medium text-gray-700 py-4 gap-1">
+                <li><a href="#beranda" class="block py-3 hover:text-primaryDark hover:bg-yellow-50 mobile-link">Beranda</a></li>
+                <li><a href="#ruang" class="block py-3 hover:text-primaryDark hover:bg-yellow-50 mobile-link">Ruang E-Learning</a></li>
+                <li><a href="#layanan" class="block py-3 hover:text-primaryDark hover:bg-yellow-50 mobile-link">Layanan</a></li>
+                <li><a href="#history" class="block py-3 hover:text-primaryDark hover:bg-yellow-50 mobile-link">History Peserta</a></li>
+                <li><a href="#faq" class="block py-3 hover:text-primaryDark hover:bg-yellow-50 mobile-link">FAQ</a></li>
+                <li class="px-6 pt-2 pb-4">
+                    <a href="https://elearningalc.online/login/index.php" target="_blank" rel="noopener noreferrer" class="block w-full bg-primary text-gray-900 py-3 rounded-lg font-bold hover:bg-yellow-500 transition">
+                        Masuk / Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <section id="beranda" class="relative min-h-[92vh] sm:min-h-screen pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-28 lg:pb-20 flex items-center justify-center bg-gradient-to-br from-amber-50/90 via-white to-yellow-50/70 overflow-hidden">
+        <!-- Decorative Animated 3D Background Mesh & Floating Particles -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <!-- Aurora Ambient Glow -->
+            <div class="absolute -top-20 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-yellow-300/40 via-amber-200/30 to-transparent rounded-full aurora-glow translate-x-1/4 -translate-y-1/4"></div>
+            <div class="absolute -bottom-24 -left-20 w-[500px] h-[500px] bg-gradient-to-tr from-amber-300/30 via-yellow-200/35 to-transparent rounded-full aurora-glow animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/3 w-80 h-80 bg-yellow-200/20 rounded-full blur-3xl wave-glow"></div>
+            
+            <!-- 3D Geometric Floating Objects (Posisi Pas, Beranimasi Cepat & Elegan) -->
+            <div class="anim-geom-1 geom-pill absolute top-28 left-[5%] w-13 h-13 rounded-2xl hidden md:flex items-center justify-center text-amber-600 shadow-xl text-lg font-bold"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="anim-geom-2 ring-3d absolute top-48 left-[18%] w-11 h-11 hidden lg:block"></div>
+            <div class="anim-geom-3 geom-pill absolute bottom-16 left-[34%] w-10 h-10 rounded-2xl hidden md:flex items-center justify-center text-amber-700 shadow-md text-sm"><i class="fa-solid fa-book"></i></div>
+            <div class="anim-geom-2 ring-3d absolute top-28 right-[10%] w-14 h-14 hidden md:block" style="border-width: 5px;"></div>
+            <div class="anim-geom-1 geom-pill absolute bottom-16 right-[6%] w-12 h-12 rounded-2xl hidden md:flex items-center justify-center text-amber-600 shadow-xl text-base"><i class="fa-solid fa-laptop"></i></div>
+            <div class="anim-geom-3 ring-3d absolute bottom-6 right-[28%] w-8 h-8 hidden sm:block"></div>
+            <div class="anim-geom-1 absolute top-20 left-[48%] w-3.5 h-3.5 rounded-full bg-amber-400 hidden sm:block shadow-md"></div>
+            <div class="anim-geom-2 absolute bottom-28 left-[14%] w-4 h-4 rounded-full bg-yellow-400 hidden sm:block shadow-md"></div>
+        </div>
+
+        <div class="container mx-auto px-4 md:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 py-4 sm:py-6 my-auto">
+            <!-- Text Content -->
+            <div class="lg:w-1/2 text-center lg:text-left reveal-left">
+                <div class="inline-block bg-yellow-100 text-primaryDark font-semibold px-4 py-1.5 rounded-full text-sm mb-6 shadow-sm border border-yellow-200 hover:scale-105 transition-transform cursor-default">
+                    ✨ Platform Edukasi Digital Terbaik
+                </div>
+                <h1 class="text-[2rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
+                    Ruang Kolaborasi untuk <span class="text-transparent bg-clip-text bg-gradient-to-r from-primaryDark to-yellow-500">Pendidikan Bermutu</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Pusat pembelajaran digital interaktif Assyuro ALC untuk siswa dan guru. Akses materi, kuis, dan kolaborasi dalam satu genggaman.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="https://elearningalc.online/login/index.php" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-primary text-gray-900 px-8 py-4 rounded-full font-bold hover:bg-yellow-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 btn-shine">
+                        Mulai Belajar <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#ruang" class="w-full sm:w-auto bg-white text-primaryDark border-2 border-primaryDark px-8 py-4 rounded-full font-bold hover:bg-yellow-50 hover:shadow-lg transition-all duration-300 flex items-center justify-center hover:-translate-y-1">
+                        Jelajahi Fitur
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image / Illustration -->
+            <div class="lg:w-1/2 w-full max-w-lg mx-auto floating reveal-right">
+                <div class="relative">
+                    <img src="IMG_7092.jpg" alt="Siswa Belajar" class="rounded-3xl shadow-2xl z-10 relative object-cover h-64 sm:h-80 md:h-[450px] w-full border-4 border-white hover:scale-[1.01] transition-transform duration-500">
+                    <!-- 3D Floating Tag Top Right (Safe Offset, No Clipping) -->
+                    <div class="absolute top-3 right-3 sm:-top-4 sm:-right-4 glass-panel float-badge px-3.5 py-2.5 rounded-2xl shadow-xl z-20 flex items-center gap-2.5 border border-amber-300/80" style="animation-delay: -2.5s;">
+                        <span class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-400 to-yellow-300 text-gray-900 flex items-center justify-center font-bold text-xs shadow-sm"><i class="fa-solid fa-bolt"></i></span>
+                        <div>
+                            <p class="text-xs font-extrabold text-gray-900">E-Learning 24/7</p>
+                            <p class="text-[10px] font-medium text-gray-500">Akses Kapan Saja</p>
+                        </div>
+                    </div>
+                    <!-- 3D Floating Badge Bottom Left (Safe Offset, No Clipping) -->
+                    <div class="absolute -bottom-5 left-3 sm:-bottom-6 sm:-left-6 glass-panel float-badge p-3 sm:p-4 rounded-2xl shadow-2xl z-20 flex items-center gap-3 sm:gap-4 border border-amber-300/80">
+                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-yellow-100 to-amber-100 flex items-center justify-center text-amber-700 shadow-inner">
+                            <i class="fa-solid fa-users text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm sm:text-base font-black text-gray-900">435+ Peserta</p>
+                            <p class="text-[11px] font-semibold text-gray-500">Paket A, B, & C Terdaftar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Section Jelajahi Ruang -->
+        <section id="ruang" class="py-20 sm:py-24 bg-gradient-to-b from-white via-amber-50/30 to-white relative overflow-hidden">
+        <!-- Floating 3D subtle shapes -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="cube-3d-2 geom-pill absolute top-12 right-[5%] w-10 h-10 rounded-2xl opacity-60 hidden md:block"></div>
+            <div class="cube-3d-1 geom-pill absolute bottom-10 left-[4%] w-8 h-8 rounded-xl opacity-60 hidden md:block"></div>
+        </div>
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16 reveal-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Jelajahi Ruang E-Learning</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Platform kami dirancang khusus dengan berbagai ruang untuk memfasilitasi kebutuhan seluruh ekosistem sekolah.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 lg:gap-8 cards-container">
+                <!-- Card 1 -->
+                <a href="https://elearningalc.online/login/index.php" target="_blank" rel="noopener noreferrer" class="glass-panel tilt-card rounded-3xl p-5 sm:p-7 text-center border border-amber-200/80 hover:bg-white cursor-pointer group block shadow-md shadow-amber-900/5 relative overflow-hidden">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-3 sm:mb-4 icon-bounce-hover icon-bounce-hover transition-all text-primaryDark text-xl sm:text-2xl">
+                        <i class="fa-solid fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Ruang Guru</h3>
+                    <p class="text-sm text-gray-600 hidden md:block">Kelola materi, absensi, dan jadwal mengajar dengan efisien.</p>
+                </a>
+                
+                <!-- Card 2 -->
+                <a href="https://elearningalc.online/login/index.php" target="_blank" rel="noopener noreferrer" class="glass-panel tilt-card rounded-3xl p-5 sm:p-7 text-center border border-amber-200/80 hover:bg-white cursor-pointer group block shadow-md shadow-amber-900/5 relative overflow-hidden">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-3 sm:mb-4 icon-bounce-hover icon-bounce-hover transition-all text-primaryDark text-xl sm:text-2xl">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Ruang Murid</h3>
+                    <p class="text-sm text-gray-600 hidden md:block">Akses pembelajaran interaktif, tugas, dan berdiskusi dengan teman.</p>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="https://elearningalc.online/login/index.php" target="_blank" rel="noopener noreferrer" class="glass-panel tilt-card rounded-3xl p-5 sm:p-7 text-center border border-amber-200/80 hover:bg-white cursor-pointer group block shadow-md shadow-amber-900/5 relative overflow-hidden">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-3 sm:mb-4 icon-bounce-hover icon-bounce-hover transition-all text-primaryDark text-xl sm:text-2xl">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Ruang Ujian</h3>
+                    <p class="text-sm text-gray-600 hidden md:block">Sistem CBT terintegrasi untuk UTS, UAS, dan Tryout dengan aman.</p>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="https://elearningalc.online/login/index.php" target="_blank" rel="noopener noreferrer" class="glass-panel tilt-card rounded-3xl p-5 sm:p-7 text-center border border-amber-200/80 hover:bg-white cursor-pointer group block shadow-md shadow-amber-900/5 relative overflow-hidden">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-3 sm:mb-4 icon-bounce-hover icon-bounce-hover transition-all text-primaryDark text-xl sm:text-2xl">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Ruang Materi</h3>
+                    <p class="text-sm text-gray-600 hidden md:block">Perpustakaan digital berisi modul, video, dan bahan ajar interaktif.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Section Layanan Unggulan -->
+    <section id="layanan" class="py-20 sm:py-24 bg-gradient-to-b from-gray-50 via-amber-50/20 to-gray-50 border-t border-gray-100 relative overflow-hidden">
+        <!-- Floating 3D Geometric Objects -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="anim-geom-2 ring-3d absolute top-12 left-[5%] w-12 h-12 opacity-60 hidden md:block"></div>
+            <div class="anim-geom-1 geom-pill absolute bottom-12 right-[6%] w-10 h-10 rounded-2xl opacity-60 hidden md:block"></div>
+            <div class="anim-geom-3 ring-3d absolute top-28 right-[20%] w-8 h-8 opacity-40 hidden sm:block"></div>
+        </div>
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal-left">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Layanan Unggulan Kami</h2>
+                    <p class="text-gray-600 text-lg">Inovasi tiada henti untuk menciptakan pengalaman belajar online yang setara dengan tatap muka.</p>
+                </div>
+                <a href="https://elearningalc.online/login/index.php" target="_blank" rel="noopener noreferrer" class="text-primaryDark font-semibold hover:text-yellow-700 flex items-center gap-2 group">
+                    Lihat Semua Layanan <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 cards-container card-3d-wrap">
+                <!-- Service 1 -->
+                <div class="card-3d-inner bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-lg shadow-gray-200/50 border border-amber-100/80 hover:border-amber-300 group transition-all">
+                    <div class="w-14 h-14 bg-yellow-100 text-primaryDark rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-gray-900 icon-bounce-hover transition-all">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Evaluasi Pembelajaran</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Pantau perkembangan siswa secara real-time melalui sistem rapor digital, analisis nilai otomatis, dan grafik ketuntasan belajar.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="card-3d-inner bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-lg shadow-gray-200/50 border border-amber-100/80 hover:border-amber-300 group transition-all">
+                    <div class="w-14 h-14 bg-yellow-100 text-primaryDark rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-gray-900 icon-bounce-hover transition-all">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Pendidikan Jarak Jauh</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Dukungan sinkron dan asinkron untuk memastikan KBM tetap berjalan maksimal kapan saja dan di mana saja.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="card-3d-inner bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-lg shadow-gray-200/50 border border-amber-100/80 hover:border-amber-300 group transition-all">
+                    <div class="w-14 h-14 bg-yellow-100 text-primaryDark rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-gray-900 icon-bounce-hover transition-all">
+                        <i class="fa-solid fa-photo-film"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Sumber Belajar Interaktif</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Integrasi media interaktif seperti video edukasi, kuis interaktif, dan animasi untuk meningkatkan minat belajar siswa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Peserta PKBM -->
+    <section id="history" class="py-20 sm:py-24 bg-gradient-to-br from-amber-50 via-white to-yellow-50/60 text-gray-800 relative overflow-hidden border-t border-b border-amber-100">
+        <!-- Floating 3D Orbs / Ambient -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="absolute -top-24 -right-16 w-80 h-80 bg-yellow-300/25 rounded-full blur-3xl animate-blob"></div>
+            <div class="absolute -bottom-20 -left-16 w-96 h-96 bg-amber-400/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        </div>
+
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Info with 3D Reveal -->
+                <div class="reveal-left">
+                    <div class="inline-flex items-center gap-2 bg-yellow-100 text-primaryDark font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 border border-yellow-200 shadow-sm">
+                        <i class="fa-solid fa-database"></i> Data Internal PKBM
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
+                        History Peserta Didik <span class="text-transparent bg-clip-text bg-gradient-to-r from-primaryDark to-yellow-600">Paket A, B, dan C</span>
+                    </h2>
+                    <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
+                        Arsip lengkap peserta PKBM Assyuro ALC tahun ajaran 2024/2025 hingga 2026/2027 dengan pencarian interaktif, grafik demografi, serta rekap pemantauan progres kursus peserta didik.
+                    </p>
+                    
+                    <div class="space-y-3.5 text-gray-700 mb-9 text-sm sm:text-base">
+                        <div class="flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-full bg-amber-100 text-primaryDark flex items-center justify-center shrink-0 font-bold text-xs"><i class="fa-solid fa-check"></i></span>
+                            <span>Grafik interaktif gender, jenjang, kelas, usia, dan sebaran alamat</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-full bg-amber-100 text-primaryDark flex items-center justify-center shrink-0 font-bold text-xs"><i class="fa-solid fa-check"></i></span>
+                            <span>Pencarian instan + kartu responsif khusus pengguna HP</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-full bg-amber-100 text-primaryDark flex items-center justify-center shrink-0 font-bold text-xs"><i class="fa-solid fa-check"></i></span>
+                            <span>Fitur ekspor laporan CSV lengkap dan rekap progres kursus</span>
+                        </div>
+                    </div>
+
+                    <a href="history-peserta.html" class="inline-flex w-full sm:w-auto justify-center items-center gap-3 bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 px-8 py-4 rounded-full font-extrabold hover:shadow-xl hover:shadow-yellow-500/25 hover:-translate-y-1 transition-all duration-300 btn-shine text-base">
+                        <span>Buka Dashboard History</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Right 3D Cards Grid -->
+                <div class="grid grid-cols-2 gap-4 sm:gap-6 reveal-right">
+                    <!-- Stat Card 1 -->
+                    <div class="bg-white/90 backdrop-blur-md border border-amber-200/80 rounded-3xl p-6 sm:p-7 shadow-lg shadow-amber-900/5 hover-3d group">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-primaryDark flex items-center justify-center text-xl mb-4 icon-bounce-hover transition-transform shadow-inner">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <p class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-1 tracking-tight">435</p>
+                        <p class="text-xs sm:text-sm font-semibold text-gray-500">Catatan Peserta</p>
+                    </div>
+
+                    <!-- Stat Card 2 -->
+                    <div class="bg-white/90 backdrop-blur-md border border-amber-200/80 rounded-3xl p-6 sm:p-7 shadow-lg shadow-amber-900/5 hover-3d group">
+                        <div class="w-12 h-12 rounded-2xl bg-yellow-100 text-amber-700 flex items-center justify-center text-xl mb-4 icon-bounce-hover transition-transform shadow-inner">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <p class="text-3xl sm:text-4xl font-extrabold text-amber-600 mb-1 tracking-tight">3</p>
+                        <p class="text-xs sm:text-sm font-semibold text-gray-500">Tahun Ajaran</p>
+                    </div>
+
+                    <!-- Stat Card 3 -->
+                    <div class="bg-white/90 backdrop-blur-md border border-sky-100 rounded-3xl p-6 sm:p-7 shadow-lg shadow-sky-900/5 hover-3d group">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl mb-4 icon-bounce-hover transition-transform shadow-inner">
+                            <i class="fa-solid fa-mars"></i>
+                        </div>
+                        <p class="text-3xl sm:text-4xl font-extrabold text-sky-600 mb-1 tracking-tight">189</p>
+                        <p class="text-xs sm:text-sm font-semibold text-gray-500">Laki-laki</p>
+                    </div>
+
+                    <!-- Stat Card 4 -->
+                    <div class="bg-white/90 backdrop-blur-md border border-pink-100 rounded-3xl p-6 sm:p-7 shadow-lg shadow-pink-900/5 hover-3d group">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl mb-4 icon-bounce-hover transition-transform shadow-inner">
+                            <i class="fa-solid fa-venus"></i>
+                        </div>
+                        <p class="text-3xl sm:text-4xl font-extrabold text-pink-600 mb-1 tracking-tight">246</p>
+                        <p class="text-xs sm:text-sm font-semibold text-gray-500">Perempuan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Section FAQ (Accordion) -->
+    <section id="faq" class="py-20 sm:py-24 bg-gradient-to-b from-white via-amber-50/20 to-white relative overflow-hidden">
+        <!-- Floating 3D Geometric Shapes -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="anim-geom-1 geom-pill absolute top-16 right-[8%] w-12 h-12 rounded-2xl opacity-50 hidden md:block"></div>
+            <div class="anim-geom-2 ring-3d absolute bottom-16 left-[7%] w-11 h-11 opacity-50 hidden md:block"></div>
+        </div>
+        <div class="container mx-auto px-4 md:px-8 max-w-4xl">
+            <div class="text-center mb-12 reveal-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pertanyaan yang Sering Diajukan</h2>
+                <p class="text-gray-600 text-lg">Temukan jawaban cepat atas kendala yang mungkin Anda temui.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:border-yellow-300 transition-colors reveal-bottom">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-white group">
+                        <span class="font-semibold text-gray-800 text-lg group-hover:text-primaryDark transition-colors">Bagaimana cara mengakses E-Learning Assyuro ALC?</span>
+                        <div class="bg-yellow-50 p-2 rounded-full group-hover:bg-yellow-100 transition-colors">
+                            <i class="fa-solid fa-chevron-down text-primaryDark transition-transform duration-300 faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden opacity-0 bg-gray-50">
+                        <p class="p-6 text-gray-600 pt-2 border-t border-gray-100">
+                            Anda dapat mengakses e-learning dengan menekan tombol <strong>"Masuk"</strong> di bagian atas website ini, atau langsung mengunjungi alamat <a href="https://elearningalc.online/login/index.php" target="_blank" rel="noopener noreferrer" class="text-primaryDark hover:underline">elearningalc.online</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:border-yellow-300 transition-colors reveal-bottom" style="transition-delay: 100ms;">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-white group">
+                        <span class="font-semibold text-gray-800 text-lg group-hover:text-primaryDark transition-colors">Apakah harus menggunakan akun khusus untuk login?</span>
+                        <div class="bg-yellow-50 p-2 rounded-full group-hover:bg-yellow-100 transition-colors">
+                            <i class="fa-solid fa-chevron-down text-primaryDark transition-transform duration-300 faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden opacity-0 bg-gray-50">
+                        <p class="p-6 text-gray-600 pt-2 border-t border-gray-100">
+                            Ya, setiap siswa dan guru telah diberikan <em>Username</em> dan <em>Password</em> secara resmi oleh pihak admin sekolah. Jika Anda belum memilikinya atau lupa kata sandi, harap hubungi Wali Kelas atau Admin IT sekolah.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:border-yellow-300 transition-colors reveal-bottom" style="transition-delay: 200ms;">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-white group">
+                        <span class="font-semibold text-gray-800 text-lg group-hover:text-primaryDark transition-colors">Apakah E-Learning ini bisa diakses via HP/Smartphone?</span>
+                        <div class="bg-yellow-50 p-2 rounded-full group-hover:bg-yellow-100 transition-colors">
+                            <i class="fa-solid fa-chevron-down text-primaryDark transition-transform duration-300 faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden opacity-0 bg-gray-50">
+                        <p class="p-6 text-gray-600 pt-2 border-t border-gray-100">
+                            Tentu saja! Platform E-Learning kami sudah dirancang sangat responsif (Mobile-Friendly), sehingga Anda bisa mengakses materi dan kuis dengan lancar baik melalui Smartphone Android maupun iOS melalui browser (Chrome/Safari).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:border-yellow-300 transition-colors reveal-bottom" style="transition-delay: 300ms;">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-white group">
+                        <span class="font-semibold text-gray-800 text-lg group-hover:text-primaryDark transition-colors">Bagaimana cara mengumpulkan tugas di LMS?</span>
+                        <div class="bg-yellow-50 p-2 rounded-full group-hover:bg-yellow-100 transition-colors">
+                            <i class="fa-solid fa-chevron-down text-primaryDark transition-transform duration-300 faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden opacity-0 bg-gray-50">
+                        <p class="p-6 text-gray-600 pt-2 border-t border-gray-100">
+                            Setelah login, masuk ke menu <strong>Kelas Saya</strong>, pilih Mata Pelajaran, lalu cari modul tugas yang aktif. Klik tombol <em>"Tambahkan Pengajuan" (Add Submission)</em>, lalu unggah file tugas Anda (PDF/Word/Gambar) dan jangan lupa klik simpan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Footer (Updated) -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-gray-800 pb-12">
+                <!-- Brand Info -->
+                <div class="md:col-span-2">
+                    <a href="#" class="flex items-center gap-3 mb-6">
+                        <img src="fav icon logo.jpg" alt="Logo ALC" class="w-12 h-12 rounded-full object-cover border-2 border-gray-700 shadow-sm hover:rotate-12 transition-transform">
+                        <span class="font-bold text-2xl tracking-tight text-white">E-Learning ALC</span>
+                    </a>
+                    <p class="text-gray-400 mb-6 max-w-sm leading-relaxed">
+                        Mewujudkan pendidikan bermutu melalui teknologi. Platform kolaborasi belajar digital yang interaktif, inklusif, dan modern.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-gray-900 hover:-translate-y-1 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-gray-900 hover:-translate-y-1 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-gray-900 hover:-translate-y-1 transition-all"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tautan Cepat -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#beranda" class="text-gray-400 hover:text-primary transition hover:pl-2 inline-block">Beranda</a></li>
+                        <li><a href="#ruang" class="text-gray-400 hover:text-primary transition hover:pl-2 inline-block">Ruang E-Learning</a></li>
+                        <li><a href="#layanan" class="text-gray-400 hover:text-primary transition hover:pl-2 inline-block">Layanan Unggulan</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-primary transition hover:pl-2 inline-block">FAQ & Bantuan</a></li>
+                        <li><a href="history-peserta.html" class="text-gray-400 hover:text-primary transition hover:pl-2 inline-block">History Peserta</a></li>
+                        <li><a href="https://elearningalc.online/login/index.php" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:text-yellow-500 transition hover:pl-2 inline-block">Portal Login</a></li>
+                    </ul>
+                </div>
+
+                <!-- Hubungi Kami -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Hubungi Kami</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
+                            <a href="https://maps.app.goo.gl/Zu2px9QGahDemxxb8" target="_blank" class="text-gray-400 hover:text-primary transition leading-relaxed">
+                                Dusun Penakak, Desa Masbagik Timur
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-primary"></i>
+                            <a href="mailto:assyurolombokcreativealc@gmail.com" class="text-gray-400 hover:text-primary transition break-all">
+                                assyurolombokcreativealc@gmail.com
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-primary"></i>
+                            <a href="https://wa.me/6285934400903" target="_blank" class="text-gray-400 hover:text-primary transition">
+                                085934400903
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p class="flex items-center gap-2">
+                    &copy; 2026 E-Learning Assyuro ALC. Hak Cipta Dilindungi.
+                    <!-- Tombol Login Admin Tersembunyi (Samar) -->
+                    <button id="admin-login-trigger" class="opacity-20 hover:opacity-100 transition-opacity focus:outline-none" title="Admin Login">
+                        <i class="fa-solid fa-lock text-xs"></i>
+                    </button>
+                </p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-white transition">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Login Modal (Hidden) -->
+    <div id="admin-login-modal" class="fixed inset-0 bg-black/60 z-[100] hidden flex items-center justify-center backdrop-blur-sm px-4">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-sm">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Admin Panel</h3>
+            <p class="text-gray-500 text-sm mb-6">Masukkan PIN untuk mode edit (Demo PIN: <b>admin123</b>)</p>
+            <form id="admin-login-form">
+                <input type="password" id="admin-password" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 mb-4" placeholder="PIN Rahasia" required>
+                <div class="flex gap-3">
+                    <button type="button" id="close-login-modal" class="w-1/2 py-3 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition">Batal</button>
+                    <button type="submit" class="w-1/2 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-black transition">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Control Panel (Hidden) - Dioptimalkan untuk HP -->
+    <div id="admin-panel" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white p-5 rounded-2xl shadow-2xl z-[90] hidden border border-gray-200 w-[90vw] max-w-[320px]">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+            <h4 class="font-bold text-gray-800"><i class="fa-solid fa-wand-magic-sparkles text-yellow-500 mr-2"></i>Mode Edit Aktif</h4>
+        </div>
+        <ul class="text-xs text-gray-600 mb-5 space-y-2 list-disc pl-4">
+            <li>Klik teks apa saja untuk mengubah ketikan.</li>
+            <li>Klik gambar untuk mengganti URL atau Upload.</li>
+        </ul>
+        
+        <div class="mb-5">
+            <label class="block text-xs font-bold text-gray-700 mb-2">Warna Utama (Primary)</label>
+            <input type="color" id="primary-color-picker" value="#FACC15" class="w-full h-10 rounded cursor-pointer border-none p-0">
+        </div>
+
+        <button id="save-changes-btn" class="w-full py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition shadow-lg shadow-green-200 text-sm sm:text-base">
+            <i class="fa-solid fa-floppy-disk mr-2"></i> Simpan Perubahan
+        </button>
+    </div>
+
+    <!-- Scripts (Vanilla JS) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Sticky Navbar Effect (Transparan ke Putih)
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'border-gray-100');
+                    navbar.classList.remove('bg-transparent', 'border-transparent', 'py-4');
+                    navbar.classList.add('py-3');
+                } else {
+                    navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'border-gray-100', 'py-3');
+                    navbar.classList.add('bg-transparent', 'border-transparent', 'py-4');
+                }
+            });
+
+            // 2. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                // Change icon
+                const icon = mobileMenuBtn.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.replace('fa-xmark', 'fa-bars');
+                } else {
+                    icon.classList.replace('fa-bars', 'fa-xmark');
+                }
+            });
+
+            // Tutup menu saat link di klik di versi mobile
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.querySelector('i').classList.replace('fa-xmark', 'fa-bars');
+                });
+            });
+
+            // 3. FAQ Accordion Logic
+            const faqs = document.querySelectorAll('.faq-btn');
+            faqs.forEach(faq => {
+                faq.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.faq-icon');
+                    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+                    // Tutup semua
+                    document.querySelectorAll('.faq-content').forEach(c => {
+                        c.style.maxHeight = '0px';
+                        c.style.opacity = '0';
+                    });
+                    document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+                    // Buka yang di-klik
+                    if (!isOpen) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.style.opacity = '1';
+                        icon.classList.add('rotate-180');
+                    }
+                });
+            });
+
+            // 4. Admin Mode & Content Management System
+            const adminLoginTrigger = document.getElementById('admin-login-trigger');
+            const adminLoginModal = document.getElementById('admin-login-modal');
+            const closeLoginBtn = document.getElementById('close-login-modal');
+            const loginForm = document.getElementById('admin-login-form');
+            const passwordInput = document.getElementById('admin-password');
+            const adminPanel = document.getElementById('admin-panel');
+            const colorPicker = document.getElementById('primary-color-picker');
+            const saveChangesBtn = document.getElementById('save-changes-btn');
+
+            let isAdmin = false;
+
+            adminLoginTrigger.addEventListener('click', () => adminLoginModal.classList.remove('hidden'));
+            closeLoginBtn.addEventListener('click', () => {
+                adminLoginModal.classList.add('hidden');
+                passwordInput.value = '';
+            });
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (passwordInput.value === 'admin123') {
+                    adminLoginModal.classList.add('hidden');
+                    enableAdminMode();
+                } else {
+                    alert('PIN Salah!');
+                }
+            });
+
+            // Image Upload Logic
+            const imageUploadInput = document.createElement('input');
+            imageUploadInput.type = 'file';
+            imageUploadInput.accept = 'image/*';
+            let currentEditingImage = null;
+
+            imageUploadInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file && currentEditingImage) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        currentEditingImage.src = event.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+                this.value = '';
+            });
+
+            function enableAdminMode() {
+                isAdmin = true;
+                adminPanel.classList.remove('hidden');
+
+                // Edit Text
+                const textElements = document.querySelectorAll('h1, h2, h3, h4, p, span');
+                textElements.forEach(el => {
+                    if(!el.querySelector('i') && el.textContent.trim().length > 0) {
+                        el.setAttribute('contenteditable', 'true');
+                        el.classList.add('outline-dashed', 'outline-2', 'outline-gray-300', 'hover:outline-blue-400', 'cursor-text', 'transition-all');
+                        el.title = "Klik untuk mengedit teks";
+                    }
+                });
+
+                // Edit Image
+                const imgElements = document.querySelectorAll('img');
+                imgElements.forEach(img => {
+                    img.classList.add('cursor-pointer', 'outline-dashed', 'outline-4', 'outline-blue-400', 'hover:opacity-80', 'transition-all');
+                    img.title = "Klik untuk ganti gambar (Upload / Link)";
+                    
+                    img.addEventListener('click', function(e) {
+                        if(!isAdmin) return;
+                        e.preventDefault();
+                        currentEditingImage = this;
+                        const choice = confirm("Pilih opsi ganti gambar:\n\n👉 Klik 'OK' untuk UPLOAD gambar dari perangkat Anda.\n👉 Klik 'Batal' / 'Cancel' untuk memasukkan LINK (URL) gambar.");
+
+                        if (choice) {
+                            imageUploadInput.click();
+                        } else {
+                            const newSrc = prompt('Masukkan URL (Link) Gambar Baru:', this.src);
+                            if (newSrc) this.src = newSrc;
+                        }
+                    });
+                });
+            }
+
+            colorPicker.addEventListener('input', (e) => {
+                document.documentElement.style.setProperty('--color-primary', e.target.value);
+                document.documentElement.style.setProperty('--color-primary-dark', e.target.value);
+            });
+
+            saveChangesBtn.addEventListener('click', () => {
+                alert('Tampilan berhasil diperbarui! \n\n(Catatan: Karena landing page ini bersifat "Statis" / tanpa Database, perubahan ini hanya tersimpan di browser Anda saat ini. Jika Anda ingin perubahan ini permanen di internet, web perlu di-hosting dengan sistem backend).');
+            });
+
+            // 5. Scroll Animations (Eye-catching Reveal Effects)
+            // Terapkan ke semua kartu dalam grid
+            const cardContainers = document.querySelectorAll('.cards-container > div');
+            cardContainers.forEach((el, index) => {
+                el.classList.add('reveal-bottom', 'hover-3d');
+                el.style.transitionDelay = `${(index % 4) * 150}ms`; // Muncul bertahap (cascade)
+            });
+
+            // Intersection Observer
+            const observerOptions = {
+                threshold: 0.15, // Muncul ketika 15% elemen terlihat di layar
+                rootMargin: "0px 0px -50px 0px"
+            };
+            
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-active');
+                        // Opsional: scrollObserver.unobserve(entry.target); jika ingin animasi 1x jalan saja
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-bottom, .reveal-left, .reveal-right').forEach(el => scrollObserver.observe(el));
+
+            // Interactive 3D Card Tilt Effect on Mouse Move
+            const tiltCards = document.querySelectorAll('.tilt-card, .hover-3d');
+            tiltCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    if (window.innerWidth < 768) return; // Non-aktif di mobile agar smooth
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((y - centerY) / centerY) * -7;
+                    const rotateY = ((x - centerX) / centerX) * 7;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
