@@ -141,14 +141,58 @@
                             <select id="input-tingkat" required
                                 class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition font-medium appearance-none">
                                 <option value="" disabled selected>Pilih Tingkatan Paket...</option>
-                                <option value="paketA">Paket A (Setara SD) - Bahasa Indonesia</option>
-                                <option value="paketB">Paket B (Setara SMP) - Bahasa Indonesia</option>
-                                <option value="paketC">Paket C (Setara SMA) - Bahasa Indonesia</option>
+                                <option value="paketA">Paket A (Setara SD)</option>
+                                <option value="paketB">Paket B (Setara SMP)</option>
+                                <option value="paketC">Paket C (Setara SMA)</option>
                             </select>
                             <span class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 pointer-events-none">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </span>
                         </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                            Mata Pelajaran Ujian <span class="text-rose-500">*</span>
+                        </label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
+                                <i class="fa-solid fa-book-bookmark text-sm"></i>
+                            </span>
+                            <select id="input-mapel" required
+                                class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition font-medium appearance-none">
+                                <option value="Bahasa Indonesia" selected>Bahasa Indonesia (Aktif)</option>
+                                <option value="Matematika" disabled>Matematika (Belum Dibuka)</option>
+                                <option value="Bahasa Inggris" disabled>Bahasa Inggris (Belum Dibuka)</option>
+                                <option value="Ilmu Pengetahuan Alam (IPA)" disabled>Ilmu Pengetahuan Alam (IPA) (Belum Dibuka)</option>
+                                <option value="Pendidikan Kewarganegaraan (PKn)" disabled>Pendidikan Kewarganegaraan (PKn) (Belum Dibuka)</option>
+                            </select>
+                            <span class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 pointer-events-none">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">
+                                Token Ujian <span class="text-rose-500">*</span>
+                            </label>
+                            <span class="text-[11px] text-blue-700 font-semibold bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-md">
+                                Token Mapel: <strong class="font-mono tracking-wider font-bold">ALC123</strong>
+                            </span>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
+                                <i class="fa-solid fa-key text-sm"></i>
+                            </span>
+                            <input type="text" id="input-token" required placeholder="Masukkan Token: ALC123" maxlength="12"
+                                class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition uppercase font-mono tracking-widest font-bold">
+                        </div>
+                        <p id="error-token-msg" class="hidden text-xs text-rose-600 font-semibold mt-1.5 flex items-center gap-1">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span>Token ujian tidak valid! Pastikan memasukkan token: <strong>ALC123</strong></span>
+                        </p>
                     </div>
 
                     <!-- Kotak Informasi Ujian -->
@@ -157,6 +201,7 @@
                             <i class="fa-solid fa-circle-info text-blue-600"></i> Petunjuk Pelaksanaan Ujian:
                         </div>
                         <p class="leading-relaxed text-blue-900/90">• Pastikan jaringan internet stabil selama mengerjakan ujian.</p>
+                        <p class="leading-relaxed text-blue-900/90">• Token ujian Bahasa Indonesia hari ini adalah <strong>ALC123</strong>.</p>
                         <p class="leading-relaxed text-blue-900/90">• Waktu pengerjaan adalah <strong>60 Menit</strong> dan akan berjalan otomatis.</p>
                         <p class="leading-relaxed text-blue-900/90">• Gunakan tombol <strong>Ragu-ragu</strong> jika belum yakin pada jawaban.</p>
                     </div>
@@ -185,7 +230,7 @@
                         <div class="min-w-0">
                             <h3 id="display-nama-siswa" class="font-bold text-slate-900 text-sm sm:text-base truncate">FEBRI HIDAYAT</h3>
                             <p class="text-xs text-slate-500 font-medium truncate">
-                                <span id="display-tingkat-siswa" class="font-bold text-blue-700">Paket B (SMP)</span> · Mapel: <span class="font-semibold text-slate-700">Bahasa Indonesia</span>
+                                <span id="display-tingkat-siswa" class="font-bold text-blue-700">Paket B (SMP)</span> · Mapel: <span id="display-mapel-siswa" class="font-semibold text-slate-700">Bahasa Indonesia</span>
                             </p>
                         </div>
                     </div>
@@ -325,7 +370,7 @@
                     </div>
                     <div class="flex justify-between pb-1 border-b border-slate-200">
                         <span class="text-slate-500">Mata Pelajaran:</span>
-                        <span class="font-bold text-slate-900">Bahasa Indonesia</span>
+                        <span id="sukses-mapel" class="font-bold text-slate-900">Bahasa Indonesia</span>
                     </div>
                     <div class="flex justify-between pb-1 border-b border-slate-200">
                         <span class="text-slate-500">Jenjang Paket:</span>
@@ -2939,9 +2984,9 @@
                     
                     tingkat: "Paket A (SD)",
                     mapel: "Bahasa Indonesia",
-                    benar: 5,
+                    benar: 30,
                     salah: 0,
-                    totalSoal: 5,
+                    totalSoal: 30,
                     skor: 100,
                     status: "Tuntas (Lulus)"
                 },
@@ -2952,9 +2997,9 @@
                     
                     tingkat: "Paket B (SMP)",
                     mapel: "Bahasa Indonesia",
-                    benar: 4,
-                    salah: 1,
-                    totalSoal: 5,
+                    benar: 25,
+                    salah: 5,
+                    totalSoal: 30,
                     skor: 80,
                     status: "Tuntas (Lulus)"
                 },
@@ -2965,9 +3010,9 @@
                     
                     tingkat: "Paket C (SMA)",
                     mapel: "Bahasa Indonesia",
-                    benar: 5,
+                    benar: 30,
                     salah: 0,
-                    totalSoal: 5,
+                    totalSoal: 30,
                     skor: 100,
                     status: "Tuntas (Lulus)"
                 }
@@ -3013,11 +3058,27 @@
             e.preventDefault();
             const nama = $('input-nama').value.trim();
             const tingkatKey = $('input-tingkat').value;
+            const mapel = $('input-mapel').value;
+            const tokenInput = $('input-token');
+            const token = tokenInput.value.trim().toUpperCase();
+            const errorMsg = $('error-token-msg');
 
-            if (!nama || !tingkatKey) {
-                alert("Harap lengkapi nama lengkap dan pilih tingkatan paket!");
+            if (!nama || !tingkatKey || !mapel) {
+                alert("Harap lengkapi nama peserta, tingkatan paket, dan mata pelajaran!");
                 return;
             }
+
+            // Validasi Token Ujian (Untuk Bahasa Indonesia tokennya ALC123)
+            const TOKEN_VALID = "ALC123";
+            if (token !== TOKEN_VALID) {
+                if (errorMsg) errorMsg.classList.remove('hidden');
+                tokenInput.classList.add('border-rose-500', 'ring-2', 'ring-rose-200');
+                tokenInput.focus();
+                return;
+            }
+
+            if (errorMsg) errorMsg.classList.add('hidden');
+            tokenInput.classList.remove('border-rose-500', 'ring-2', 'ring-rose-200');
 
             const labelMap = {
                 paketA: "Paket A (SD)",
@@ -3028,7 +3089,8 @@
             CBT_STATE.siswa = {
                 nama,
                 tingkatKey,
-                tingkatLabel: labelMap[tingkatKey] || "Paket B (SMP)"
+                tingkatLabel: labelMap[tingkatKey] || "Paket B (SMP)",
+                mapel: mapel || "Bahasa Indonesia"
             };
 
             // Muat 30 soal sesuai jenjang
@@ -3040,6 +3102,9 @@
             // Update UI Header Ujian
             $('display-nama-siswa').textContent = nama;
             $('display-tingkat-siswa').textContent = CBT_STATE.siswa.tingkatLabel;
+            if ($('display-mapel-siswa')) {
+                $('display-mapel-siswa').textContent = CBT_STATE.siswa.mapel;
+            }
 
             // Mulai Timer & Render Ujian (60 Menit)
             startTimer(60 * 60);
@@ -3058,7 +3123,7 @@
 
             // Update Nomor Soal & Kategori
             $('soal-nomor-badge').textContent = index + 1;
-            $('soal-kategori-badge').textContent = `${CBT_STATE.siswa.tingkatLabel} · Soal ${index + 1} dari ${total}`;
+            $('soal-kategori-badge').textContent = `${CBT_STATE.siswa.tingkatLabel} · ${CBT_STATE.siswa.mapel} · Soal ${index + 1} dari ${total}`;
 
             // Render Bacaan Stimulus
             if (soal.bacaan && soal.bacaan.trim()) {
@@ -3289,6 +3354,7 @@
             $('sukses-nama').textContent = CBT_STATE.siswa.nama;
             
             $('sukses-tingkat').textContent = CBT_STATE.siswa.tingkatLabel;
+            if ($('sukses-mapel')) $('sukses-mapel').textContent = CBT_STATE.siswa.mapel;
             $('sukses-waktu').textContent = waktuString;
 
             switchView('sukses');
