@@ -1,421 +1,2378 @@
 {
-  "paketA": {
-    "title": "Ujian Bahasa Indonesia - Paket A (Setara SD)",
-    "jenjang": "Paket A (SD)",
-    "durasi": 60,
-    "keterangan": "Ide pokok paragraf, makna kata kontekstual, dan simpulan cerita.",
-    "soal": [
-      {
-        "id": 1,
-        "bacaan": "Hutan mangrove memiliki peranan yang sangat penting bagi wilayah pesisir pantai. Selain menjadi tempat hidup beragam biota laut seperti kepiting, udang, dan ikan kecil, akar bakau yang kokoh mampu menahan hantaman ombak besar. Keberadaan mangrove secara alami juga efektif mencegah terjadinya abrasi atau pengikisan pantai oleh air laut.",
-        "pertanyaan": "Ide pokok dari paragraf di atas adalah ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Kehidupan kepiting dan udang di pesisir pantai"
-          },
-          {
-            "key": "B",
-            "text": "Pentingnya peranan hutan mangrove bagi wilayah pesisir"
-          },
-          {
-            "key": "C",
-            "text": "Proses terjadinya abrasi air laut di pantai"
-          },
-          {
-            "key": "D",
-            "text": "Kekuatan akar tanaman bakau saat diterpa ombak"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Ide pokok paragraf tersebut dinyatakan pada kalimat utama pertama, yaitu fungsi dan peranan penting hutan mangrove bagi pesisir."
-      },
-      {
-        "id": 2,
-        "bacaan": "Di Desa Masbagik, warga setiap hari Minggu berkumpul membersihkan saluran irigasi sawah. Bapak-bapak mengangkat lumpur dan sampah plastik, sedangkan ibu-ibu menyiapkan minuman hangat dan makanan ringan. Semangat gotong royong ini membuat desa selalu asri dan terhindar dari luapan air saat musim hujan tiba.",
-        "pertanyaan": "Simpulan yang tepat berdasarkan isi cerita pendek di atas adalah ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Saluran irigasi di desa Masbagik selalu kotor setiap hari Minggu"
-          },
-          {
-            "key": "B",
-            "text": "Gotong royong warga desa menjaga kebersihan dan mencegah banjir"
-          },
-          {
-            "key": "C",
-            "text": "Ibu-ibu desa Masbagik hanya bertugas memasak di dapur"
-          },
-          {
-            "key": "D",
-            "text": "Hujan deras selalu membawa tumpukan sampah plastik"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Simpulan cerita menggambarkan inti keseluruhan kegiatan gotong royong warga yang berdampak positif mencegah banjir dan lingkungan tetap asri."
-      },
-      {
-        "id": 3,
-        "bacaan": "Tanaman lidah buaya dikenal memiliki banyak khasiat sejak zaman dahulu. Gel dingin di dalam daunnya sering dimanfaatkan untuk meredakan luka bakar ringan, melembapkan kulit kering, serta menyuburkan rambut.",
-        "pertanyaan": "Makna kata 'khasiat' pada teks di atas memiliki arti yang sama dengan ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Manfaat atau kegunaan"
-          },
-          {
-            "key": "B",
-            "text": "Bentuk atau rupa"
-          },
-          {
-            "key": "C",
-            "text": "Harga atau nilai jual"
-          },
-          {
-            "key": "D",
-            "text": "Racun atau bahaya"
-          }
-        ],
-        "kunci": "A",
-        "pembahasan": "Kata 'khasiat' menurut KBBI adalah faedah, kegunaan, atau manfaat."
-      },
-      {
-        "id": 4,
-        "bacaan": "Budi bercita-cita menjadi seorang wirausahawan sukses. Setiap sore sepulang sekolah kesetaraan, ia membantu pamannya menata dagangan di pasar. Ia tidak pernah mengeluh lelah karena ia tahu bahwa kesuksesan butuh kerja keras dan ketekunan.",
-        "pertanyaan": "Nilai moral positif yang dapat diteladani dari tokoh Budi adalah ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Bekerja di pasar lebih penting daripada sekolah"
-          },
-          {
-            "key": "B",
-            "text": "Ketekunan, kerja keras, dan bakti membantu keluarga"
-          },
-          {
-            "key": "C",
-            "text": "Menghabiskan waktu sore untuk bermain bersama teman"
-          },
-          {
-            "key": "D",
-            "text": "Mencari keuntungan sebanyak-banyaknya di pasar"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Karakter Budi menunjukkan ketekunan, tidak pantang menyerah, dan rajin membantu keluarganya."
-      },
-      {
-        "id": 5,
-        "bacaan": "Penggunaan kantong plastik sekali pakai semakin dikurangi di pasar-pasar tradisional. Warga kini dihimbau membawa tas belanja kain sendiri dari rumah guna menekan volume timbunan sampah yang sulit terurai oleh tanah.",
-        "pertanyaan": "Mengapa warga dihimbau membawa tas belanja kain dari rumah?",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Karena tas kain dijual dengan harga yang sangat mahal"
-          },
-          {
-            "key": "B",
-            "text": "Agar pedagang tidak perlu melayani pembeli"
-          },
-          {
-            "key": "C",
-            "text": "Untuk mengurangi timbunan sampah plastik yang sulit terurai"
-          },
-          {
-            "key": "D",
-            "text": "Karena pasar tradisional melarang warga berbelanja"
-          }
-        ],
-        "kunci": "C",
-        "pembahasan": "Alasan warga dihimbau membawa tas kain tertulis jelas pada kalimat terakhir: menekan volume timbunan sampah plastik yang sulit terurai."
-      }
-    ]
-  },
-  "paketB": {
-    "title": "Ujian Bahasa Indonesia - Paket B (Setara SMP)",
-    "jenjang": "Paket B (SMP)",
-    "durasi": 60,
-    "keterangan": "Teks eksplanasi, gagasan utama, tajuk rencana, dan resensi buku.",
-    "soal": [
-      {
-        "id": 1,
-        "bacaan": "Pelangi merupakan fenomena optik dan meteorologi yang menghasilkan spektrum cahaya hampir bersambung di langit ketika matahari bersinar ke atas tetesan air hujan di atmosfer. Peristiwa ini terjadi melalui proses pembiasan, pemantulan, dan penguraian cahaya putih matahari menjadi berbagai warna oleh butiran air hujan yang berfungsi layaknya prisma kaca alami.",
-        "pertanyaan": "Berdasarkan ciri dan tujuannya, kutipan teks di atas termasuk jenis teks eksplanasi yang menjelaskan ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Urutan kronologis sejarah penemuan alat optik"
-          },
-          {
-            "key": "B",
-            "text": "Proses kausalitas terjadinya fenomena alam pelangi"
-          },
-          {
-            "key": "C",
-            "text": "Opini penulis tentang keindahan warna langit sore"
-          },
-          {
-            "key": "D",
-            "text": "Langkah-langkah pembuatan percobaan air hujan di laboratorium"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Teks tersebut menjelaskan mekanisme sebab-akibat (kausalitas) dan proses fisika ilmiah terjadinya fenomena alam pelangi."
-      },
-      {
-        "id": 2,
-        "bacaan": "Literasi digital di kalangan remaja kesetaraan kini menjadi pilar krusial. Bukan semata-mata kepiawaian mengoperasikan gawai pintar atau berselancar di media sosial, melainkan kecakapan menyaring akurasi informasi, memverifikasi fakta dari sumber kredibel, serta memproteksi jejak digital dari ancaman siber.",
-        "pertanyaan": "Gagasan utama paragraf di atas adalah ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Kemampuan bermain media sosial bagi generasi muda"
-          },
-          {
-            "key": "B",
-            "text": "Hakekat literasi digital remaja sebagai kecakapan menyaring informasi dan proteksi diri"
-          },
-          {
-            "key": "C",
-            "text": "Bahaya penggunaan ponsel pintar di lingkungan sekolah kesetaraan"
-          },
-          {
-            "key": "D",
-            "text": "Mahalnya biaya pengamanan jaringan internet di era modern"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Gagasan utama paragraf menegaskan bahwa literasi digital remaja adalah kemampuan kritis menyaring informasi dan menjaga keamanan diri di ruang siber."
-      },
-      {
-        "id": 3,
-        "bacaan": "Buku 'Merajut Asa di Ujung Senja' karya Ahmad Syarif menyajikan gaya penuturan yang sangat lugas dan menyentuh nurani pembaca. Tokoh-tokohnya dibangun dengan dialog membumi yang mencerminkan realitas masyarakat pedesaan. Sayangnya, sampul buku ini terkesan terlalu monoton dan pemilihan font pada bab pertengahan sedikit terlalu rapat sehingga melelahkan mata pembaca.",
-        "pertanyaan": "Pernyataan yang memuat kelemahan buku dalam kutipan resensi di atas adalah ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Penuturan yang lugas dan menyentuh nurani pembaca"
-          },
-          {
-            "key": "B",
-            "text": "Karakter tokoh dibangun dengan dialog membumi"
-          },
-          {
-            "key": "C",
-            "text": "Sampul buku monoton dan pemilihan font agak rapat melelahkan mata"
-          },
-          {
-            "key": "D",
-            "text": "Latar cerita yang mengangkat potret masyarakat pedesaan"
-          }
-        ],
-        "kunci": "C",
-        "pembahasan": "Kelemahan buku diungkapkan pada kalimat terakhir: sampul monoton dan font yang rapat melelahkan mata."
-      },
-      {
-        "id": 4,
-        "bacaan": "Pemerintah daerah bersama pengelola PKBM kian agresif memfasilitasi pelatihan vokasi digital marketing bagi warga belajar kesetaraan. Langkah ini patut diapresiasi tinggi sebagai solusi solutif menjembatani kesenjangan lapangan kerja lokal. Kendati demikian, program ini tidak boleh berhenti pada seremonial pelatihan, melainkan harus diiringi pendampingan akses permodalan dan kemitraan industri yang berkelanjutan.",
-        "pertanyaan": "Keberpihakan dan pandangan redaksi dalam tajuk rencana di atas ditujukan untuk ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Menolak program pelatihan vokasi digital di daerah"
-          },
-          {
-            "key": "B",
-            "text": "Mendukung pelatihan vokasi namun menuntut keberlanjutan pendampingan dan kemitraan nyata"
-          },
-          {
-            "key": "C",
-            "text": "Menuntut agar seluruh warga beralih profesi menjadi pedagang online"
-          },
-          {
-            "key": "D",
-            "text": "Menyalahkan peserta didik yang belum memiliki modal usaha mandiri"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Pandangan redaksi mengapresiasi program pelatihan, sekaligus memberi kritik konstruktif agar ada pendampingan kemitraan yang berkelanjutan."
-      },
-      {
-        "id": 5,
-        "bacaan": "Pemanasan global telah memicu anomali cuaca yang sulit diprediksi para petani. Musim kemarau yang berkepanjangan disusul curah hujan berintensitas ekstrem dalam periode singkat sering kali mengakibatkan kegagalan panen serentak.",
-        "pertanyaan": "Makna istilah 'anomali' dalam konteks paragraf tersebut adalah ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Keadaan normal dan teratur sebagaimana biasanya"
-          },
-          {
-            "key": "B",
-            "text": "Penyimpangan atau keanehan dari pola standar kelaziman"
-          },
-          {
-            "key": "C",
-            "text": "Kemajuan pesat dalam bidang teknologi agrikultur"
-          },
-          {
-            "key": "D",
-            "text": "Ramalan astronomi mengenai pergerakan rasi bintang"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Anomali berarti penyimpangan atau ketidaknormalan dari kondisi cuaca yang lazim."
-      }
-    ]
-  },
-  "paketC": {
-    "title": "Ujian Bahasa Indonesia - Paket C (Setara SMA)",
-    "jenjang": "Paket C (SMA)",
-    "durasi": 60,
-    "keterangan": "Analisis teks editorial, surat lamaran pekerjaan, karya ilmiah, dan kritik sastra (HOTS - 5 Opsi Pilihan).",
-    "soal": [
-      {
-        "id": 1,
-        "bacaan": "Pergeseran paradigma pasar kerja menuntut dunia pendidikan kesetaraan untuk tidak sekadar melahirkan lulusan berijazah legal formal, melainkan individu adaptif dengan kecakapan berpikir kritis tingkat tinggi (HOTS). Otomatisasi kecerdasan buatan (AI) telah mendisrupsi ribuan pekerjaan klerikal rutin. Bila kurikulum vokasi PKBM tidak segera bertransformasi menanamkan kapabilitas problem solving, reskilling, dan etika kolaborasi digital, lulusan kesetaraan berisiko teralienasi di pasar tenaga kerja masa depan yang kian kompetitif.",
-        "pertanyaan": "Isu sentral dan sikap kritis yang dibangun penulis dalam teks editorial tersebut adalah ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Penolakan terhadap adopsi teknologi kecerdasan buatan di lingkungan sekolah"
-          },
-          {
-            "key": "B",
-            "text": "Tuntutan transformasi kurikulum vokasi PKBM menuju kapabilitas adaptif dan berpikir kritis menghadapi disrupsi pasar kerja"
-          },
-          {
-            "key": "C",
-            "text": "Penghapusan ijazah kesetaraan karena sudah tidak relevan dengan kebutuhan dunia kerja"
-          },
-          {
-            "key": "D",
-            "text": "Pernyataan bahwa pekerjaan klerikal tidak akan pernah tergantikan oleh otomatisasi sistem"
-          },
-          {
-            "key": "E",
-            "text": "Kritik terhadap para pengusaha yang tidak mau mempekerjakan lulusan kesetaraan"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Penulis menyoroti perlunya kurikulum PKBM beradaptasi dengan mengembangkan daya nalar kritis dan pemecahan masalah agar lulusannya kompetitif menghadapi disrupsi AI."
-      },
-      {
-        "id": 2,
-        "bacaan": "Cermati kutipan pembuka surat lamaran pekerjaan berikut:\n'Berdasarkan iklan lowongan pekerjaan yang dimuat pada harian Suara Nusa edisi 15 Oktober 2026, yang menyatakan bahwa perusahaan Bapak/Ibu membutuhkan posisi Staf Administrasi Digital, maka saya yang bertanda tangan di bawah ini:'",
-        "pertanyaan": "Kaidah kebahasaan pembuka surat lamaran pekerjaan di atas dinilai efektif dan baku karena ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Menggunakan rima kata puitis untuk memikat hati pimpinan bagian personalia"
-          },
-          {
-            "key": "B",
-            "text": "Menyebutkan sumber informasi lowongan secara jelas, tanggal penerbitan yang kredibel, serta posisi yang dituju secara eksplisit"
-          },
-          {
-            "key": "C",
-            "text": "Mencantumkan besaran nominal gaji yang diharapkan pelamar secara langsung di paragraf awal"
-          },
-          {
-            "key": "D",
-            "text": "Menjelaskan riwayat kesehatan dan silsilah keluarga pelamar secara terperinci"
-          },
-          {
-            "key": "E",
-            "text": "Menunjukkan rasa putus asa agar segera diterima bekerja di perusahaan tersebut"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Pembuka surat lamaran pekerjaan yang bersumber dari media cetak/online harus menyebutkan sumber rujukan, tanggal edisi, dan nama posisi yang dilamar secara lugas dan baku."
-      },
-      {
-        "id": 3,
-        "bacaan": "Dalam karya tulis ilmiah bertajuk 'Efektivitas Modul Interaktif LMS terhadap Retensi Pemahaman Warga Belajar PKBM', peneliti mengemukakan hipotesis bahwa penggunaan kuis formatif adaptif berkorelasi linier dengan peningkatan nilai sumatif. Hasil pengujian menunjukkan koefisien determinasi sebesar 0,84 dengan p-value < 0,05.",
-        "pertanyaan": "Interpretasi ilmiah yang paling valid berdasarkan data kesimpulan di atas adalah ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Modul interaktif tidak memberikan dampak signifikan terhadap retensi belajar siswa"
-          },
-          {
-            "key": "B",
-            "text": "Penggunaan kuis formatif adaptif berkontribusi kuat (84%) dan signifikan secara statistik terhadap peningkatan nilai pemahaman siswa"
-          },
-          {
-            "key": "C",
-            "text": "Nilai sumatif siswa hanya ditentukan oleh faktor keberuntungan semata tanpa pengaruh media"
-          },
-          {
-            "key": "D",
-            "text": "Seluruh peserta didik merasa kesulitan mengerjakan kuis formatif di platform LMS"
-          },
-          {
-            "key": "E",
-            "text": "Penelitian harus diulang karena angka koefisien determinasi belum mencapai 100% sempurna"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Koefisien determinasi 0,84 mengindikasikan 84% variasi nilai sumatif dapat dijelaskan oleh kuis formatif adaptif, dan p < 0,05 membuktikan korelasi tersebut signifikan secara statistik."
-      },
-      {
-        "id": 4,
-        "bacaan": "Dalam novel 'Bumi Manusia' karya Pramoedya Ananta Toer, tokoh Minke digambarkan sebagai seorang pemuda pribumi terpelajar yang mengalami pergulatan identitas di tengah hegemoni kolonial Hindia Belanda. Ia menggunakan pena dan tulisan berbahasa Belanda sebagai senjata perlawanan intelektual melawan ketidakadilan sistem hukum yang diskriminatif.",
-        "pertanyaan": "Analisis kritik sastra berpendekatan sosiologis yang tepat terhadap karakterisasi Minke adalah ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Minke adalah gambaran pemuda lemah yang menyerah tanpa syarat pada budaya kolonial"
-          },
-          {
-            "key": "B",
-            "text": "Karakter Minke merefleksikan kebangkitan kesadaran nasionalisme awal melalui pendidikan modern dan advokasi literasi pers perjuangan"
-          },
-          {
-            "key": "C",
-            "text": "Pramoedya menolak keberadaan pemuda terpelajar di era pergerakan nasional"
-          },
-          {
-            "key": "D",
-            "text": "Perjuangan Minke dinilai sia-sia karena tidak menggunakan senjata tajam dan kekuatan fisik"
-          },
-          {
-            "key": "E",
-            "text": "Novel tersebut murni karya roman percintaan remaja tanpa sangkut paut dengan struktur sosial masa kolonial"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Pendekatan sosiologi sastra melihat tokoh Minke sebagai representasi embrio kaum pergerakan terpelajar yang memanfaatkan pers dan pemikiran modern untuk mendobrak feodalisme dan kolonialisme."
-      },
-      {
-        "id": 5,
-        "bacaan": "Cermati kalimat simpulan karya ilmiah berikut:\n'Berdasarkan paparan di atas, dapat ditarik benang merah bahwa penerapan model pembelajaran blended learning di PKBM mampu mendongkrak kemandirian belajar peserta didik hingga mencapai taraf optimal.'",
-        "pertanyaan": "Frasa idiomatis 'menarik benang merah' dalam konteks penulisan ilmiah tersebut bermakna ...",
-        "opsi": [
-          {
-            "key": "A",
-            "text": "Memperbaiki jahitan pakaian seragam sekolah yang rusak"
-          },
-          {
-            "key": "B",
-            "text": "Menemukan keterkaitan logis atau merumuskan kesimpulan pokok yang mengikat seluruh bahasan"
-          },
-          {
-            "key": "C",
-            "text": "Menimbulkan pertikaian sengit antara dua kelompok penelitian yang berbeda"
-          },
-          {
-            "key": "D",
-            "text": "Menghapus seluruh hipotesis penelitian yang telah dibuat di bab pendahuluan"
-          },
-          {
-            "key": "E",
-            "text": "Menghubungkan kabel instalasi laboratorium komputer di sekolah kesetaraan"
-          }
-        ],
-        "kunci": "B",
-        "pembahasan": "Idiom 'menarik benang merah' dalam teks argumentatif/ilmiah bermakna merumuskan kesimpulan atau menemukan kaitan konseptual utama yang menyatukan argumen."
-      }
-    ]
-  }
+  "paketA": [
+    {
+      "id": 1,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Hutan mangrove memiliki peranan yang sangat penting bagi wilayah pesisir pantai. Selain menjadi tempat hidup beragam biota laut seperti kepiting, udang, dan ikan kecil, akar bakau yang kokoh mampu menahan hantaman ombak besar. Keberadaan mangrove secara alami juga efektif mencegah terjadinya abrasi atau pengikisan pantai oleh air laut.",
+      "pertanyaan": "Ide pokok dari paragraf di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Kehidupan kepiting dan udang di pesisir pantai"
+        },
+        {
+          "key": "B",
+          "text": "Pentingnya peranan hutan mangrove bagi wilayah pesisir"
+        },
+        {
+          "key": "C",
+          "text": "Proses terjadinya abrasi air laut di pantai"
+        },
+        {
+          "key": "D",
+          "text": "Kekuatan akar tanaman bakau saat diterpa ombak"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 2,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Di Desa Masbagik, warga setiap hari Minggu berkumpul membersihkan saluran irigasi sawah. Bapak-bapak mengangkat lumpur dan sampah plastik, sedangkan ibu-ibu menyiapkan minuman hangat dan makanan ringan. Semangat gotong royong ini membuat desa selalu asri dan terhindar dari luapan air saat musim hujan tiba.",
+      "pertanyaan": "Simpulan yang tepat berdasarkan isi cerita pendek di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Saluran irigasi di desa Masbagik selalu kotor setiap hari Minggu"
+        },
+        {
+          "key": "B",
+          "text": "Gotong royong warga desa menjaga kebersihan dan mencegah banjir"
+        },
+        {
+          "key": "C",
+          "text": "Ibu-ibu desa Masbagik hanya bertugas memasak di dapur"
+        },
+        {
+          "key": "D",
+          "text": "Hujan deras selalu membawa tumpukan sampah plastik"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 3,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Tanaman lidah buaya dikenal memiliki banyak khasiat sejak zaman dahulu. Gel dingin di dalam daunnya sering dimanfaatkan untuk meredakan luka bakar ringan, melembapkan kulit kering, serta menyuburkan rambut.",
+      "pertanyaan": "Makna kata 'khasiat' pada teks di atas memiliki arti yang sama dengan ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Manfaat atau kegunaan"
+        },
+        {
+          "key": "B",
+          "text": "Bentuk atau rupa"
+        },
+        {
+          "key": "C",
+          "text": "Harga atau nilai jual"
+        },
+        {
+          "key": "D",
+          "text": "Racun atau bahaya"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 4,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Budi bercita-cita menjadi seorang wirausahawan sukses. Setiap sore sepulang sekolah kesetaraan, ia membantu pamannya menata dagangan di pasar. Ia tidak pernah mengeluh lelah karena ia tahu bahwa kesuksesan butuh kerja keras dan ketekunan.",
+      "pertanyaan": "Nilai moral positif yang dapat diteladani dari tokoh Budi adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Bekerja di pasar lebih penting daripada sekolah"
+        },
+        {
+          "key": "B",
+          "text": "Ketekunan, kerja keras, dan bakti membantu keluarga"
+        },
+        {
+          "key": "C",
+          "text": "Menghabiskan waktu sore untuk bermain bersama teman"
+        },
+        {
+          "key": "D",
+          "text": "Mencari keuntungan sebanyak-banyaknya di pasar"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 5,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Pak Hasan memperoleh penghasilan Rp2.000.000,00 setiap bulan. Namun, karena ingin terlihat bergaya di depan teman-temannya, ia membeli barang-barang elektronik mewah dengan cicilan mencapai Rp2.500.000,00 per bulan hingga akhirnya terjerat hutang.",
+      "pertanyaan": "Peribahasa yang paling tepat untuk menggambarkan keadaan Pak Hasan adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Air tenang menghanyutkan"
+        },
+        {
+          "key": "B",
+          "text": "Tong kosong nyaring bunyinya"
+        },
+        {
+          "key": "C",
+          "text": "Besar pasak daripada tiang"
+        },
+        {
+          "key": "D",
+          "text": "Air beriak tanda tak dalam"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 6,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Perhatikan petunjuk pembuatan jamu beras kencur berikut:\n(1) Tumbuk kencur dan beras yang telah direndam hingga halus.\n(2) Rebus gula merah, asam jawa, dan jahe dengan air bersih sampai mendidih.\n(3) Saring air rebusan rempah dan tuang ke dalam wadah gelas bersih.\n(4) Campurkan tumbukan kencur dan beras ke dalam air rebusan yang sudah disaring, lalu aduk rata.",
+      "pertanyaan": "Urutan langkah pembuatan jamu beras kencur yang tepat dan logis adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "(1) - (3) - (2) - (4)"
+        },
+        {
+          "key": "B",
+          "text": "(2) - (1) - (4) - (3)"
+        },
+        {
+          "key": "C",
+          "text": "(3) - (2) - (1) - (4)"
+        },
+        {
+          "key": "D",
+          "text": "(4) - (1) - (2) - (3)"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 7,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Rian sering terlambat masuk kelas kesetaraan Paket A karena selalu begadang bermain game di ponsel hingga larut malam. Akibatnya, nilai tugasnya mulai menurun.",
+      "pertanyaan": "Kalimat saran yang paling santun dan tepat untuk diberikan kepada Rian adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Sebaiknya kamu mengatur waktu tidur dengan baik agar tidak terlambat dan bisa konsentrasi belajar"
+        },
+        {
+          "key": "B",
+          "text": "Kamu jangan pernah bermain game lagi seumur hidup karena itu merugikan"
+        },
+        {
+          "key": "C",
+          "text": "Kalau kamu terlambat lagi, sebaiknya kamu berhenti sekolah saja"
+        },
+        {
+          "key": "D",
+          "text": "Mengapa kamu selalu membuat guru dan teman-temanmu marah di kelas?"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 8,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Di sebuah padang rumput, Semut rajin mengumpulkan biji-bijian di bawah terik matahari untuk persiapan musim dingin. Di sisi lain, Belalang hanya bersantai sambil meniup serulingnya sambil menertawakan ketekunan Semut.",
+      "pertanyaan": "Watak tokoh Belalang dalam kutipan cerita fabel tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Sombong dan dermawan"
+        },
+        {
+          "key": "B",
+          "text": "Pemberani dan hemat"
+        },
+        {
+          "key": "C",
+          "text": "Jujur dan setia kawan"
+        },
+        {
+          "key": "D",
+          "text": "Pemalas dan suka meremehkan"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 9,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Matahari baru saja terbit di ufuk timur memancarkan sinar keemasan. Embun pagi masih menempel di dedukunan kebun kopi desa Sembalun. Para petani sudah bergegas memikul keranjang bambu menuju lereng bukit.",
+      "pertanyaan": "Latar waktu dan tempat terjadinya peristiwa dalam teks di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Siang hari di pematang sawah"
+        },
+        {
+          "key": "B",
+          "text": "Sore hari di pasar tradisional"
+        },
+        {
+          "key": "C",
+          "text": "Pagi hari di kebun kopi lereng bukit"
+        },
+        {
+          "key": "D",
+          "text": "Malam hari di balai desa"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 10,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Menabung sejak dini memberikan banyak manfaat positif bagi masa depan anak. Dengan membiasakan menyisihkan uang jajan, anak belajar hidup hemat, menghargai uang, serta mampu mempersiapkan kebutuhan mendesak tanpa menyusahkan orang tua.",
+      "pertanyaan": "Gagasan utama paragraf di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Manfaat menabung sejak dini bagi masa depan anak"
+        },
+        {
+          "key": "B",
+          "text": "Cara meminta uang jajan tambahan kepada orang tua"
+        },
+        {
+          "key": "C",
+          "text": "Perbedaan bank syariah dan bank konvensional"
+        },
+        {
+          "key": "D",
+          "text": "Membeli barang-barang mahal dengan kartu kredit"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 11,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Pemerintah dan masyarakat Lombok bersama-sama menjaga agar kelestarian hutan di kawasan Gunung Rinjani tetap terjaga.",
+      "pertanyaan": "Sinonim (persamaan kata) dari kata 'kelestarian' adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Kerapuhan"
+        },
+        {
+          "key": "B",
+          "text": "Kerusakan"
+        },
+        {
+          "key": "C",
+          "text": "Kelanggengan / Keberlanjutan"
+        },
+        {
+          "key": "D",
+          "text": "Kemusnahan"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 12,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Setelah bekerja keras seharian di ladang jagung, wajah kakek tampak sangat lelah tetapi hatinya merasa gembira melihat hasil panen yang melimpah.",
+      "pertanyaan": "Lawan kata (antonim) dari kata 'gembira' pada kalimat di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Suka"
+        },
+        {
+          "key": "B",
+          "text": "Sedih"
+        },
+        {
+          "key": "C",
+          "text": "Bangga"
+        },
+        {
+          "key": "D",
+          "text": "Semangat"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 13,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Bunga mawar harum baunya,\nTumbuh indah di tepi kolam.\n[ ... ]\n[ ... ]",
+      "pertanyaan": "Larik isi yang paling tepat untuk melengkapi pantun nasihat di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Tuntutlah ilmu selagi muda,\nAgar selamat dunia akhirat."
+        },
+        {
+          "key": "B",
+          "text": "Beli mangga ke pasar raya,\nJangan lupa membeli tomat."
+        },
+        {
+          "key": "C",
+          "text": "Kucing tidur di atas meja,\nAnak tikus lari berlompat."
+        },
+        {
+          "key": "D",
+          "text": "Hujan deras lebat airnya,\nBanjir meluap ke rumah warga."
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 14,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Meskipun Andi terpilih sebagai juara pertama lomba cerdas cermat tingkat kabupaten, ia selalu bersikap rendah hati dan tidak pernah memamerkan kehebatannya.",
+      "pertanyaan": "Arti dari ungkapan 'rendah hati' adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Suka berbohong"
+        },
+        {
+          "key": "B",
+          "text": "Kurang percaya diri"
+        },
+        {
+          "key": "C",
+          "text": "Kecil hati dan penakut"
+        },
+        {
+          "key": "D",
+          "text": "Tidak sombong atau ramah"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 15,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Perhatikan penulisan kalimat berikut:\n'pada hari senin, dokter sutomo berkunjung ke kota mataram.'",
+      "pertanyaan": "Penulisan huruf kapital yang benar sesuai ejaan bahasa Indonesia adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Pada Hari senin, Dokter sutomo berkunjung ke kota Mataram."
+        },
+        {
+          "key": "B",
+          "text": "Pada hari Senin, Dokter Sutomo berkunjung ke Kota Mataram."
+        },
+        {
+          "key": "C",
+          "text": "Pada Hari Senin, dokter Sutomo berkunjung ke kota mataram."
+        },
+        {
+          "key": "D",
+          "text": "pada hari senin, Dokter Sutomo berkunjung ke kota Mataram."
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 16,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Ibu membeli keperluan dapur di warung: beras, minyak goreng, gula, dan telur.",
+      "pertanyaan": "Fungsi tanda baca titik dua (:) pada kalimat di atas digunakan untuk ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Mengawali rincian atau pemerian barang yang disebutkan"
+        },
+        {
+          "key": "B",
+          "text": "Mengakhiri kalimat tanya"
+        },
+        {
+          "key": "C",
+          "text": "Memisahkan anak kalimat dengan induk kalimat"
+        },
+        {
+          "key": "D",
+          "text": "Menunjukkan percakapan langsung antara dua orang"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 17,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Kau bimbing tanganku mengeja kata,\nKau terangi gelapnya kebodohan,\nTanpa lelah kau curahkan kasih,\nOh guruku pelita hidupku.",
+      "pertanyaan": "Amanat yang terkandung dalam bait puisi di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Guru harus selalu diberi hadiah mahal setiap hari"
+        },
+        {
+          "key": "B",
+          "text": "Membaca buku hanya dilakukan saat di sekolah"
+        },
+        {
+          "key": "C",
+          "text": "Kita harus menghormati dan berterima kasih atas jasa bimbingan guru"
+        },
+        {
+          "key": "D",
+          "text": "Menulis huruf harus memakai tinta hitam"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 18,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Data diri:\n1. Nama: Siti Rohana\n2. Tempat/Tgl Lahir: Lombok Timur, 12 Agustus 2012\n3. Agama: Islam\n4. Alamat: Jl. Pahlawan No. 10 Selong",
+      "pertanyaan": "Data di atas biasanya digunakan untuk mengisi lembaran ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Surat izin sakit kerja"
+        },
+        {
+          "key": "B",
+          "text": "Struk belanja supermarket"
+        },
+        {
+          "key": "C",
+          "text": "Kwitansi pembayaran listrik"
+        },
+        {
+          "key": "D",
+          "text": "Formulir pendaftaran anggota perpustakaan atau siswa baru"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 19,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Berdasarkan pengamatan selama tujuh hari, biji kacang hijau yang diletakkan di tempat terang tumbuh lebih kokoh dengan daun hijau segar. Sedangkan biji kacang hijau di tempat gelap tumbuh lebih cepat namun batangnya pucat dan rapuh.",
+      "pertanyaan": "Simpulan hasil pengamatan tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Kacang hijau tidak membutuhkan air untuk bertumbuh"
+        },
+        {
+          "key": "B",
+          "text": "Cahaya matahari sangat memengaruhi kekuatan batang dan warna daun tanaman"
+        },
+        {
+          "key": "C",
+          "text": "Kacang hijau sebaiknya ditanam di dalam lemari gelap"
+        },
+        {
+          "key": "D",
+          "text": "Warna daun tanaman selalu berubah menjadi kuning"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 20,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Ruang kelas terlihat kotor dengan bungkus makanan berserakan di bawah meja setelah jam istirahat selesai.",
+      "pertanyaan": "Tanggapan logis dan tindakan yang paling tepat untuk situasi tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Seluruh siswa segera bergotong royong menyapu kelas agar kembali bersih dan nyaman"
+        },
+        {
+          "key": "B",
+          "text": "Membiarkan saja sampah menumpuk sampai petugas kebersihan datang besok"
+        },
+        {
+          "key": "C",
+          "text": "Menuduh teman sebangku sebagai pembuang sampah tanpa bukti"
+        },
+        {
+          "key": "D",
+          "text": "Pindah ke ruangan kelas lain yang masih bersih"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 21,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Energi matahari merupakan sumber energi terbarukan yang sangat melimpah di Indonesia. Sinar matahari dapat diubah menjadi energi listrik melalui panel surya. Selain ramah lingkungan, energi ini tidak menghasilkan polusi udara dan dapat menghemat biaya tagihan listrik rumah tangga.",
+      "pertanyaan": "Kalimat utama pada paragraf di atas terletak pada ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Awal paragraf (kalimat pertama)"
+        },
+        {
+          "key": "B",
+          "text": "Tengah paragraf (kalimat kedua)"
+        },
+        {
+          "key": "C",
+          "text": "Akhir paragraf (kalimat ketiga)"
+        },
+        {
+          "key": "D",
+          "text": "Awal dan akhir secara bersamaan"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 22,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Program konservasi terumbu karang di Pantai Senggigi gencar dilakukan untuk melindungi ekosistem bawah laut.",
+      "pertanyaan": "Kata 'konservasi' dalam kalimat di atas bermakna ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Penangkapan ikan dengan jaring pukat"
+        },
+        {
+          "key": "B",
+          "text": "Upaya pelestarian dan perlindungan alam dari kerusakan"
+        },
+        {
+          "key": "C",
+          "text": "Pembangunan dermaga kapal pesiar"
+        },
+        {
+          "key": "D",
+          "text": "Penyelaman komersial di laut dalam"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 23,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Perhatikan kalimat acak berikut:\n(1) Kami berangkat menuju Pantai Kuta Mandalika pukul tujuh pagi.\n(2) Liburan akhir pekan kemarin sungguh menyenangkan bagi keluargaku.\n(3) Sesampainya di sana, kami bermain pasir putih dan menikmati pemandangan bukit.\n(4) Menjelang sore, kami bersiap pulang dengan membawa kenangan indah.",
+      "pertanyaan": "Susunan kalimat agar menjadi paragraf narasi yang padu dan runtut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "(1) - (3) - (4) - (2)"
+        },
+        {
+          "key": "B",
+          "text": "(3) - (1) - (2) - (4)"
+        },
+        {
+          "key": "C",
+          "text": "(2) - (1) - (3) - (4)"
+        },
+        {
+          "key": "D",
+          "text": "(4) - (2) - (1) - (3)"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 24,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "'Matikan lampu dan keran air saat tidak digunakan! Sayangi bumi, hemat pengeluaran keluarga.'",
+      "pertanyaan": "Pernyataan di atas merupakan contoh ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Surat undangan resmi"
+        },
+        {
+          "key": "B",
+          "text": "Slogan atau iklan layanan masyarakat"
+        },
+        {
+          "key": "C",
+          "text": "Cerita dongeng rakyat"
+        },
+        {
+          "key": "D",
+          "text": "Daftar menu makanan restoran"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 25,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Pasar yang baru dibuka itu langsung ramai dikunjungi pembeli karena barang yang dijual lengkap dan murah. Hal ini sesuai pepatah 'ada gula ada semut'.",
+      "pertanyaan": "Arti dari peribahasa 'Ada gula ada semut' adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Gula pasir selalu dirubung semut hitam"
+        },
+        {
+          "key": "B",
+          "text": "Orang kaya selalu membagikan uang kepada tetangga"
+        },
+        {
+          "key": "C",
+          "text": "Semut selalu mencari makanan manis di dapur"
+        },
+        {
+          "key": "D",
+          "text": "Tempat yang banyak rezeki atau keuntungan pasti ramai didatangi orang"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 26,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Dina rajin belajar setiap malam [ ... ] ia ingin meraih nilai terbaik pada ujian kesetaraan Paket A.",
+      "pertanyaan": "Kata hubung (konjungsi) yang paling tepat untuk melengkapi kalimat di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "karena"
+        },
+        {
+          "key": "B",
+          "text": "walaupun"
+        },
+        {
+          "key": "C",
+          "text": "tetapi"
+        },
+        {
+          "key": "D",
+          "text": "sebelum"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 27,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Desa Sukarara di Lombok Tengah terkenal sebagai sentra kerajinan tenun ikat dan songket tradisional. Para perajin wanita menenun kain secara turun-temurun menggunakan alat tenun bukan mesin (ATBM) dari kayu. Motif tenun yang dihasilkan memiliki keunikan khas seperti motif subahnale dan keker.",
+      "pertanyaan": "Berdasarkan teks, alat yang digunakan oleh perajin wanita Sukarara untuk menenun adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Mesin jahit listrik modern"
+        },
+        {
+          "key": "B",
+          "text": "Komputer cetak digital"
+        },
+        {
+          "key": "C",
+          "text": "Alat tenun bukan mesin (ATBM) dari bahan kayu"
+        },
+        {
+          "key": "D",
+          "text": "Jarum rajut kawat impor"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 28,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Warga membiarkan kaleng bekas dan ban tergenang air hujan di halaman belakang. Akibatnya, nyamuk Aedes aegypti berkembang biak pesat dan beberapa anak terjangkit penyakit demam berdarah.",
+      "pertanyaan": "Penyebab berkembang biaknya nyamuk Aedes aegypti pada teks tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Cuaca panas berkepanjangan"
+        },
+        {
+          "key": "B",
+          "text": "Genangan air hujan pada kaleng dan ban bekas yang dibiarkan"
+        },
+        {
+          "key": "C",
+          "text": "Pemberian obat nyamuk semprot di dalam kamar"
+        },
+        {
+          "key": "D",
+          "text": "Pohon mangga yang berbuah lebat di pekarangan"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 29,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Ibu membeli obat batuk di apotik dekat rumah setelah mendapatkan resep dokter.",
+      "pertanyaan": "Kata yang dicetak miring (apotik) tidak baku. Bentuk baku kata tersebut sesuai KBBI adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "apotek"
+        },
+        {
+          "key": "B",
+          "text": "apotiek"
+        },
+        {
+          "key": "C",
+          "text": "apotekan"
+        },
+        {
+          "key": "D",
+          "text": "optik"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 30,
+      "kategori": "Bahasa Indonesia - Paket A",
+      "bacaan": "Roni menemukan sebuah dompet tebal berisi uang tunai di emperan toko. Tanpa ragu, ia langsung menyerahkannya kepada petugas pos polisi agar dikembalikan kepada pemiliknya yang sah. Petugas polisi memuji tindakan terpuji anak tersebut.",
+      "pertanyaan": "Tema yang paling tepat untuk cerita pendek di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Keindahan alam pedesaan"
+        },
+        {
+          "key": "B",
+          "text": "Keberanian melawan musuh"
+        },
+        {
+          "key": "C",
+          "text": "Kejujuran dan integritas moral anak"
+        },
+        {
+          "key": "D",
+          "text": "Kecintaan pada binatang piaraan"
+        }
+      ],
+      "kunci": "C"
+    }
+  ],
+  "paketB": [
+    {
+      "id": 1,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Gempa bumi berkekuatan magnitudo 5,2 mengguncang wilayah Lombok Utara pada Selasa pagi pukul 07.15 WITA. Badan Meteorologi, Klimatologi, dan Geofisika (BMKG) mengonfirmasi bahwa pusat gempa berada di kedalaman 10 km dan tidak berpotensi tsunami. Warga diimbau untuk tetap tenang serta menghindari bangunan retak.",
+      "pertanyaan": "Unsur 'kapan' dan 'di mana' peristiwa tersebut terjadi dalam kutipan teks berita adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Senin malam di Mataram"
+        },
+        {
+          "key": "B",
+          "text": "Selasa pagi pukul 07.15 WITA di Lombok Utara"
+        },
+        {
+          "key": "C",
+          "text": "Rabu sore di Lombok Timur"
+        },
+        {
+          "key": "D",
+          "text": "Kamis siang di pesisir Pantai Senggigi"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 2,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Teks 1: Festival Bau Nyale di Pantai Seger Lombok Tengah dibanjiri ribuan warga lokal dan wisatawan asing sejak dini hari untuk menangkap cacing laut berwarna-warni.\nTeks 2: Pemerintah Kabupaten Lombok Tengah menyiapkan rekayasa lalu lintas dan pos keamanan terpadu guna mengantisipasi kepadatan arus wisatawan saat perayaan tradisi Bau Nyale.",
+      "pertanyaan": "Perbedaan fokus informasi kedua teks berita di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Teks 1 tentang kuliner lombok; Teks 2 tentang pertanian modern"
+        },
+        {
+          "key": "B",
+          "text": "Teks 1 tentang kecelakaan laut; Teks 2 tentang perlombaan perahu"
+        },
+        {
+          "key": "C",
+          "text": "Teks 1 memuat antusiasme warga/wisatawan; Teks 2 memuat kesiapan rekayasa lalu lintas dan pos keamanan"
+        },
+        {
+          "key": "D",
+          "text": "Teks 1 tentang cuaca buruk; Teks 2 tentang penetapan harga tiket wisata"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 3,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Pelangi terbentuk ketika sinar matahari melewati butiran-butiran air hujan di atmosfer. Cahaya putih matahari mengalami pembiasan (refraksi) saat memasuki tetesan air, kemudian terurai menjadi spektrum warna yang berbeda panjang gelombangnya, lalu dipantulkan kembali ke mata pengamat sebagai lengkungan warna indah.",
+      "pertanyaan": "Berdasarkan ciri dan tujuannya, kutipan teks di atas termasuk jenis teks eksplanasi yang menjelaskan ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Proses terjadinya fenomena alam pembiasan cahaya pembentuk pelangi"
+        },
+        {
+          "key": "B",
+          "text": "Kisah fiksi mengenai bidadari yang mandi di danau"
+        },
+        {
+          "key": "C",
+          "text": "Langkah-langkah mengecat dinding rumah dengan warna warni"
+        },
+        {
+          "key": "D",
+          "text": "Daftar harga teropong bintang di laboratorium fisika"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 4,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Hujan deras mengguyur hulu sungai selama berjam-jam tanpa henti. [ ... ], debit air meluap dan tanggul penahan tidak mampu menahan volume air, [ ... ] permukiman warga terendam banjir.",
+      "pertanyaan": "Konjungsi kausalitas (sebab-akibat) yang paling tepat untuk melengkapi paragraf rumpang tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Meskipun - tetapi"
+        },
+        {
+          "key": "B",
+          "text": "Akibatnya - sehingga"
+        },
+        {
+          "key": "C",
+          "text": "Walaupun - melainkan"
+        },
+        {
+          "key": "D",
+          "text": "Sebelum - setelah"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 5,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Komodo (Varanus komodoensis) adalah spesies kadal terbesar di dunia yang masih hidup hingga saat ini dan merupakan satwa endemik Indonesia yang dilindungi. Hewan karnivor ini memiliki panjang tubuh mencapai 3 meter dengan berat melebihi 70 kilogram.",
+      "pertanyaan": "Dalam struktur Teks Laporan Hasil Observasi (LHO), kutipan teks di atas menduduki bagian ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Deskripsi manfaat"
+        },
+        {
+          "key": "B",
+          "text": "Simpulan penutup"
+        },
+        {
+          "key": "C",
+          "text": "Orientasi konflik cerita"
+        },
+        {
+          "key": "D",
+          "text": "Pernyataan umum atau definisi"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 6,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Pohon kelapa dijuluki pohon serbaguna karena hampir setiap bagian dari pohon ini bermanfaat bagi manusia. Batangnya dapat dijadikan tiang rumah, daunnya dianyam menjadi ketupat dan atap, buahnya dimanfaatkan untuk minyak serta minuman segar, dan tempurungnya diolah menjadi arang aktif bernilai ekonomi tinggi.",
+      "pertanyaan": "Bagian kutipan Laporan Hasil Observasi di atas berfokus pada pembahasan ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Deskripsi manfaat dari setiap bagian tanaman kelapa"
+        },
+        {
+          "key": "B",
+          "text": "Klasifikasi ilmiah dan ordo botani kelapa"
+        },
+        {
+          "key": "C",
+          "text": "Teknik pembasmian hama kumbang tanduk"
+        },
+        {
+          "key": "D",
+          "text": "Harga bibit kelapa sawit di pasar lelang"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 7,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Setelah bertahun-tahun hidup dalam perselisihan mengenai batas ladang warisan, Pak Kardi dan Pak Slamet akhirnya bersedia duduk bersama di balai desa. Dengan disaksikan tokoh adat dan kepala desa, keduanya saling berjabat tangan memaafkan serta menyepakati pembagian lahan secara adil.",
+      "pertanyaan": "Kutipan alur cerita pendek tersebut berada pada tahap ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Pengenalan situasi cerita (orientasi)"
+        },
+        {
+          "key": "B",
+          "text": "Pemunculan konflik awal (komplikasi)"
+        },
+        {
+          "key": "C",
+          "text": "Penyelesaian masalah (resolusi)"
+        },
+        {
+          "key": "D",
+          "text": "Puncak ketegangan pertikaian (klimaks)"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 8,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Setiap kali melihat nenek tua tetangganya kesulitan mengangkat ember air dari sumur, tanpa diminta sedikit pun Herman langsung berlari menghampiri dan membawakan ember tersebut hingga ke dapur nenek sambil tersenyum hangat.",
+      "pertanyaan": "Penggambaran watak tokoh Herman yang ringan tangan dan suka menolong dilakukan oleh pengarang melalui metode ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Penjelasan watak secara langsung oleh pengarang"
+        },
+        {
+          "key": "B",
+          "text": "Perilaku dan tindakan nyata tokoh dalam cerita"
+        },
+        {
+          "key": "C",
+          "text": "Penggambaran bentuk fisik dan cara berpakaian"
+        },
+        {
+          "key": "D",
+          "text": "Dialog tokoh lain yang mengkritik perbuatannya"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 9,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Di dalam dadanya berkecamuk pergulatan hebat. Apakah ia harus melaporkan kecurangan sahabat karibnya sendiri kepada panitia ujian, ataukah ia memilih diam demi menjaga tali persahabatan mereka walau hatinya tersiksa oleh rasa bersalah?",
+      "pertanyaan": "Jenis konflik yang dialami oleh tokoh dalam kutipan cerpen di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Konflik batin (kejiwaan dalam diri sendiri)"
+        },
+        {
+          "key": "B",
+          "text": "Konflik fisik berupa perkelahian fisik"
+        },
+        {
+          "key": "C",
+          "text": "Konflik alam melawan bencana topan"
+        },
+        {
+          "key": "D",
+          "text": "Konflik politik perebutan kekuasaan takhta"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 10,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Tradisi Begibung di Lombok, yaitu makan bersama dalam satu nampan besar beralaskan daun pisang, memperlihatkan betapa kuatnya rasa kebersamaan warga. Tiada sekat antara orang kaya dan orang miskin saat duduk melingkar menyantap hidangan yang sama.",
+      "pertanyaan": "Nilai kehidupan yang paling menonjol pada kutipan teks di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Nilai estetika lukisan dinding"
+        },
+        {
+          "key": "B",
+          "text": "Nilai persaingan dagang"
+        },
+        {
+          "key": "C",
+          "text": "Nilai ekonomi pertambangan"
+        },
+        {
+          "key": "D",
+          "text": "Nilai sosial budaya kebersamaan dan kesetaraan"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 11,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Gemercik air sungai menari di sela bebatuan,\nAngin sepoi menyapu lembut pipiku yang basah,\nKicau burung pipit menyanyikan kidung damai.",
+      "pertanyaan": "Larik kedua puisi di atas menggunakan citraan (imaji) ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Penglihatan"
+        },
+        {
+          "key": "B",
+          "text": "Perabaan (taktil)"
+        },
+        {
+          "key": "C",
+          "text": "Pengecapan"
+        },
+        {
+          "key": "D",
+          "text": "Penciuman"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 12,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Di tengah badai samudera yang gelap gulita,\nAyah berdiri tegak bagai karang kokoh,\nTak goyah diterjang gulungan ombak duka.",
+      "pertanyaan": "Makna lambang kata 'karang kokoh' dalam bait puisi di atas melambangkan ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Keteguhan, ketabahan, dan ketahanan menghadapi cobaan hidup"
+        },
+        {
+          "key": "B",
+          "text": "Kekayaan materi berlimpah di pesisir pulau"
+        },
+        {
+          "key": "C",
+          "text": "Hati yang keras dan tidak mau mendengarkan nasihat"
+        },
+        {
+          "key": "D",
+          "text": "Bahaya kecelakaan kapal laut di tengah karang"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 13,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Ibu pertiwi menangis menatap tanah yang gersang,\nPohon-pohon ditebang tangan serakah tanpa nurani,\nKini bencana datang silih berganti menghampiri.",
+      "pertanyaan": "Suasana batin yang tergambar dalam puisi di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Riang gembira dan penuh tawa"
+        },
+        {
+          "key": "B",
+          "text": "Kagum akan kehebatan teknologi modern"
+        },
+        {
+          "key": "C",
+          "text": "Sedih, prihatin, dan kecewa atas kerusakan alam"
+        },
+        {
+          "key": "D",
+          "text": "Puas melihat pembangunan gedung tinggi"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 14,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Hadirin yang saya hormati, marilah kita jaga kebersihan lingkungan sekitar kita. Sampah plastik yang kita buang sembarangan membutuhkan ratusan tahun untuk terurai dan dapat meracuni tanah serta sumber air minum kita. Oleh karena itu, mulailah memilah sampah dari rumah tangga kita masing-masing mulai hari ini demi generasi penerus kita.",
+      "pertanyaan": "Tujuan utama dari kutipan pidato persuasif di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Menjelaskan rumus kimia proses pembentukan plastik"
+        },
+        {
+          "key": "B",
+          "text": "Mengajak dan meyakinkan pendengar untuk menjaga kebersihan dan memilah sampah"
+        },
+        {
+          "key": "C",
+          "text": "Mengumumkan kenaikan iuran kebersihan RT"
+        },
+        {
+          "key": "D",
+          "text": "Menceritakan sejarah pabrik plastik di Indonesia"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 15,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Mari kita satukan tekad, singsingkan lengan baju, dan bergerak bersama membersihkan lingkungan kita!",
+      "pertanyaan": "Kalimat tersebut termasuk ciri kebahasaan teks persuasif yaitu ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Kalimat ajakan / persuasif dengan kata kerja emotif"
+        },
+        {
+          "key": "B",
+          "text": "Kalimat berita pasif berklausa ganda"
+        },
+        {
+          "key": "C",
+          "text": "Kalimat tanya retoris tanpa jawaban"
+        },
+        {
+          "key": "D",
+          "text": "Kalimat pengandaian yang mustahil terwujud"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 16,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Buku 'Meniti Impian di Tanah Sasak' karya Ahmad Syarif menyajikan alur cerita yang sangat memikat dan inspiratif. Penggunaan bahasa yang lugas dipadukan dengan istilah budaya lokal Lombok yang kaya menjadikan pembaca seolah larut dalam perjuangan tokoh utamanya.",
+      "pertanyaan": "Dalam teks ulasan (resensi buku), kutipan di atas menyoroti bagian ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Data fisik buku dan nomor ISBN"
+        },
+        {
+          "key": "B",
+          "text": "Kelemahan dan kekurangan font tulisan buku"
+        },
+        {
+          "key": "C",
+          "text": "Harga buku di toko buku gramedia"
+        },
+        {
+          "key": "D",
+          "text": "Keunggulan isi dan kekuatan bahasa buku"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 17,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Sayangnya, buku setebal 250 halaman ini dicetak menggunakan kertas koran tipis dengan kualitas jilidan yang mudah terlepas jika sering dibuka, serta masih terdapat beberapa kesalahan ketik (typo) pada bab ketiga.",
+      "pertanyaan": "Pernyataan resensi tersebut mengungkapkan tentang ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Pujian atas kecemerlangan penulis"
+        },
+        {
+          "key": "B",
+          "text": "Sinopsis bab pertama buku"
+        },
+        {
+          "key": "C",
+          "text": "Kelemahan teknis dan fisik dari buku"
+        },
+        {
+          "key": "D",
+          "text": "Riwayat hidup pengarang buku"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 18,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Penyajian lukisan ini sangat indah dengan kombinasi warna hangat yang memanjakan mata. Namun, tata letak objek utama di sudut kiri bawah terkesan membuat komposisi ruang kanvas menjadi agak berat sebelah.",
+      "pertanyaan": "Ciri khas kalimat tanggapan kritis yang santun pada teks di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Menghujat karya orang lain secara kasar"
+        },
+        {
+          "key": "B",
+          "text": "Mengapresiasi kelebihan terlebih dahulu sebelum menyampaikan masukan/kritik yang membangun"
+        },
+        {
+          "key": "C",
+          "text": "Memaksa pelukis mengganti seluruh cat kanvasnya"
+        },
+        {
+          "key": "D",
+          "text": "Menolak memberikan pendapat sama sekali"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 19,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Dalam diskusi kelas mengenai penggunaan smartphone di sekolah kesetaraan, kelompok pro berargumen bahwa gawai mempermudah akses modul elektronik, pencarian referensi belajar, dan penggunaan aplikasi CBT mandiri.",
+      "pertanyaan": "Alasan yang mendukung (pro) penggunaan smartphone berdasarkan teks tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Smartphone mempermudah akses modul digital dan ujian CBT mandiri"
+        },
+        {
+          "key": "B",
+          "text": "Siswa dapat leluasa bermain game online saat jam pelajaran"
+        },
+        {
+          "key": "C",
+          "text": "Baterai ponsel cepat habis jika dipakai di sekolah"
+        },
+        {
+          "key": "D",
+          "text": "Harga gawai semakin mahal setiap tahunnya"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 20,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Meskipun penggunaan smartphone memberikan kemudahan akses materi pembelajaran digital, pembatasan ketat tetap perlu diterapkan agar siswa tidak teralihkan oleh media sosial dan game selama jam belajar berlangsung.",
+      "pertanyaan": "Simpulan netral dari teks diskusi tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Smartphone harus dilarang total tanpa pengecualian"
+        },
+        {
+          "key": "B",
+          "text": "Siswa dibebaskan memakai ponsel tanpa aturan"
+        },
+        {
+          "key": "C",
+          "text": "Pemanfaatan ponsel untuk belajar sangat baik dengan diimbangi aturan pengawasan yang bijak"
+        },
+        {
+          "key": "D",
+          "text": "Sekolah harus membagikan gawai gratis kepada semua warga"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 21,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Kalimat: 'Para hadirin sekalian yang terhormat diharap agar supaya segera masuk ke dalam ruangan.'",
+      "pertanyaan": "Perbaikan kalimat tersebut agar menjadi kalimat efektif yang benar adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Para hadirin sekalian diharap masuk ruangan segera."
+        },
+        {
+          "key": "B",
+          "text": "Hadirin yang terhormat dipersilakan masuk ke ruangan."
+        },
+        {
+          "key": "C",
+          "text": "Para tamu hadirin semuanya agar supaya segera masuk."
+        },
+        {
+          "key": "D",
+          "text": "Semua para hadirin segera masuk ke dalam ruang."
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 22,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Perhatikan kata-kata berikut: (1) antre, (2) praktek, (3) analisa, (4) kualitas, (5) ijin.",
+      "pertanyaan": "Kelompok kata yang semuanya baku sesuai pedoman KBBI adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "antre dan kualitas"
+        },
+        {
+          "key": "B",
+          "text": "praktek dan analisa"
+        },
+        {
+          "key": "C",
+          "text": "ijin dan praktek"
+        },
+        {
+          "key": "D",
+          "text": "analisa dan ijin"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 23,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Perhatikan kalimat: 'Ia ingin melanjutkan pendidikan kesetaraan ke jenjang Paket C tetapi biaya pendaftarannya belum terkumpul.'",
+      "pertanyaan": "Tanda baca koma (,) yang tepat harus diletakkan pada posisi ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Setelah kata 'pendidikan'"
+        },
+        {
+          "key": "B",
+          "text": "Setelah kata 'jenjang'"
+        },
+        {
+          "key": "C",
+          "text": "Setelah kata 'Paket C' dan sebelum kata 'tetapi'"
+        },
+        {
+          "key": "D",
+          "text": "Tepat sebelum kata 'tetapi'"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 24,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Kalimat aktif: 'Tutor bahasa Indonesia membimbing para peserta didik kesetaraan dengan sabar.'",
+      "pertanyaan": "Bentuk kalimat pasif yang tepat dari kalimat di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Para peserta didik kesetaraan membimbing tutor dengan sabar."
+        },
+        {
+          "key": "B",
+          "text": "Para peserta didik kesetaraan dibimbing oleh tutor bahasa Indonesia dengan sabar."
+        },
+        {
+          "key": "C",
+          "text": "Tutor bahasa Indonesia terbimbing oleh peserta didik kesetaraan."
+        },
+        {
+          "key": "D",
+          "text": "Dengan sabar membimbing peserta didik kesetaraan."
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 25,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Petunjuk pembuatan akun E-Learning:\n(1) Buka peramban (browser) dan ketik alamat situs web.\n(2) Klik tombol 'Daftar Akun Baru'.\n(3) Masukkan data diri dan buat kata sandi yang aman.\n(4) Lakukan verifikasi melalui email atau nomor WhatsApp.\n(5) Masuk (login) ke dashboard pembelajaran.",
+      "pertanyaan": "Teks petunjuk di atas termasuk teks prosedur karena ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Mengisahkan petualangan seorang programmer komputer"
+        },
+        {
+          "key": "B",
+          "text": "Menggambarkan suasana laboratorium komputer yang dingin"
+        },
+        {
+          "key": "C",
+          "text": "Memuat langkah-langkah berurutan secara sistematis untuk mencapai suatu tujuan pembuatan akun"
+        },
+        {
+          "key": "D",
+          "text": "Menjelaskan teori relativitas gelombang elektromagnetik"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 26,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Petunjuk: 'Aduklah larutan pupuk organik cair tersebut secara perlahan hingga merata sebelum disiramkan ke media tanam!'",
+      "pertanyaan": "Kata kerja berimbuhan '-lah' pada kata 'Aduklah' berfungsi sebagai kalimat ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Imperatif (perintah halus) dalam teks prosedur"
+        },
+        {
+          "key": "B",
+          "text": "Deklaratif murni penyampai berita"
+        },
+        {
+          "key": "C",
+          "text": "Interogatif meminta konfirmasi"
+        },
+        {
+          "key": "D",
+          "text": "Deskriptif menggambarkan keindahan"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 27,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Poster memuat gambar buku terbuka dengan sinar terang di atasnya disertai tulisan: 'Buku adalah Jendela Dunia, Membaca adalah Kuncinya.'",
+      "pertanyaan": "Tujuan utama perancangan poster edukatif tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Menjual buku jendela impor dengan harga diskon"
+        },
+        {
+          "key": "B",
+          "text": "Menginstruksikan warga memasang kunci jendela rumah"
+        },
+        {
+          "key": "C",
+          "text": "Mempromosikan toko kunci gembok terdekat"
+        },
+        {
+          "key": "D",
+          "text": "Membangkitkan minat dan kesadaran masyarakat akan pentingnya budaya membaca"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 28,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Paragraf 1 menjelaskan keindahan bawah laut Gili Trawangan.\nParagraf 2 menjelaskan tumpukan sampah plastik yang mulai mengancam biota terumbu karang di kawasan perairan yang sama.",
+      "pertanyaan": "Hubungan makna antarkedua paragraf tersebut adalah hubungan ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Penegasan kesamaan fakta"
+        },
+        {
+          "key": "B",
+          "text": "Pertentangan (kontras antara potensi wisata dan ancaman kerusakan)"
+        },
+        {
+          "key": "C",
+          "text": "Sebab yang berulang-ulang tanpa akibat"
+        },
+        {
+          "key": "D",
+          "text": "Pengecualian tanpa hubungan logis"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 29,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Perhatikan kalimat: 'Sehingga seluruh peserta ujian diimbau mematuhi tata tertib.'",
+      "pertanyaan": "Kesalahan struktur kalimat tersebut terletak pada ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Penggunaan konjungsi intrakalimat 'sehingga' di awal kalimat tanpa klausa utama"
+        },
+        {
+          "key": "B",
+          "text": "Penggunaan kata 'peserta' yang bermakna ganda"
+        },
+        {
+          "key": "C",
+          "text": "Penggunaan imbuhan di- pada kata diimbau"
+        },
+        {
+          "key": "D",
+          "text": "Kurangnya tanda seru di akhir kalimat"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 30,
+      "kategori": "Bahasa Indonesia - Paket B",
+      "bacaan": "Tabel Hasil Survei Membaca:\n- Membaca buku teks pelajaran: 25%\n- Membaca artikel media daring/sosial: 60%\n- Membaca karya sastra/cerpen: 15%",
+      "pertanyaan": "Simpulan yang paling tepat berdasarkan data survei tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Karya sastra merupakan bacaan yang paling digemari"
+        },
+        {
+          "key": "B",
+          "text": "Remaja sama sekali tidak pernah membaca buku pelajaran"
+        },
+        {
+          "key": "C",
+          "text": "Mayoritas responden lebih banyak mengalokasikan waktu membaca untuk artikel media digital"
+        },
+        {
+          "key": "D",
+          "text": "Buku teks pelajaran tidak perlu dicetak lagi"
+        }
+      ],
+      "kunci": "C"
+    }
+  ],
+  "paketC": [
+    {
+      "id": 1,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Cermati kutipan teks editorial berikut:\n'Kenaikan harga beras di pasaran dalam beberapa bulan terakhir kian menekan daya beli masyarakat menengah ke bawah. Meskipun pemerintah telah menggelar operasi pasar murah dan menyalurkan bantuan pangan, langkah tersebut terbukti baru sebatas penawar dahaga sesaat. Akar persoalan struktural seperti rantai distribusi yang berbelit, spekulasi tengkulak, dan turunnya produktivitas gabah akibat perubahan iklim belum disentuh secara komprehensif.'",
+      "pertanyaan": "Opini redaksi yang terkandung dalam teks editorial tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Pemerintah tidak pernah menyalurkan bantuan beras pangan kepada masyarakat"
+        },
+        {
+          "key": "B",
+          "text": "Masyarakat menengah ke bawah sama sekali tidak terpengaruh oleh gejolak harga pangan"
+        },
+        {
+          "key": "C",
+          "text": "Operasi pasar murah hanya solusi jangka pendek dan belum menyelesaikan persoalan struktural pangan"
+        },
+        {
+          "key": "D",
+          "text": "Perubahan iklim sama sekali tidak berdampak pada produktivitas gabah petani"
+        },
+        {
+          "key": "E",
+          "text": "Rantai distribusi beras di Indonesia sudah sangat efisien dan transparan"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 2,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Kutipan editorial: 'Negara tidak boleh membiarkan rakyat kecil bertarung sendirian melawan guncangan ekonomi. Kebijakan proteksi harga di tingkat petani dan jaminan ketersediaan beras dengan harga terjangkau bagi konsumen miskin harus ditegakkan dengan ketegasan regulasi tanpa kompromi.'",
+      "pertanyaan": "Keberpihakan penulis (redaksi) dalam teks editorial tersebut ditujukan kepada ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Korporasi distributor beras skala besar"
+        },
+        {
+          "key": "B",
+          "text": "Masyarakat kecil (petani produsen dan konsumen berpenghasilan rendah)"
+        },
+        {
+          "key": "C",
+          "text": "Importir beras dari luar negeri"
+        },
+        {
+          "key": "D",
+          "text": "Spekulan pasar modal dan perbankan"
+        },
+        {
+          "key": "E",
+          "text": "Lembaga survei komersial independen"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 3,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Cermati kalimat-kalimat berikut:\n(1) Berdasarkan data BPS per September 2026, produksi padi nasional mencapai 31,5 juta ton gabah kering giling.\n(2) Bantuan pangan disalurkan kepada 21,3 juta keluarga penerima manfaat di seluruh Indonesia.\n(3) Menurut hemat kami, ketergantungan pada beras impor dapat melemahkan kedaulatan pangan bangsa secara jangka panjang.\n(4) Menteri Pertanian meninjau langsung panen raya di Kabupaten Lombok Tengah pada Kamis pekan lalu.",
+      "pertanyaan": "Kalimat yang berupa opini dalam teks di atas ditandai dengan nomor ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "(3)"
+        },
+        {
+          "key": "B",
+          "text": "(1)"
+        },
+        {
+          "key": "C",
+          "text": "(2)"
+        },
+        {
+          "key": "D",
+          "text": "(4)"
+        },
+        {
+          "key": "E",
+          "text": "(1) dan (2)"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 4,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Perhatikan penulisan identitas pelamar pada surat lamaran pekerjaan berikut:\n\nNama                : Dian Lestari, S.Pd.\nTempat, tanggal lahir : Mataram, 14 Mei 1998\nPendidikan          : S-1 Pendidikan Bahasa Indonesia\nAlamat              : Jalan Pejanggik Nomor 45, Mataram",
+      "pertanyaan": "Analisis penulisan rincian identitas diri di atas sesuai dengan Pedoman Umum Ejaan Bahasa Indonesia (PUEBI) adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Salah, karena setiap awal kata rincian harus diawali huruf kapital besar"
+        },
+        {
+          "key": "B",
+          "text": "Salah, karena penulisan kata 'Jalan' wajib disingkat menjadi 'Jln.'"
+        },
+        {
+          "key": "C",
+          "text": "Salah, karena tanggal lahir tidak boleh dipisahkan koma"
+        },
+        {
+          "key": "D",
+          "text": "Tepat, karena awal pemerian memakai huruf kecil bila menduduki klausa kelanjutan dari kalimat pengantar"
+        },
+        {
+          "key": "E",
+          "text": "Salah, karena gelar akademik tidak boleh dicantumkan di surat lamaran"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 5,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Cermati iklan lowongan pekerjaan: 'Dibutuhkan segera: Tenaga Pengajar Komputer di PKBM Asyyuro Lombok Creative (ALC). Kirimkan lamaran ke alamat email resmi sebelum 30 November 2026. (Harian Lombok Post, 20 Oktober 2026)'.",
+      "pertanyaan": "Kalimat pembuka surat lamaran pekerjaan yang tepat berdasarkan inisiatif iklan tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Saya membaca iklan Bapak, lalu saya merasa sangat tertarik dan ingin langsung bekerja di PKBM ALC."
+        },
+        {
+          "key": "B",
+          "text": "Sehubungan dengan iklan lowongan pekerjaan di harian Lombok Post edisi 20 Oktober 2026, yang memuat kebutuhan Tenaga Pengajar Komputer di PKBM Asyyuro Lombok Creative, dengan ini saya mengajukan lamaran pekerjaan."
+        },
+        {
+          "key": "C",
+          "text": "Melalui surat ini saya menyatakan sanggup mengajar komputer di PKBM ALC jika digaji sesuai standar."
+        },
+        {
+          "key": "D",
+          "text": "Berdasarkan info kabar burung dari teman, saya mendengar lembaga Bapak kekurangan tenaga pengajar."
+        },
+        {
+          "key": "E",
+          "text": "Karena saya belum punya pekerjaan tetap, saya ingin melamar lowongan komputer di instansi Bapak."
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 6,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Cermati kalimat penutup surat lamaran pekerjaan: 'Demikian surat lamaran ini saya sampaikan, atas perhatiannya yang teramat besar saya haturkan beribu terima kasih banyak.'",
+      "pertanyaan": "Perbaikan kalimat penutup surat lamaran pekerjaan di atas agar efektif dan santun sesuai etika korespondensi resmi adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Atas perhatiannya Bapak, saya sampaikan terima kasih."
+        },
+        {
+          "key": "B",
+          "text": "Sekian dulu lamaran saya, mohon diterima ya Pak."
+        },
+        {
+          "key": "C",
+          "text": "Atas perhatian Bapak/Ibu, saya mengucapkan terima kasih."
+        },
+        {
+          "key": "D",
+          "text": "Terima kasih atas segala perhatiannya yang sangat melimpah ruah."
+        },
+        {
+          "key": "E",
+          "text": "Sebelum dan sesudahnya atas budi baik Bapak saya ucapkan banyak terima kasih."
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 7,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Kutipan novel sejarah: 'Di tengah gemuruh rapat pemuda di gedung Kramat 106, para pemuda dari Jong Java, Jong Sumatranen Bond, Jong Ambon, dan berbagai perkumpulan kepulauan lainnya menyatukan ikrar sakral. Tiada lagi sekat kedaerahan yang sempit; hanya ada satu darah, satu bangsa, dan satu bahasa persatuan: Indonesia.'",
+      "pertanyaan": "Latar historis yang mendasari peristiwa dalam kutipan novel sejarah tersebut adalah peristiwa ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Kongres Pemuda II yang melahirkan ikrar Sumpah Pemuda tahun 1928"
+        },
+        {
+          "key": "B",
+          "text": "Proklamasi Kemerdekaan Indonesia 17 Agustus 1945"
+        },
+        {
+          "key": "C",
+          "text": "Peristiwa Bandung Lautan Api tahun 1946"
+        },
+        {
+          "key": "D",
+          "text": "Pertempuran Ambarawa menghadapi tentara Sekutu"
+        },
+        {
+          "key": "E",
+          "text": "Rapat pembentukan BPUPKI di Jakarta"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 8,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Meskipun hidup dalam pengasingan di Banda Neira yang sunyi, Bung Hatta tidak pernah berhenti membaca buku dan mendidik anak-anak pulau setempat agar melek aksara dan memahami arti kemerdekaan nurani.",
+      "pertanyaan": "Nilai karakter kepahlawanan yang paling relevan untuk diimplementasikan generasi muda saat ini adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Membalas dendam kepada pihak penjajah dengan kekerasan"
+        },
+        {
+          "key": "B",
+          "text": "Mengumpulkan kekayaan pribadi selama masa pengasingan politik"
+        },
+        {
+          "key": "C",
+          "text": "Menghindari perselisihan dengan menyerahkan tanah air kepada musuh"
+        },
+        {
+          "key": "D",
+          "text": "Mengeluhkan keterbatasan fasilitas hidup di daerah terpencil"
+        },
+        {
+          "key": "E",
+          "text": "Kecintaan tiada henti pada literasi ilmu pengetahuan dan pengabdian tulus mencerdaskan kehidupan sesama"
+        }
+      ],
+      "kunci": "E"
+    },
+    {
+      "id": 9,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Artikel ilmiah populer: 'Transformasi digital di sektor pendidikan kesetaraan nonformal terbukti mampu memangkas kesenjangan akses belajar bagi masyarakat marjinal. Dengan memanfaatkan modul daring dan platform Computer-Based Testing (CBT) adaptif, warga belajar yang terikat jam kerja dapat mengelola waktu belajar secara fleksibel tanpa menurunkan mutu penguasaan kompetensi akademik.'",
+      "pertanyaan": "Masalah utama yang diangkat dalam kutipan artikel ilmiah populer di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Mahalnya biaya kuota internet untuk menonton video hiburan"
+        },
+        {
+          "key": "B",
+          "text": "Peran transformasi digital dalam memperluas akses dan fleksibilitas belajar di pendidikan kesetaraan"
+        },
+        {
+          "key": "C",
+          "text": "Penutupan seluruh sekolah tatap muka konvensional di Indonesia"
+        },
+        {
+          "key": "D",
+          "text": "Ketiadaan komputer jinjing di daerah pelosok kepulauan"
+        },
+        {
+          "key": "E",
+          "text": "Penurunan minat baca buku cetak di kalangan pekerja pabrik"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 10,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Premis 1: Pembelajaran berbasis proyek (PBL) mendorong kemampuan berpikir kritis dan kerja sama siswa.\nPremis 2: Siswa Paket C yang mengikuti pelatihan pembuatan produk tenun digital terlibat aktif dalam pemecahan masalah nyata.\nSimpulan: Siswa Paket C tersebut mengalami peningkatan keterampilan berpikir kritis dan kecakapan vokasi.",
+      "pertanyaan": "Pola penalaran yang digunakan dalam penarikan kesimpulan di atas adalah pola penalaran ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Generalisasi semata tanpa bukti empiris"
+        },
+        {
+          "key": "B",
+          "text": "Analogi kiasan estetis"
+        },
+        {
+          "key": "C",
+          "text": "Deduktif logis melalui premis umum dan premis khusus"
+        },
+        {
+          "key": "D",
+          "text": "Sebab-akibat berbalik tanpa korelasi variabel"
+        },
+        {
+          "key": "E",
+          "text": "Deskriptif naratif fiktif"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 11,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Latar belakang masalah: Minat membaca warga belajar di PKBM masih tergolong rendah akibat minimnya buku fisik bermutu dan keterbatasan jam buka perpustakaan konvensional.",
+      "pertanyaan": "Rumusan masalah karya ilmiah yang paling tepat dan terukur berdasarkan latar belakang di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Bagaimanakah pengaruh implementasi perpustakaan digital interaktif terhadap peningkatan minat baca warga belajar PKBM?"
+        },
+        {
+          "key": "B",
+          "text": "Berapakah harga lemari buku kayu di perpustakaan nasional?"
+        },
+        {
+          "key": "C",
+          "text": "Mengapa warga belajar tidak mau membeli buku ensiklopedia impor yang mahal?"
+        },
+        {
+          "key": "D",
+          "text": "Apakah membaca itu penting bagi kehidupan manusia di bumi?"
+        },
+        {
+          "key": "E",
+          "text": "Siapakah pendiri pertama perpustakaan konvensional di daerah Lombok?"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 12,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Cermati judul karya ilmiah berikut: 'Penerapan Model Pembelajaran Blended Learning Untuk Meningkatkan Hasil Belajar Bahasa Indonesia Siswa Paket C Di PKBM Asyyuro.'",
+      "pertanyaan": "Penulisan judul karya ilmiah yang tepat sesuai kaidah tata tulis EYD adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Penerapan Model Pembelajaran Blended Learning Untuk Meningkatkan Hasil Belajar Bahasa Indonesia Siswa Paket C di PKBM Asyyuro"
+        },
+        {
+          "key": "B",
+          "text": "Penerapan model pembelajaran blended learning untuk meningkatkan hasil belajar bahasa indonesia siswa paket C di PKBM Asyyuro"
+        },
+        {
+          "key": "C",
+          "text": "PENERAPAN MODEL PEMBELAJARAN BLENDED LEARNING UNTUK MENINGKATKAN HASIL BELAJAR BAHASA INDONESIA SISWA PAKET C DI PKBM ASSYURO"
+        },
+        {
+          "key": "D",
+          "text": "Penerapan Model Pembelajaran Blended Learning untuk Meningkatkan Hasil Belajar Bahasa Indonesia Siswa Paket C di PKBM Asyyuro"
+        },
+        {
+          "key": "E",
+          "text": "Penerapan Model Pembelajaran Blended Learning Untuk Meningkatkan Hasil Belajar Bahasa indonesia Siswa Paket c di PKBM Asyyuro"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 13,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Data pustaka: Buku berjudul 'Metodologi Penelitian Pendidikan', karangan Prof. Dr. Sugiyono, diterbitkan tahun 2021 oleh Penerbit Alfabeta di Bandung.",
+      "pertanyaan": "Penulisan daftar pustaka yang baku dan tepat menurut sistem standar alfabetis adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Sugiyono, Prof. Dr. 2021. Metodologi Penelitian Pendidikan. Alfabeta: Bandung."
+        },
+        {
+          "key": "B",
+          "text": "Sugiyono. 2021. Metodologi Penelitian Pendidikan. Bandung: Alfabeta."
+        },
+        {
+          "key": "C",
+          "text": "Metodologi Penelitian Pendidikan, Sugiyono. 2021. Bandung: Alfabeta."
+        },
+        {
+          "key": "D",
+          "text": "Prof. Dr. Sugiyono. (2021). Metodologi Penelitian Pendidikan: Bandung: Alfabeta."
+        },
+        {
+          "key": "E",
+          "text": "Sugiyono. Metodologi Penelitian Pendidikan. 2021, Alfabeta, Bandung."
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 14,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Kutipan kritik sastra: 'Keberhasilan novel ini tidak semata terletak pada kepiawaian merajut konflik romantisme remaja, melainkan pada keberanian penulis membedah kegelisahan eksistensial generasi muda pinggiran di tengah disrupsi teknologi melalui diksi-diksi bernas yang hemat namun sarat makna filosofis.'",
+      "pertanyaan": "Fokus evaluasi yang disampaikan oleh kritikus sastra pada kutipan di atas menyoroti aspek ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Desain sampul depan dan ketebalan kertas novel"
+        },
+        {
+          "key": "B",
+          "text": "Banyaknya royalti yang diterima penulis dari penerbit"
+        },
+        {
+          "key": "C",
+          "text": "Jumlah penjualan novel di platform toko daring"
+        },
+        {
+          "key": "D",
+          "text": "Riwayat pendidikan formal sang novelis"
+        },
+        {
+          "key": "E",
+          "text": "Kedalaman tema eksistensial dan kekuatan estetik pemilihan diksi pengarang"
+        }
+      ],
+      "kunci": "E"
+    },
+    {
+      "id": 15,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Cermati bait puisi kontemporer:\n'Kata-kata telah membeku menjadi belati,\nMenikam hening di ruang rapat para penguasa,\nNamun nurani mereka telah lama mematuhi berhala angka.'",
+      "pertanyaan": "Frasa metaforis 'mematuhi berhala angka' dalam konteks bait puisi di atas bermakna ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Belajar berhitung matematika aljabar di sekolah dasar"
+        },
+        {
+          "key": "B",
+          "text": "Menyembah patung dewa bertuliskan angka romawi kuno"
+        },
+        {
+          "key": "C",
+          "text": "Hanya mementingkan keuntungan materi, statistik semu, dan kalkulasi uang tanpa memedulikan rasa kemanusiaan"
+        },
+        {
+          "key": "D",
+          "text": "Menghitung jumlah suara pemilihan kepala desa secara manual"
+        },
+        {
+          "key": "E",
+          "text": "Menyimpan uang tabungan di dalam celengan tanah liat"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 16,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Petikan naskah drama:\nLURAH: (Berdiri dari kursi, menatap tajam ke arah para mandor) 'Kalian pikir saya tidak tahu permainan kotor di balik proyek irigasi ini? Rakyat menjerit kekeringan, sawah mereka retak, sementara kalian sibuk mempertebal kantong pribadi!'\nMANDOR: (Menunduk gemetar, menyeka keringat dingin di dahinya) 'Ampun, Pak Lurah... kami hanya menjalankan instruksi dari pihak pengembang...'",
+      "pertanyaan": "Konflik dramatik yang mengemuka dalam dialog naskah drama tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Perebutan batas tanah pekarangan keluarga"
+        },
+        {
+          "key": "B",
+          "text": "Pertentangan moral antara pemimpin yang membela hak rakyat melawan oknum penyeleweng proyek fasilitas publik"
+        },
+        {
+          "key": "C",
+          "text": "Ketidaksepakatan pemilihan bibit padi varietas baru"
+        },
+        {
+          "key": "D",
+          "text": "Perdebatan mengenai jadwal jam kerja para buruh tani"
+        },
+        {
+          "key": "E",
+          "text": "Perselisihan harga jual beras di pasar induk"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 17,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Teks naskah drama: 'MANDOR: (Menunduk gemetar, menyeka keringat dingin di dahinya)...'",
+      "pertanyaan": "Bagian kalimat dalam tanda kurung yang berisi petunjuk lakuan atau gerak fisik aktor di panggung disebut ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Kramagung (petunjuk lakuan/perilaku pentas)"
+        },
+        {
+          "key": "B",
+          "text": "Wawancang (dialog tuturan tokoh)"
+        },
+        {
+          "key": "C",
+          "text": "Prolog pembuka tirai"
+        },
+        {
+          "key": "D",
+          "text": "Epilog penutup drama"
+        },
+        {
+          "key": "E",
+          "text": "Solilokui monolog batin"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 18,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Kalimat: 'Berdasarkan daripada hasil analisis data statistik tersebut membuktikan bahwasanya inovasi pembelajaran berpengaruh positif.'",
+      "pertanyaan": "Penyebab ketidakefektifan kalimat di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Penggunaan tanda baca titik di akhir kalimat"
+        },
+        {
+          "key": "B",
+          "text": "Ketiadaan objek penderita dalam klausa"
+        },
+        {
+          "key": "C",
+          "text": "Penggunaan istilah serapan asing data statistik"
+        },
+        {
+          "key": "D",
+          "text": "Kontaminasi struktur dan kerancuan sintaksis akibat pemborosan preposisi 'berdasarkan daripada' serta ketiadaan subjek yang jelas"
+        },
+        {
+          "key": "E",
+          "text": "Panjang kalimat melebihi sepuluh kata baku"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 19,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Cermati kalimat majemuk bertingkat: 'Meskipun curah hujan ekstrem memicu longsor di jalur pusuk, pendistribusian bantuan logistik ke posko pengungsian tetap terlaksana secara terjadwal.'",
+      "pertanyaan": "Hubungan pertautan makna semantis antara anak kalimat dan induk kalimat pada kalimat tersebut menyatakan hubungan ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Sebab akibat langsung"
+        },
+        {
+          "key": "B",
+          "text": "Konsesif (pertentangan / kesungguhan meski ada rintangan)"
+        },
+        {
+          "key": "C",
+          "text": "Kondisional bersyarat mutlak"
+        },
+        {
+          "key": "D",
+          "text": "Tujuan akhir pelaksanaan"
+        },
+        {
+          "key": "E",
+          "text": "Perbandingan derajat kesetaraan"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 20,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Perhatikan penulisan tanda baca pada kalimat: 'Kemerdekaan belajar—yang selama ini dicita-citakan—kini menemukan ruang artikulasinya.'",
+      "pertanyaan": "Fungsi tanda pisah (—) pada kalimat tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Menunjukkan rentang waktu dari tahun ke tahun"
+        },
+        {
+          "key": "B",
+          "text": "Memisahkan suku kata pada pergantian baris ketikan"
+        },
+        {
+          "key": "C",
+          "text": "Membatasi penyisipan keterangan atau penjelasan yang memberi penegasan di luar bangun kalimat utama"
+        },
+        {
+          "key": "D",
+          "text": "Menggantikan tanda hubung strip pendek antar-kata ulang"
+        },
+        {
+          "key": "E",
+          "text": "Mengakhiri kutipan langsung ucapan narasumber"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 21,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Kutipan Biografi Ki Hadjar Dewantara: 'Sebagai bangsawan berdarah keraton Yogyakarta, Raden Mas Soewardi Soerjaningrat rela menanggalkan gelar kebangsawanannya dan berganti nama menjadi Ki Hadjar Dewantara. Beliau ingin leluasa berbaur tanpa sekat kasta feodal agar dapat memperjuangkan hak pendidikan bagi kaum jelata pribumi yang saat itu ditindas pemerintah kolonial Hindia Belanda.'",
+      "pertanyaan": "Keteladanan moral yang paling menonjol dari tokoh Ki Hadjar Dewantara adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Kerendahan hati melepaskan privilese kasta demi memperjuangkan kesetaraan pendidikan bagi rakyat jelata"
+        },
+        {
+          "key": "B",
+          "text": "Keberhasilan mengumpulkan gelar kebangsawanannya di lingkungan keraton"
+        },
+        {
+          "key": "C",
+          "text": "Kemampuan berbahasa Belanda yang fasih saat berdiplomasi"
+        },
+        {
+          "key": "D",
+          "text": "Kesetiaan mempertahankan tradisi feodalisme kraton secara murni"
+        },
+        {
+          "key": "E",
+          "text": "Penolakan terhadap semua orang Eropa yang tinggal di Jawa"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 22,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Cermati kutipan teks anekdot:\nSeorang pengendara motor menerobos lampu merah di perempatan jalan. Polisi segera menghentikannya.\nPOLISI: 'Selamat siang! Anda tahu kesalahan Anda?'\nPENGENDARA: 'Tahu, Pak. Kesalahan saya adalah kurang waspada, tadi saya tidak melihat Bapak berdiri di balik pohon rimbun itu.'",
+      "pertanyaan": "Berdasarkan struktur teks anekdot, bagian jawaban pengendara yang memuat unsur humor satir dan kejutan tersebut menduduki bagian ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Abstraksi"
+        },
+        {
+          "key": "B",
+          "text": "Orientasi"
+        },
+        {
+          "key": "C",
+          "text": "Krisis"
+        },
+        {
+          "key": "D",
+          "text": "Koda penutup"
+        },
+        {
+          "key": "E",
+          "text": "Reaksi"
+        }
+      ],
+      "kunci": "E"
+    },
+    {
+      "id": 23,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Teks anekdot: 'Kesalahan saya adalah kurang waspada, tadi saya tidak melihat Bapak berdiri di balik pohon rimbun itu.'",
+      "pertanyaan": "Kritik atau sindiran tersirat yang disampaikan dalam teks anekdot tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Pohon di pinggir jalan raya harus segera ditebang petugas pertamanan"
+        },
+        {
+          "key": "B",
+          "text": "Sindiran terhadap perilaku oknum masyarakat yang baru taat aturan hukum jika ada petugas yang mengawasi secara kasat mata"
+        },
+        {
+          "key": "C",
+          "text": "Pengendara motor wajib memakai kacamata hitam antiradiasi matahari"
+        },
+        {
+          "key": "D",
+          "text": "Lampu lalu lintas di jalan raya sering kali mengalami kerusakan korsleting"
+        },
+        {
+          "key": "E",
+          "text": "Polisi lalu lintas sebaiknya tidak bertugas di tempat teduh"
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 24,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Dialog negosiasi:\nPEMBELI: 'Kain tenun songket ikat ini coraknya sangat elok, tetapi apakah harganya tidak bisa diturunkan menjadi Rp450.000,00?'\nPENJUAL: 'Wah, belum bisa, Kak. Pewarnaannya memakai bahan alami daun nila dan dikerjakan manual selama tiga pekan. Kalau Kakak ambil dua lembar, saya berikan harga spesial Rp500.000,00 per lembar ditambah gratis selendang tenun mini.'\nPEMBELI: 'Baiklah, saya sepakat mengambil dua lembar!'",
+      "pertanyaan": "Faktor penentu keberhasilan negosiasi hingga mencapai kesepakatan (deal) tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Pembeli memaksa penjual menjual rugi"
+        },
+        {
+          "key": "B",
+          "text": "Penjual mengusir pembeli yang menawar harga"
+        },
+        {
+          "key": "C",
+          "text": "Adanya kompromi dan penawaran jalan tengah yang saling menguntungkan (win-win solution)"
+        },
+        {
+          "key": "D",
+          "text": "Pembeli membatalkan pembelian karena kecewa"
+        },
+        {
+          "key": "E",
+          "text": "Penjual menurunkan kualitas kain tenun yang dibeli"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 25,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Paragraf eksposisi:\n'Pendidikan kesetaraan (Paket A, B, dan C) memegang peranan krusial sebagai jaring pengaman sosial pendidikan nasional. Melalui kurikulum yang fleksibel dan kontekstual vokasi, program ini terbukti mengembalikan asa warga putus sekolah untuk menuntaskan wajib belajar 12 tahun sekaligus membekali mereka keterampilan wirausaha mandiri.'",
+      "pertanyaan": "Kutipan teks eksposisi di atas menduduki struktur bagian ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Tesis (pernyataan pendapat awal yang diperkuat argumen)"
+        },
+        {
+          "key": "B",
+          "text": "Orientasi cerita fiksi"
+        },
+        {
+          "key": "C",
+          "text": "Resolusi konflik antartokoh"
+        },
+        {
+          "key": "D",
+          "text": "Komplikasi alur mundur"
+        },
+        {
+          "key": "E",
+          "text": "Koda petunjuk moral"
+        }
+      ],
+      "kunci": "A"
+    },
+    {
+      "id": 26,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Silogisme logis:\nPremis Mayor: Semua peserta ujian CBT yang menguasai materi dan mematuhi tata tertib berpeluang meraih predikat tuntas kelulusan.\nPremis Minor: Fahri adalah peserta ujian CBT yang tekun menguasai materi dan taat mematuhi seluruh tata tertib ujian.",
+      "pertanyaan": "Kesimpulan silogisme yang sah dan tepat secara kaidah logika formal adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Fahri mungkin tidak perlu mengikuti ujian CBT kesetaraan"
+        },
+        {
+          "key": "B",
+          "text": "Semua peserta ujian CBT memiliki nilai yang sama persis dengan Fahri"
+        },
+        {
+          "key": "C",
+          "text": "Fahri tidak mematuhi tata tertib saat berada di ruang ujian"
+        },
+        {
+          "key": "D",
+          "text": "Fahri berpeluang meraih predikat tuntas kelulusan"
+        },
+        {
+          "key": "E",
+          "text": "Kelulusan Fahri ditentukan oleh keikutsertaan peserta lain"
+        }
+      ],
+      "kunci": "D"
+    },
+    {
+      "id": 27,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Perhatikan penulisan istilah serapan asing pada kalimat: 'Aplikasi cbt ini dilengkapi dengan fitur auto-grading dan sistem back-up data otomatis.'",
+      "pertanyaan": "Penulisan istilah serapan dan huruf miring yang benar menurut kaidah PUEBI adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Aplikasi CBT ini dilengkapi dengan fitur auto-grading dan sistem back-up data otomatis."
+        },
+        {
+          "key": "B",
+          "text": "Aplikasi CBT ini dilengkapi dengan fitur *auto-grading* dan sistem *back-up* data otomatis."
+        },
+        {
+          "key": "C",
+          "text": "Aplikasi cbt ini dilengkapi dengan fitur AUTOGRADING dan sistem BACKUP data otomatis."
+        },
+        {
+          "key": "D",
+          "text": "Aplikasi CBT ini dilengkapi dengan fitur oto-grading dan sistem bek-ap data otomatis."
+        },
+        {
+          "key": "E",
+          "text": "Aplikasi C.B.T. ini dilengkapi dengan fitur 'auto-grading' dan sistem 'back-up' data otomatis."
+        }
+      ],
+      "kunci": "B"
+    },
+    {
+      "id": 28,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Sebuah laporan evaluasi mengklaim bahwa seluruh warga belajar di suatu kabupaten telah 100% melek literasi digital. Namun pada lampiran survei lapangan, 45% responden di daerah terpencil menyatakan belum pernah mengoperasikan gawai pintar atau komputer jinjing secara mandiri.",
+      "pertanyaan": "Kelemahan atau bias metodologis yang dapat dikritisi dari laporan evaluasi tersebut adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Judul laporan terlalu pendek dan kurang variatif"
+        },
+        {
+          "key": "B",
+          "text": "Warna grafik yang digunakan tidak kontras dengan latar kertas"
+        },
+        {
+          "key": "C",
+          "text": "Nama penguji survei tidak ditulis lengkap dengan gelar bangsawan"
+        },
+        {
+          "key": "D",
+          "text": "Format font huruf terlalu besar untuk dibaca pembaca dewasa"
+        },
+        {
+          "key": "E",
+          "text": "Ketidaksinkronan logis antara klaim kesimpulan umum (100% melek digital) dengan fakta empiris lapangan yang menunjukkan masih tingginya warga yang belum mampu mengoperasikan perangkat"
+        }
+      ],
+      "kunci": "E"
+    },
+    {
+      "id": 29,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Perhatikan penulisan nama dan gelar akademik berikut:\n(1) Dr. Ir. Muhammad Zaini, M.Pd.\n(2) Dr, Ir, Muhammad Zaini. M,Pd,\n(3) DR. IR. Muhammad Zaini. MPd.\n(4) dr. Ir. Muhammad Zaini, MPd.",
+      "pertanyaan": "Penulisan nama beserta gelar akademik yang benar sesuai kaidah PUEBI ditunjukkan oleh nomor ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "(4)"
+        },
+        {
+          "key": "B",
+          "text": "(2)"
+        },
+        {
+          "key": "C",
+          "text": "(1)"
+        },
+        {
+          "key": "D",
+          "text": "(3)"
+        },
+        {
+          "key": "E",
+          "text": "(1) dan (3)"
+        }
+      ],
+      "kunci": "C"
+    },
+    {
+      "id": 30,
+      "kategori": "Bahasa Indonesia - Paket C",
+      "bacaan": "Teks 1: Pendidikan kesetaraan di era modern dituntut bertransformasi memadukan penguatan karakter moral dengan penguasaan kecakapan vokasi digital agar lulusan memiliki daya saing nyata di pasar kerja.\nTeks 2: Kurikulum berbasis kompetensi aplikatif di PKBM membuka ruang luas bagi warga belajar untuk mengembangkan jiwa kewirausahaan mandiri tanpa mengesampingkan capaian ijazah formal.",
+      "pertanyaan": "Sintesis atau benang merah yang mengaitkan substansi kedua teks bacaan di atas adalah ...",
+      "opsi": [
+        {
+          "key": "A",
+          "text": "Pentingnya sinergi antara kurikulum akademik kesetaraan dan keterampilan vokasi praktis guna mencetak lulusan PKBM yang mandiri dan kompetitif"
+        },
+        {
+          "key": "B",
+          "text": "Ijazah kesetaraan tidak lagi dibutuhkan jika siswa sudah memiliki modal uang"
+        },
+        {
+          "key": "C",
+          "text": "Pendidikan karakter moral hanya diperlukan di sekolah keagamaan tertentu"
+        },
+        {
+          "key": "D",
+          "text": "Perkembangan digital justru menghambat kreativitas siswa di daerah"
+        },
+        {
+          "key": "E",
+          "text": "Pemberian modal usaha lebih utama daripada proses bimbingan belajar"
+        }
+      ],
+      "kunci": "A"
+    }
+  ]
 }
