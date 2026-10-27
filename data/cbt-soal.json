@@ -1,0 +1,421 @@
+{
+  "paketA": {
+    "title": "Ujian Bahasa Indonesia - Paket A (Setara SD)",
+    "jenjang": "Paket A (SD)",
+    "durasi": 60,
+    "keterangan": "Ide pokok paragraf, makna kata kontekstual, dan simpulan cerita.",
+    "soal": [
+      {
+        "id": 1,
+        "bacaan": "Hutan mangrove memiliki peranan yang sangat penting bagi wilayah pesisir pantai. Selain menjadi tempat hidup beragam biota laut seperti kepiting, udang, dan ikan kecil, akar bakau yang kokoh mampu menahan hantaman ombak besar. Keberadaan mangrove secara alami juga efektif mencegah terjadinya abrasi atau pengikisan pantai oleh air laut.",
+        "pertanyaan": "Ide pokok dari paragraf di atas adalah ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Kehidupan kepiting dan udang di pesisir pantai"
+          },
+          {
+            "key": "B",
+            "text": "Pentingnya peranan hutan mangrove bagi wilayah pesisir"
+          },
+          {
+            "key": "C",
+            "text": "Proses terjadinya abrasi air laut di pantai"
+          },
+          {
+            "key": "D",
+            "text": "Kekuatan akar tanaman bakau saat diterpa ombak"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Ide pokok paragraf tersebut dinyatakan pada kalimat utama pertama, yaitu fungsi dan peranan penting hutan mangrove bagi pesisir."
+      },
+      {
+        "id": 2,
+        "bacaan": "Di Desa Masbagik, warga setiap hari Minggu berkumpul membersihkan saluran irigasi sawah. Bapak-bapak mengangkat lumpur dan sampah plastik, sedangkan ibu-ibu menyiapkan minuman hangat dan makanan ringan. Semangat gotong royong ini membuat desa selalu asri dan terhindar dari luapan air saat musim hujan tiba.",
+        "pertanyaan": "Simpulan yang tepat berdasarkan isi cerita pendek di atas adalah ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Saluran irigasi di desa Masbagik selalu kotor setiap hari Minggu"
+          },
+          {
+            "key": "B",
+            "text": "Gotong royong warga desa menjaga kebersihan dan mencegah banjir"
+          },
+          {
+            "key": "C",
+            "text": "Ibu-ibu desa Masbagik hanya bertugas memasak di dapur"
+          },
+          {
+            "key": "D",
+            "text": "Hujan deras selalu membawa tumpukan sampah plastik"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Simpulan cerita menggambarkan inti keseluruhan kegiatan gotong royong warga yang berdampak positif mencegah banjir dan lingkungan tetap asri."
+      },
+      {
+        "id": 3,
+        "bacaan": "Tanaman lidah buaya dikenal memiliki banyak khasiat sejak zaman dahulu. Gel dingin di dalam daunnya sering dimanfaatkan untuk meredakan luka bakar ringan, melembapkan kulit kering, serta menyuburkan rambut.",
+        "pertanyaan": "Makna kata 'khasiat' pada teks di atas memiliki arti yang sama dengan ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Manfaat atau kegunaan"
+          },
+          {
+            "key": "B",
+            "text": "Bentuk atau rupa"
+          },
+          {
+            "key": "C",
+            "text": "Harga atau nilai jual"
+          },
+          {
+            "key": "D",
+            "text": "Racun atau bahaya"
+          }
+        ],
+        "kunci": "A",
+        "pembahasan": "Kata 'khasiat' menurut KBBI adalah faedah, kegunaan, atau manfaat."
+      },
+      {
+        "id": 4,
+        "bacaan": "Budi bercita-cita menjadi seorang wirausahawan sukses. Setiap sore sepulang sekolah kesetaraan, ia membantu pamannya menata dagangan di pasar. Ia tidak pernah mengeluh lelah karena ia tahu bahwa kesuksesan butuh kerja keras dan ketekunan.",
+        "pertanyaan": "Nilai moral positif yang dapat diteladani dari tokoh Budi adalah ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Bekerja di pasar lebih penting daripada sekolah"
+          },
+          {
+            "key": "B",
+            "text": "Ketekunan, kerja keras, dan bakti membantu keluarga"
+          },
+          {
+            "key": "C",
+            "text": "Menghabiskan waktu sore untuk bermain bersama teman"
+          },
+          {
+            "key": "D",
+            "text": "Mencari keuntungan sebanyak-banyaknya di pasar"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Karakter Budi menunjukkan ketekunan, tidak pantang menyerah, dan rajin membantu keluarganya."
+      },
+      {
+        "id": 5,
+        "bacaan": "Penggunaan kantong plastik sekali pakai semakin dikurangi di pasar-pasar tradisional. Warga kini dihimbau membawa tas belanja kain sendiri dari rumah guna menekan volume timbunan sampah yang sulit terurai oleh tanah.",
+        "pertanyaan": "Mengapa warga dihimbau membawa tas belanja kain dari rumah?",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Karena tas kain dijual dengan harga yang sangat mahal"
+          },
+          {
+            "key": "B",
+            "text": "Agar pedagang tidak perlu melayani pembeli"
+          },
+          {
+            "key": "C",
+            "text": "Untuk mengurangi timbunan sampah plastik yang sulit terurai"
+          },
+          {
+            "key": "D",
+            "text": "Karena pasar tradisional melarang warga berbelanja"
+          }
+        ],
+        "kunci": "C",
+        "pembahasan": "Alasan warga dihimbau membawa tas kain tertulis jelas pada kalimat terakhir: menekan volume timbunan sampah plastik yang sulit terurai."
+      }
+    ]
+  },
+  "paketB": {
+    "title": "Ujian Bahasa Indonesia - Paket B (Setara SMP)",
+    "jenjang": "Paket B (SMP)",
+    "durasi": 60,
+    "keterangan": "Teks eksplanasi, gagasan utama, tajuk rencana, dan resensi buku.",
+    "soal": [
+      {
+        "id": 1,
+        "bacaan": "Pelangi merupakan fenomena optik dan meteorologi yang menghasilkan spektrum cahaya hampir bersambung di langit ketika matahari bersinar ke atas tetesan air hujan di atmosfer. Peristiwa ini terjadi melalui proses pembiasan, pemantulan, dan penguraian cahaya putih matahari menjadi berbagai warna oleh butiran air hujan yang berfungsi layaknya prisma kaca alami.",
+        "pertanyaan": "Berdasarkan ciri dan tujuannya, kutipan teks di atas termasuk jenis teks eksplanasi yang menjelaskan ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Urutan kronologis sejarah penemuan alat optik"
+          },
+          {
+            "key": "B",
+            "text": "Proses kausalitas terjadinya fenomena alam pelangi"
+          },
+          {
+            "key": "C",
+            "text": "Opini penulis tentang keindahan warna langit sore"
+          },
+          {
+            "key": "D",
+            "text": "Langkah-langkah pembuatan percobaan air hujan di laboratorium"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Teks tersebut menjelaskan mekanisme sebab-akibat (kausalitas) dan proses fisika ilmiah terjadinya fenomena alam pelangi."
+      },
+      {
+        "id": 2,
+        "bacaan": "Literasi digital di kalangan remaja kesetaraan kini menjadi pilar krusial. Bukan semata-mata kepiawaian mengoperasikan gawai pintar atau berselancar di media sosial, melainkan kecakapan menyaring akurasi informasi, memverifikasi fakta dari sumber kredibel, serta memproteksi jejak digital dari ancaman siber.",
+        "pertanyaan": "Gagasan utama paragraf di atas adalah ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Kemampuan bermain media sosial bagi generasi muda"
+          },
+          {
+            "key": "B",
+            "text": "Hakekat literasi digital remaja sebagai kecakapan menyaring informasi dan proteksi diri"
+          },
+          {
+            "key": "C",
+            "text": "Bahaya penggunaan ponsel pintar di lingkungan sekolah kesetaraan"
+          },
+          {
+            "key": "D",
+            "text": "Mahalnya biaya pengamanan jaringan internet di era modern"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Gagasan utama paragraf menegaskan bahwa literasi digital remaja adalah kemampuan kritis menyaring informasi dan menjaga keamanan diri di ruang siber."
+      },
+      {
+        "id": 3,
+        "bacaan": "Buku 'Merajut Asa di Ujung Senja' karya Ahmad Syarif menyajikan gaya penuturan yang sangat lugas dan menyentuh nurani pembaca. Tokoh-tokohnya dibangun dengan dialog membumi yang mencerminkan realitas masyarakat pedesaan. Sayangnya, sampul buku ini terkesan terlalu monoton dan pemilihan font pada bab pertengahan sedikit terlalu rapat sehingga melelahkan mata pembaca.",
+        "pertanyaan": "Pernyataan yang memuat kelemahan buku dalam kutipan resensi di atas adalah ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Penuturan yang lugas dan menyentuh nurani pembaca"
+          },
+          {
+            "key": "B",
+            "text": "Karakter tokoh dibangun dengan dialog membumi"
+          },
+          {
+            "key": "C",
+            "text": "Sampul buku monoton dan pemilihan font agak rapat melelahkan mata"
+          },
+          {
+            "key": "D",
+            "text": "Latar cerita yang mengangkat potret masyarakat pedesaan"
+          }
+        ],
+        "kunci": "C",
+        "pembahasan": "Kelemahan buku diungkapkan pada kalimat terakhir: sampul monoton dan font yang rapat melelahkan mata."
+      },
+      {
+        "id": 4,
+        "bacaan": "Pemerintah daerah bersama pengelola PKBM kian agresif memfasilitasi pelatihan vokasi digital marketing bagi warga belajar kesetaraan. Langkah ini patut diapresiasi tinggi sebagai solusi solutif menjembatani kesenjangan lapangan kerja lokal. Kendati demikian, program ini tidak boleh berhenti pada seremonial pelatihan, melainkan harus diiringi pendampingan akses permodalan dan kemitraan industri yang berkelanjutan.",
+        "pertanyaan": "Keberpihakan dan pandangan redaksi dalam tajuk rencana di atas ditujukan untuk ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Menolak program pelatihan vokasi digital di daerah"
+          },
+          {
+            "key": "B",
+            "text": "Mendukung pelatihan vokasi namun menuntut keberlanjutan pendampingan dan kemitraan nyata"
+          },
+          {
+            "key": "C",
+            "text": "Menuntut agar seluruh warga beralih profesi menjadi pedagang online"
+          },
+          {
+            "key": "D",
+            "text": "Menyalahkan peserta didik yang belum memiliki modal usaha mandiri"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Pandangan redaksi mengapresiasi program pelatihan, sekaligus memberi kritik konstruktif agar ada pendampingan kemitraan yang berkelanjutan."
+      },
+      {
+        "id": 5,
+        "bacaan": "Pemanasan global telah memicu anomali cuaca yang sulit diprediksi para petani. Musim kemarau yang berkepanjangan disusul curah hujan berintensitas ekstrem dalam periode singkat sering kali mengakibatkan kegagalan panen serentak.",
+        "pertanyaan": "Makna istilah 'anomali' dalam konteks paragraf tersebut adalah ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Keadaan normal dan teratur sebagaimana biasanya"
+          },
+          {
+            "key": "B",
+            "text": "Penyimpangan atau keanehan dari pola standar kelaziman"
+          },
+          {
+            "key": "C",
+            "text": "Kemajuan pesat dalam bidang teknologi agrikultur"
+          },
+          {
+            "key": "D",
+            "text": "Ramalan astronomi mengenai pergerakan rasi bintang"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Anomali berarti penyimpangan atau ketidaknormalan dari kondisi cuaca yang lazim."
+      }
+    ]
+  },
+  "paketC": {
+    "title": "Ujian Bahasa Indonesia - Paket C (Setara SMA)",
+    "jenjang": "Paket C (SMA)",
+    "durasi": 60,
+    "keterangan": "Analisis teks editorial, surat lamaran pekerjaan, karya ilmiah, dan kritik sastra (HOTS - 5 Opsi Pilihan).",
+    "soal": [
+      {
+        "id": 1,
+        "bacaan": "Pergeseran paradigma pasar kerja menuntut dunia pendidikan kesetaraan untuk tidak sekadar melahirkan lulusan berijazah legal formal, melainkan individu adaptif dengan kecakapan berpikir kritis tingkat tinggi (HOTS). Otomatisasi kecerdasan buatan (AI) telah mendisrupsi ribuan pekerjaan klerikal rutin. Bila kurikulum vokasi PKBM tidak segera bertransformasi menanamkan kapabilitas problem solving, reskilling, dan etika kolaborasi digital, lulusan kesetaraan berisiko teralienasi di pasar tenaga kerja masa depan yang kian kompetitif.",
+        "pertanyaan": "Isu sentral dan sikap kritis yang dibangun penulis dalam teks editorial tersebut adalah ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Penolakan terhadap adopsi teknologi kecerdasan buatan di lingkungan sekolah"
+          },
+          {
+            "key": "B",
+            "text": "Tuntutan transformasi kurikulum vokasi PKBM menuju kapabilitas adaptif dan berpikir kritis menghadapi disrupsi pasar kerja"
+          },
+          {
+            "key": "C",
+            "text": "Penghapusan ijazah kesetaraan karena sudah tidak relevan dengan kebutuhan dunia kerja"
+          },
+          {
+            "key": "D",
+            "text": "Pernyataan bahwa pekerjaan klerikal tidak akan pernah tergantikan oleh otomatisasi sistem"
+          },
+          {
+            "key": "E",
+            "text": "Kritik terhadap para pengusaha yang tidak mau mempekerjakan lulusan kesetaraan"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Penulis menyoroti perlunya kurikulum PKBM beradaptasi dengan mengembangkan daya nalar kritis dan pemecahan masalah agar lulusannya kompetitif menghadapi disrupsi AI."
+      },
+      {
+        "id": 2,
+        "bacaan": "Cermati kutipan pembuka surat lamaran pekerjaan berikut:\n'Berdasarkan iklan lowongan pekerjaan yang dimuat pada harian Suara Nusa edisi 15 Oktober 2026, yang menyatakan bahwa perusahaan Bapak/Ibu membutuhkan posisi Staf Administrasi Digital, maka saya yang bertanda tangan di bawah ini:'",
+        "pertanyaan": "Kaidah kebahasaan pembuka surat lamaran pekerjaan di atas dinilai efektif dan baku karena ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Menggunakan rima kata puitis untuk memikat hati pimpinan bagian personalia"
+          },
+          {
+            "key": "B",
+            "text": "Menyebutkan sumber informasi lowongan secara jelas, tanggal penerbitan yang kredibel, serta posisi yang dituju secara eksplisit"
+          },
+          {
+            "key": "C",
+            "text": "Mencantumkan besaran nominal gaji yang diharapkan pelamar secara langsung di paragraf awal"
+          },
+          {
+            "key": "D",
+            "text": "Menjelaskan riwayat kesehatan dan silsilah keluarga pelamar secara terperinci"
+          },
+          {
+            "key": "E",
+            "text": "Menunjukkan rasa putus asa agar segera diterima bekerja di perusahaan tersebut"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Pembuka surat lamaran pekerjaan yang bersumber dari media cetak/online harus menyebutkan sumber rujukan, tanggal edisi, dan nama posisi yang dilamar secara lugas dan baku."
+      },
+      {
+        "id": 3,
+        "bacaan": "Dalam karya tulis ilmiah bertajuk 'Efektivitas Modul Interaktif LMS terhadap Retensi Pemahaman Warga Belajar PKBM', peneliti mengemukakan hipotesis bahwa penggunaan kuis formatif adaptif berkorelasi linier dengan peningkatan nilai sumatif. Hasil pengujian menunjukkan koefisien determinasi sebesar 0,84 dengan p-value < 0,05.",
+        "pertanyaan": "Interpretasi ilmiah yang paling valid berdasarkan data kesimpulan di atas adalah ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Modul interaktif tidak memberikan dampak signifikan terhadap retensi belajar siswa"
+          },
+          {
+            "key": "B",
+            "text": "Penggunaan kuis formatif adaptif berkontribusi kuat (84%) dan signifikan secara statistik terhadap peningkatan nilai pemahaman siswa"
+          },
+          {
+            "key": "C",
+            "text": "Nilai sumatif siswa hanya ditentukan oleh faktor keberuntungan semata tanpa pengaruh media"
+          },
+          {
+            "key": "D",
+            "text": "Seluruh peserta didik merasa kesulitan mengerjakan kuis formatif di platform LMS"
+          },
+          {
+            "key": "E",
+            "text": "Penelitian harus diulang karena angka koefisien determinasi belum mencapai 100% sempurna"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Koefisien determinasi 0,84 mengindikasikan 84% variasi nilai sumatif dapat dijelaskan oleh kuis formatif adaptif, dan p < 0,05 membuktikan korelasi tersebut signifikan secara statistik."
+      },
+      {
+        "id": 4,
+        "bacaan": "Dalam novel 'Bumi Manusia' karya Pramoedya Ananta Toer, tokoh Minke digambarkan sebagai seorang pemuda pribumi terpelajar yang mengalami pergulatan identitas di tengah hegemoni kolonial Hindia Belanda. Ia menggunakan pena dan tulisan berbahasa Belanda sebagai senjata perlawanan intelektual melawan ketidakadilan sistem hukum yang diskriminatif.",
+        "pertanyaan": "Analisis kritik sastra berpendekatan sosiologis yang tepat terhadap karakterisasi Minke adalah ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Minke adalah gambaran pemuda lemah yang menyerah tanpa syarat pada budaya kolonial"
+          },
+          {
+            "key": "B",
+            "text": "Karakter Minke merefleksikan kebangkitan kesadaran nasionalisme awal melalui pendidikan modern dan advokasi literasi pers perjuangan"
+          },
+          {
+            "key": "C",
+            "text": "Pramoedya menolak keberadaan pemuda terpelajar di era pergerakan nasional"
+          },
+          {
+            "key": "D",
+            "text": "Perjuangan Minke dinilai sia-sia karena tidak menggunakan senjata tajam dan kekuatan fisik"
+          },
+          {
+            "key": "E",
+            "text": "Novel tersebut murni karya roman percintaan remaja tanpa sangkut paut dengan struktur sosial masa kolonial"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Pendekatan sosiologi sastra melihat tokoh Minke sebagai representasi embrio kaum pergerakan terpelajar yang memanfaatkan pers dan pemikiran modern untuk mendobrak feodalisme dan kolonialisme."
+      },
+      {
+        "id": 5,
+        "bacaan": "Cermati kalimat simpulan karya ilmiah berikut:\n'Berdasarkan paparan di atas, dapat ditarik benang merah bahwa penerapan model pembelajaran blended learning di PKBM mampu mendongkrak kemandirian belajar peserta didik hingga mencapai taraf optimal.'",
+        "pertanyaan": "Frasa idiomatis 'menarik benang merah' dalam konteks penulisan ilmiah tersebut bermakna ...",
+        "opsi": [
+          {
+            "key": "A",
+            "text": "Memperbaiki jahitan pakaian seragam sekolah yang rusak"
+          },
+          {
+            "key": "B",
+            "text": "Menemukan keterkaitan logis atau merumuskan kesimpulan pokok yang mengikat seluruh bahasan"
+          },
+          {
+            "key": "C",
+            "text": "Menimbulkan pertikaian sengit antara dua kelompok penelitian yang berbeda"
+          },
+          {
+            "key": "D",
+            "text": "Menghapus seluruh hipotesis penelitian yang telah dibuat di bab pendahuluan"
+          },
+          {
+            "key": "E",
+            "text": "Menghubungkan kabel instalasi laboratorium komputer di sekolah kesetaraan"
+          }
+        ],
+        "kunci": "B",
+        "pembahasan": "Idiom 'menarik benang merah' dalam teks argumentatif/ilmiah bermakna merumuskan kesimpulan atau menemukan kaitan konseptual utama yang menyatukan argumen."
+      }
+    ]
+  }
+}

@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>CBT PKBM Assyuro Lombok Creative (ALC) - Ujian Berbasis Komputer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="fav icon logo.jpg" type="image/jpeg">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        cbt: {
+                            primary: '#1e40af', // Blue 800 - khas aplikasi ujian resmi
+                            secondary: '#0f766e', // Teal 700
+                            accent: '#d97706', // Amber 600
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            ragu: '#eab308'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Transisi halus */
+        .tab-pane {
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+    </style>
+</head>
+<body class="h-full text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Brand Navbar Institusi Resmi -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="fav icon logo.jpg" alt="Logo ALC" class="w-10 h-10 rounded-lg object-cover border border-slate-200 shadow-xs">
+                <div>
+                    <span class="inline-block text-[10px] font-bold tracking-wider uppercase text-blue-700 bg-blue-50 px-2 py-0.5 rounded">CBT Mandiri Kesetaraan</span>
+                    <h1 class="text-sm sm:text-base font-extrabold text-slate-900 tracking-tight leading-none mt-0.5">PKBM Assyuro Lombok Creative</h1>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-2 sm:gap-4">
+                <!-- Navigasi Cepat / Akses Mode -->
+                <a href="index.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-blue-700 py-1.5 px-3 rounded-lg border border-slate-200 hover:bg-slate-50 transition">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="hidden sm:inline">Beranda</span>
+                </a>
+                
+                <button id="btn-switch-admin" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200 py-1.5 px-3 rounded-lg transition" title="Portal Pengurus / Tutor">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <span class="hidden sm:inline">Panel Pengurus</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER APLIKASI CBT (SINGLE PAGE APPLICATION) -->
+    <main class="flex-1 flex flex-col justify-center max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- ========================================== -->
+        <!-- VIEW 1: PORTAL IDENTITAS SISWA (LOGIN PESERTA) -->
+        <!-- ========================================== -->
+        <section id="view-identitas" class="tab-pane max-w-xl mx-auto w-full my-auto">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 sm:p-8">
+                <!-- Header Card -->
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-700 rounded-2xl flex items-center justify-center mx-auto text-2xl mb-3 shadow-inner">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">Konfirmasi Tes Peserta</h2>
+                    <p class="text-sm text-slate-500 mt-1">Ujian Akhir Semester & Modul Bahasa Indonesia</p>
+                </div>
+
+                <!-- Formulir Data Peserta -->
+                <form id="form-login-siswa" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                            Nama Lengkap Peserta <span class="text-rose-500">*</span>
+                        </label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
+                                <i class="fa-solid fa-user text-sm"></i>
+                            </span>
+                            <input type="text" id="input-nama" required placeholder="Contoh: FEBRI HIDAYAT"
+                                class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition uppercase font-medium">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                            Nomor Induk Siswa (NIS / NISN) <span class="text-rose-500">*</span>
+                        </label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
+                                <i class="fa-solid fa-id-card text-sm"></i>
+                            </span>
+                            <input type="text" id="input-nis" required placeholder="Contoh: 3006440348"
+                                class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 font-mono transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                            Tingkatan Pendidikan Kesetaraan <span class="text-rose-500">*</span>
+                        </label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
+                                <i class="fa-solid fa-layer-group text-sm"></i>
+                            </span>
+                            <select id="input-tingkat" required
+                                class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition font-medium appearance-none">
+                                <option value="" disabled selected>Pilih Tingkatan Paket...</option>
+                                <option value="paketA">Paket A (Setara SD) - Bahasa Indonesia</option>
+                                <option value="paketB">Paket B (Setara SMP) - Bahasa Indonesia</option>
+                                <option value="paketC">Paket C (Setara SMA) - Bahasa Indonesia</option>
+                            </select>
+                            <span class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 pointer-events-none">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Kotak Informasi Ujian -->
+                    <div class="bg-blue-50/70 border border-blue-200/80 rounded-xl p-4 text-xs text-blue-900 space-y-1.5">
+                        <div class="font-bold flex items-center gap-1.5 text-blue-950">
+                            <i class="fa-solid fa-circle-info text-blue-600"></i> Petunjuk Pelaksanaan Ujian:
+                        </div>
+                        <p class="leading-relaxed text-blue-900/90">• Pastikan jaringan internet stabil selama mengerjakan ujian.</p>
+                        <p class="leading-relaxed text-blue-900/90">• Waktu pengerjaan adalah <strong>60 Menit</strong> dan akan berjalan otomatis.</p>
+                        <p class="leading-relaxed text-blue-900/90">• Gunakan tombol <strong>Ragu-ragu</strong> jika belum yakin pada jawaban.</p>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3.5 px-6 rounded-xl shadow-sm hover:shadow transition duration-200 flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer">
+                        <span>Mulai Mengerjakan Ujian</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- VIEW 2: HALAMAN UJIAN ONLINE SISWA (CBT ACTIVE) -->
+        <!-- ========================================== -->
+        <section id="view-ujian" class="tab-pane hidden flex-1 flex flex-col">
+            <!-- CBT Sticky Header Informasi & Timer -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-4 mb-4 shadow-xs">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <!-- Data Peserta Ujian -->
+                    <div class="flex items-center gap-3 min-w-0">
+                        <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 font-bold text-sm shrink-0">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <h3 id="display-nama-siswa" class="font-bold text-slate-900 text-sm sm:text-base truncate">FEBRI HIDAYAT</h3>
+                            <p class="text-xs text-slate-500 font-medium truncate">
+                                <span id="display-tingkat-siswa" class="font-bold text-blue-700">Paket B (SMP)</span> · NIS: <span id="display-nis-siswa" class="font-mono">3006440348</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timer Countdown Khas CBT -->
+                    <div class="flex items-center gap-2.5 bg-slate-900 text-white px-4 py-2 rounded-xl shadow-xs">
+                        <i class="fa-regular fa-clock text-amber-400 text-sm animate-pulse"></i>
+                        <div>
+                            <div class="text-[9px] uppercase tracking-wider text-slate-400 font-semibold leading-tight">Sisa Waktu</div>
+                            <div id="cbt-timer" class="font-mono text-base sm:text-lg font-bold text-white tracking-widest leading-none">60:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Body Soal & Panel Navigasi -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 flex-1 items-start">
+                
+                <!-- Kolom Kiri: Pertanyaan dan Pilihan Ganda (9 Kolom) -->
+                <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200 p-5 sm:p-7 shadow-xs flex flex-col justify-between min-h-[460px]">
+                    <div>
+                        <!-- Header Soal: Nomor & Indikator -->
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Soal Nomor</span>
+                                <span id="soal-nomor-badge" class="w-8 h-8 rounded-lg bg-blue-700 text-white font-extrabold flex items-center justify-center text-sm shadow-xs">1</span>
+                            </div>
+                            <span id="soal-kategori-badge" class="text-[11px] font-bold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700">
+                                Bahasa Indonesia
+                            </span>
+                        </div>
+
+                        <!-- Kotak Bacaan / Stimulus Teks (Jika ada) -->
+                        <div id="soal-bacaan-wrapper" class="mb-5 bg-slate-50 border border-slate-200/80 rounded-xl p-4 text-sm text-slate-700 leading-relaxed max-h-56 overflow-y-auto custom-scrollbar">
+                            <p class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1.5">
+                                <i class="fa-solid fa-book-open text-xs"></i> Teks Stimulus Bacaan:
+                            </p>
+                            <div id="soal-bacaan-content" class="text-slate-800 whitespace-pre-line text-sm sm:text-base leading-relaxed"></div>
+                        </div>
+
+                        <!-- Pertanyaan Pokok -->
+                        <div class="mb-6">
+                            <h4 id="soal-pertanyaan" class="text-base sm:text-lg font-bold text-slate-900 leading-snug"></h4>
+                        </div>
+
+                        <!-- Opsi Pilihan Jawaban (A, B, C, D, [E]) -->
+                        <div id="soal-opsi-container" class="space-y-3">
+                            <!-- Di-render dinamis oleh JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Navigasi Bawah: Sebelumnya, Ragu-ragu, Selanjutnya / Selesai -->
+                    <div class="flex flex-wrap items-center justify-between gap-3 pt-6 mt-6 border-t border-slate-100">
+                        <button id="btn-prev" class="px-4 sm:px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 font-bold hover:bg-slate-50 active:bg-slate-100 text-xs sm:text-sm flex items-center gap-2 transition cursor-pointer">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span>Sebelumnya</span>
+                        </button>
+
+                        <button id="btn-ragu" class="px-4 sm:px-5 py-2.5 rounded-xl bg-amber-50 border border-amber-300 text-amber-800 font-bold hover:bg-amber-100 active:bg-amber-200 text-xs sm:text-sm flex items-center gap-2 transition cursor-pointer">
+                            <i class="fa-regular fa-square-check"></i>
+                            <span id="label-ragu">Ragu-ragu</span>
+                        </button>
+
+                        <button id="btn-next" class="px-4 sm:px-6 py-2.5 rounded-xl bg-blue-700 text-white font-bold hover:bg-blue-800 active:bg-blue-900 text-xs sm:text-sm flex items-center gap-2 shadow-xs transition cursor-pointer">
+                            <span id="label-next">Selanjutnya</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Grid Nomor Soal (4 Kolom) -->
+                <div class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-xs">
+                    <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+                        <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-grip text-blue-700"></i> Daftar Nomor Soal
+                        </h4>
+                        <span id="counter-terjawab" class="text-xs font-semibold text-slate-500">0 / 5 Selesai</span>
+                    </div>
+
+                    <!-- Legend Indikator Status Soal -->
+                    <div class="grid grid-cols-3 gap-2 mb-4 text-[10px] text-slate-600 font-medium">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-blue-700 inline-block"></span>
+                            <span>Dijawab</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-amber-400 inline-block"></span>
+                            <span>Ragu-ragu</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-slate-100 border border-slate-300 inline-block"></span>
+                            <span>Belum</span>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Grid Nomor Soal -->
+                    <div id="grid-nomor-soal" class="grid grid-cols-5 gap-2 max-h-60 sm:max-h-80 overflow-y-auto custom-scrollbar p-1">
+                        <!-- Di-render dinamis oleh JavaScript -->
+                    </div>
+
+                    <!-- Tombol Kumpul Jawaban Akhir -->
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button id="btn-kumpul-final" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xs transition cursor-pointer">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <span>Selesai & Kumpulkan Jawaban</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- VIEW 3: HALAMAN SUKSES PENGERJAAN UJIAN -->
+        <!-- ========================================== -->
+        <section id="view-sukses" class="tab-pane hidden max-w-md mx-auto w-full my-auto text-center">
+            <div class="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm space-y-5">
+                <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl shadow-inner">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+                    <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                        Jawaban Berhasil Disimpan
+                    </span>
+                    <h2 class="text-2xl font-black text-slate-900 tracking-tight">Terima Kasih!</h2>
+                    <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                        Ujian Anda telah tercatat dengan aman di server CBT PKBM Assyuro Lombok Creative (ALC).
+                    </p>
+                </div>
+
+                <!-- Rangkuman Singkat Pengerjaan -->
+                <div class="bg-slate-50 rounded-2xl p-4 text-left text-xs space-y-2 border border-slate-200 text-slate-700">
+                    <div class="flex justify-between pb-1 border-b border-slate-200">
+                        <span class="text-slate-500">Nama Peserta:</span>
+                        <span id="sukses-nama" class="font-bold text-slate-900">-</span>
+                    </div>
+                    <div class="flex justify-between pb-1 border-b border-slate-200">
+                        <span class="text-slate-500">Nomor Induk Siswa:</span>
+                        <span id="sukses-nis" class="font-mono font-bold text-slate-900">-</span>
+                    </div>
+                    <div class="flex justify-between pb-1 border-b border-slate-200">
+                        <span class="text-slate-500">Jenjang Paket:</span>
+                        <span id="sukses-tingkat" class="font-bold text-blue-700">-</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-500">Waktu Submit:</span>
+                        <span id="sukses-waktu" class="font-semibold text-slate-900">-</span>
+                    </div>
+                </div>
+
+                <div class="pt-2 flex flex-col gap-2">
+                    <button id="btn-kembali-portal" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 rounded-xl text-sm transition">
+                        Kembali ke Halaman Depan
+                    </button>
+                    <a href="index.html" class="text-xs text-slate-500 hover:text-blue-700 py-1 transition font-medium">
+                        Ke Beranda E-Learning ALC
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- VIEW 4: DASHBOARD ADMIN & REKAP NILAI REAL-TIME -->
+        <!-- ========================================== -->
+        <section id="view-admin" class="tab-pane hidden flex-1 flex flex-col space-y-6">
+            <!-- Header Panel Admin -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 px-2 py-0.5 rounded">Panel Pengurus / Tutor</span>
+                        <h2 class="text-lg sm:text-xl font-bold text-slate-900">Rekap Nilai & Hasil Ujian CBT</h2>
+                        <p class="text-xs text-slate-500">PKBM Assyuro ALC · Evaluasi Pembelajaran Kesetaraan</p>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi Admin -->
+                <div class="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
+                    <button id="btn-export-excel" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-xs transition">
+                        <i class="fa-solid fa-file-excel"></i>
+                        <span>Export ke Spreadsheet (CSV)</span>
+                    </button>
+                    <button id="btn-reset-db" class="inline-flex items-center justify-center gap-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 px-3 py-2.5 rounded-xl font-bold text-xs transition" title="Hapus Data Percobaan">
+                        <i class="fa-solid fa-trash-can"></i>
+                        <span class="hidden md:inline">Reset Data</span>
+                    </button>
+                    <button id="btn-exit-admin" class="inline-flex items-center justify-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-2.5 rounded-xl font-bold text-xs transition">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Keluar</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kartu Statistik Singkat Admin -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+                    <p class="text-xs text-slate-500 font-medium">Total Peserta Mengerjakan</p>
+                    <p id="stat-total-peserta" class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">0</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Semua Tingkatan</p>
+                </div>
+                <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+                    <p class="text-xs text-slate-500 font-medium">Rata-rata Skor</p>
+                    <p id="stat-avg-skor" class="text-2xl sm:text-3xl font-black text-blue-700 mt-1">0</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Skala 100</p>
+                </div>
+                <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+                    <p class="text-xs text-slate-500 font-medium">Tuntas (Lulus KKM >= 75)</p>
+                    <p id="stat-tuntas" class="text-2xl sm:text-3xl font-black text-emerald-600 mt-1">0</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Memenuhi Syarat</p>
+                </div>
+                <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+                    <p class="text-xs text-slate-500 font-medium">Perlu Remedial</p>
+                    <p id="stat-remedial" class="text-2xl sm:text-3xl font-black text-amber-600 mt-1">0</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Skor < 75</p>
+                </div>
+            </div>
+
+            <!-- Tabel Data Rekap Nilai -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs flex flex-col flex-1">
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mb-4">
+                    <div class="relative flex-1 max-w-sm">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                        <input type="search" id="admin-search-input" placeholder="Cari nama atau NIS siswa..."
+                            class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+                    <select id="admin-filter-tingkat" class="bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        <option value="">Semua Tingkatan</option>
+                        <option value="Paket A (SD)">Paket A (SD)</option>
+                        <option value="Paket B (SMP)">Paket B (SMP)</option>
+                        <option value="Paket C (SMA)">Paket C (SMA)</option>
+                    </select>
+                </div>
+
+                <div class="overflow-x-auto flex-1 rounded-xl border border-slate-200">
+                    <table class="w-full text-left text-xs sm:text-sm border-collapse min-w-[760px]">
+                        <thead class="bg-slate-50 text-slate-600 font-bold uppercase tracking-wider text-[11px] border-b border-slate-200">
+                            <tr>
+                                <th class="py-3 px-4">No</th>
+                                <th class="py-3 px-4">Waktu Submit</th>
+                                <th class="py-3 px-4">Nama Peserta</th>
+                                <th class="py-3 px-4">NIS</th>
+                                <th class="py-3 px-4">Tingkat</th>
+                                <th class="py-3 px-4">Mapel</th>
+                                <th class="py-3 px-4 text-center">Analisis Jawaban</th>
+                                <th class="py-3 px-4 text-center">Skor Akhir</th>
+                                <th class="py-3 px-4 text-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-table-body" class="divide-y divide-slate-100 font-medium text-slate-700">
+                            <!-- Di-render dinamis oleh JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <p id="admin-empty-table" class="hidden text-center text-slate-400 py-10 text-xs sm:text-sm">Belum ada peserta yang mengumpulkan ujian.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL POPUP KONFIRMASI PENGUMPULAN JAWABAN -->
+    <div id="modal-konfirmasi" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200 text-center space-y-4">
+            <div class="w-14 h-14 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center mx-auto text-2xl">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-slate-900">Konfirmasi Kumpul Ujian</h3>
+                <p id="konfirmasi-desc" class="text-xs text-slate-500 mt-1">
+                    Apakah Anda yakin ingin mengumpulkan lembar jawaban sekarang?
+                </p>
+            </div>
+
+            <div id="modal-ringkasan-soal" class="bg-slate-50 rounded-xl p-3 text-xs text-slate-600 space-y-1">
+                <div class="flex justify-between">
+                    <span>Sudah Dijawab:</span>
+                    <strong id="ringkas-jawab" class="text-blue-700">0</strong>
+                </div>
+                <div class="flex justify-between">
+                    <span>Ragu-ragu:</span>
+                    <strong id="ringkas-ragu" class="text-amber-600">0</strong>
+                </div>
+                <div class="flex justify-between">
+                    <span>Belum Dijawab:</span>
+                    <strong id="ringkas-belum" class="text-rose-600">0</strong>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 pt-2">
+                <button id="btn-batal-kumpul" class="w-1/2 py-2.5 px-4 rounded-xl border border-slate-200 font-bold text-xs text-slate-600 hover:bg-slate-50 transition">
+                    Periksa Lagi
+                </button>
+                <button id="btn-lanjut-kumpul" class="w-1/2 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 font-bold text-xs text-white shadow-xs transition">
+                    Ya, Kumpulkan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL AUTH ADMIN LOGIN -->
+    <div id="modal-auth-admin" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+            <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+                <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Autentikasi Pengurus</h3>
+                    <p class="text-xs text-slate-500">CBT Admin Portal ALC</p>
+                </div>
+            </div>
+
+            <form id="form-admin-auth" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">PIN / Password Admin</label>
+                    <input type="password" id="input-admin-pin" placeholder="Masukkan PIN admin..." required
+                        class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 font-mono">
+                    <p class="text-[11px] text-slate-400 mt-1">Default PIN: <strong class="text-slate-600">Admin123</strong></p>
+                </div>
+                <p id="error-admin-pin" class="hidden text-xs font-semibold text-rose-600 bg-rose-50 p-2 rounded-lg">PIN salah, silakan coba lagi.</p>
+                <div class="flex items-center gap-2 pt-2">
+                    <button type="button" id="btn-close-auth-admin" class="w-1/2 py-2.5 px-4 rounded-xl border border-slate-200 font-bold text-xs text-slate-600 hover:bg-slate-50 transition">
+                        Batal
+                    </button>
+                    <button type="submit" class="w-1/2 py-2.5 px-4 rounded-xl bg-blue-700 hover:bg-blue-800 font-bold text-xs text-white shadow-xs transition">
+                        Buka Panel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOGIKA JAVASCRIPT MURNI (VANILLA JS CBT ENGINE) -->
+    <script>
+        // --- 1. MOCK DATABASE SOAL BAHASA INDONESIA FASE 1 ---
+        const CBT_QUESTIONS = {
+            "paketA": [
+                {
+                    id: 1,
+                    bacaan: "Hutan mangrove memiliki peranan yang sangat penting bagi wilayah pesisir pantai. Selain menjadi tempat hidup beragam biota laut seperti kepiting, udang, dan ikan kecil, akar bakau yang kokoh mampu menahan hantaman ombak besar. Keberadaan mangrove secara alami juga efektif mencegah terjadinya abrasi atau pengikisan pantai oleh air laut.",
+                    pertanyaan: "Ide pokok dari paragraf di atas adalah ...",
+                    opsi: [
+                        { key: "A", text: "Kehidupan kepiting dan udang di pesisir pantai" },
+                        { key: "B", text: "Pentingnya peranan hutan mangrove bagi wilayah pesisir" },
+                        { key: "C", text: "Proses terjadinya abrasi air laut di pantai" },
+                        { key: "D", text: "Kekuatan akar tanaman bakau saat diterpa ombak" }
+                    ],
+                    kunci: "B"
+                },
+                {
+                    id: 2,
+                    bacaan: "Di Desa Masbagik, warga setiap hari Minggu berkumpul membersihkan saluran irigasi sawah. Bapak-bapak mengangkat lumpur dan sampah plastik, sedangkan ibu-ibu menyiapkan minuman hangat dan makanan ringan. Semangat gotong royong ini membuat desa selalu asri dan terhindar dari luapan air saat musim hujan tiba.",
+                    pertanyaan: "Simpulan yang tepat berdasarkan isi cerita pendek di atas adalah ...",
+                    opsi: [
+                        { key: "A", text: "Saluran irigasi di desa Masbagik selalu kotor setiap hari Minggu" },
+                        { key: "B", text: "Gotong royong warga desa menjaga kebersihan dan mencegah banjir" },
+                        { key: "C", text: "Ibu-ibu desa Masbagik hanya bertugas memasak di dapur" },
+                        { key: "D", text: "Hujan deras selalu membawa tumpukan sampah plastik" }
+                    ],
+                    kunci: "B"
+                },
+                {
+                    id: 3,
+                    bacaan: "Tanaman lidah buaya dikenal memiliki banyak khasiat sejak zaman dahulu. Gel dingin di dalam daunnya sering dimanfaatkan untuk meredakan luka bakar ringan, melembapkan kulit kering, serta menyuburkan rambut.",
+                    pertanyaan: "Makna kata 'khasiat' pada teks di atas memiliki arti yang sama dengan ...",
+                    opsi: [
+                        { key: "A", text: "Manfaat atau kegunaan" },
+                        { key: "B", text: "Bentuk atau rupa" },
+                        { key: "C", text: "Harga atau nilai jual" },
+                        { key: "D", text: "Racun atau bahaya" }
+                    ],
+                    kunci: "A"
+                },
+                {
+                    id: 4,
+                    bacaan: "Budi bercita-cita menjadi seorang wirausahawan sukses. Setiap sore sepulang sekolah kesetaraan, ia membantu pamannya menata dagangan di pasar. Ia tidak pernah mengeluh lelah karena ia tahu bahwa kesuksesan butuh kerja keras dan ketekunan.",
+                    pertanyaan: "Nilai moral positif yang dapat diteladani dari tokoh Budi adalah ...",
+                    opsi: [
+                        { key: "A", text: "Bekerja di pasar lebih penting daripada sekolah" },
+                        { key: "B", text: "Ketekunan, kerja keras, dan bakti membantu keluarga" },
+                        { key: "C", text: "Menghabiskan waktu sore untuk bermain bersama teman" },
+                        { key: "D", text: "Mencari keuntungan sebanyak-banyaknya di pasar" }
+                    ],
+                    kunci: "B"
+                },
+                {
+                    id: 5,
+                    bacaan: "Penggunaan kantong plastik sekali pakai semakin dikurangi di pasar-pasar tradisional. Warga kini dihimbau membawa tas belanja kain sendiri dari rumah guna menekan volume timbunan sampah yang sulit terurai oleh tanah.",
+                    pertanyaan: "Mengapa warga dihimbau membawa tas belanja kain dari rumah?",
+                    opsi: [
+                        { key: "A", text: "Karena tas kain dijual dengan harga yang sangat mahal" },
+                        { key: "B", text: "Agar pedagang tidak perlu melayani pembeli" },
+                        { key: "C", text: "Untuk mengurangi timbunan sampah plastik yang sulit terurai" },
+                        { key: "D", text: "Karena pasar tradisional melarang warga berbelanja" }
+                    ],
+                    kunci: "C"
+                }
+            ],
+            "paketB": [
+                {
+                    id: 1,
+                    bacaan: "Pelangi merupakan fenomena optik dan meteorologi yang menghasilkan spektrum cahaya hampir bersambung di langit ketika matahari bersinar ke atas tetesan air hujan di atmosfer. Peristiwa ini terjadi melalui proses pembiasan, pemantulan, dan penguraian cahaya putih matahari menjadi berbagai warna oleh butiran air hujan yang berfungsi layaknya prisma kaca alami.",
+                    pertanyaan: "Berdasarkan ciri dan tujuannya, kutipan teks di atas termasuk jenis teks eksplanasi yang menjelaskan ...",
+                    opsi: [
+                        { key: "A", text: "Urutan kronologis sejarah penemuan alat optik" },
+                        { key: "B", text: "Proses kausalitas terjadinya fenomena alam pelangi" },
+                        { key: "C", text: "Opini penulis tentang keindahan warna langit sore" },
+                        { key: "D", text: "Langkah-langkah pembuatan percobaan air hujan di laboratorium" }
+                    ],
+                    kunci: "B"
+                },
+                {
+                    id: 2,
+                    bacaan: "Literasi digital di kalangan remaja kesetaraan kini menjadi pilar krusial. Bukan semata-mata kepiawaian mengoperasikan gawai pintar atau berselancar di media sosial, melainkan kecakapan menyaring akurasi informasi, memverifikasi fakta dari sumber kredibel, serta memproteksi jejak digital dari ancaman siber.",
+                    pertanyaan: "Gagasan utama paragraf di atas adalah ...",
+                    opsi: [
+                        { key: "A", text: "Kemampuan bermain media sosial bagi generasi muda" },
+                        { key: "B", text: "Hakekat literasi digital remaja sebagai kecakapan menyaring informasi dan proteksi diri" },
+                        { key: "C", text: "Bahaya penggunaan ponsel pintar di lingkungan sekolah kesetaraan" },
+                        { key: "D", text: "Mahalnya biaya pengamanan jaringan internet di era modern" }
+                    ],
+                    kunci: "B"
+                },
+                {
+                    id: 3,
+                    bacaan: "Buku 'Merajut Asa di Ujung Senja' karya Ahmad Syarif menyajikan gaya penuturan yang sangat lugas dan menyentuh nurani pembaca. Tokoh-tokohnya dibangun dengan dialog membumi yang mencerminkan realitas masyarakat pedesaan. Sayangnya, sampul buku ini terkesan terlalu monoton dan pemilihan font pada bab pertengahan sedikit terlalu rapat sehingga melelahkan mata pembaca.",
+                    pertanyaan: "Pernyataan yang memuat kelemahan buku dalam kutipan resensi di atas adalah ...",
+                    opsi: [
+                        { key: "A", text: "Penuturan yang lugas dan menyentuh nurani pembaca" },
+                        { key: "B", text: "Karakter tokoh dibangun dengan dialog membumi" },
+                        { key: "C", text: "Sampul buku monoton dan pemilihan font agak rapat melelahkan mata" },
+                        { key: "D", text: "Latar cerita yang mengangkat potret masyarakat pedesaan" }
+                    ],
+                    kunci: "C"
+                },
+                {
+                    id: 4,
+                    bacaan: "Pemerintah daerah bersama pengelola PKBM kian agresif memfasilitasi pelatihan vokasi digital marketing bagi warga belajar kesetaraan. Langkah ini patut diapresiasi tinggi sebagai solusi solutif menjembatani kesenjangan lapangan kerja lokal. Kendati demikian, program ini tidak boleh berhenti pada seremonial pelatihan, melainkan harus diiringi pendampingan akses permodalan dan kemitraan industri yang berkelanjutan.",
+                    pertanyaan: "Keberpihakan dan pandangan redaksi dalam tajuk rencana di atas ditujukan untuk ...",
+                    opsi: [
+                        { key: "A", text: "Menolak program pelatihan vokasi digital di daerah" },
+                        { key: "B", text: "Mendukung pelatihan vokasi namun menuntut keberlanjutan pendampingan dan kemitraan nyata" },
+                        { key: "C", text: "Menuntut agar seluruh warga beralih profesi menjadi pedagang online" },
+                        { key: "D", text: "Menyalahkan peserta didik yang belum memiliki modal usaha mandiri" }
+                    ],
+                    kunci: "B"
+                },
+                {
+                    id: 5,
+                    bacaan: "Pemanasan global telah memicu anomali cuaca yang sulit diprediksi para petani. Musim kemarau yang berkepanjangan disusul curah hujan berintensitas ekstrem dalam periode singkat sering kali mengakibatkan kegagalan panen serentak.",
+                    pertanyaan: "Makna istilah 'anomali' dalam konteks paragraf tersebut adalah ...",
+                    opsi: [
+                        { key: "A", text: "Keadaan normal dan teratur sebagaimana biasanya" },
+                        { key: "B", text: "Penyimpangan atau keanehan dari pola standar kelaziman" },
+                        { key: "C", text: "Kemajuan pesat dalam bidang teknologi agrikultur" },
+                        { key: "D", text: "Ramalan astronomi mengenai pergerakan rasi bintang" }
+                    ],
+                    kunci: "B"
+                }
+            ],
+            "paketC": [
+                {
+                    id: 1,
+                    bacaan: "Pergeseran paradigma pasar kerja menuntut dunia pendidikan kesetaraan untuk tidak sekadar melahirkan lulusan berijazah legal formal, melainkan individu adaptif dengan kecakapan berpikir kritis tingkat tinggi (HOTS). Otomatisasi kecerdasan buatan (AI) telah mendisrupsi ribuan pekerjaan klerikal rutin. Bila kurikulum vokasi PKBM tidak segera bertransformasi menanamkan kapabilitas problem solving, reskilling, dan etika kolaborasi digital, lulusan kesetaraan berisiko teralienasi di pasar tenaga kerja masa depan yang kian kompetitif.",
+                    pertanyaan: "Isu sentral dan sikap kritis yang dibangun penulis dalam teks editorial tersebut adalah ...",
+                    opsi: [
+                        { key: "A", text: "Penolakan terhadap adopsi teknologi kecerdasan buatan di lingkungan sekolah" },
+                        { key: "B", text: "Tuntutan transformasi kurikulum vokasi PKBM menuju kapabilitas adaptif dan berpikir kritis menghadapi disrupsi pasar kerja" },
+                        { key: "C", text: "Penghapusan ijazah kesetaraan karena sudah tidak relevan dengan kebutuhan dunia kerja" },
+                        { key: "D", text: "Pernyataan bahwa pekerjaan klerikal tidak akan pernah tergantikan oleh otomatisasi sistem" },
+                        { key: "E", text: "Kritik terhadap para pengusaha yang tidak mau mempekerjakan lulusan kesetaraan" }
+                    ],
+                    kunci: "B"
+                },
+                {
+                    id: 2,
+                    bacaan: "Cermati kutipan pembuka surat lamaran pekerjaan berikut:\n'Berdasarkan iklan lowongan pekerjaan yang dimuat pada harian Suara Nusa edisi 15 Oktober 2026, yang menyatakan bahwa perusahaan Bapak/Ibu membutuhkan posisi Staf Administrasi Digital, maka saya yang bertanda tangan di bawah ini:'",
+                    pertanyaan: "Kaidah kebahasaan pembuka surat lamaran pekerjaan di atas dinilai efektif dan baku karena ...",
+                    opsi: [
+                        { key: "A", text: "Menggunakan rima kata puitis untuk memikat hati pimpinan bagian personalia" },
+                        { key: "B", text: "Menyebutkan sumber informasi lowongan secara jelas, tanggal penerbitan yang kredibel, serta posisi yang dituju secara eksplisit" },
+                        { key: "C", text: "Mencantumkan besaran nominal gaji yang diharapkan pelamar secara langsung di paragraf awal" },
+                        { key: "D", text: "Menjelaskan riwayat kesehatan dan silsilah keluarga pelamar secara terperinci" },
+                        { key: "E", text: "Menunjukkan rasa putus asa agar segera diterima bekerja di perusahaan tersebut" }
+                    ],
+                    kunci: "B"
+                },
+                {
+                    id: 3,
+                    bacaan: "Dalam karya tulis ilmiah bertajuk 'Efektivitas Modul Interaktif LMS terhadap Retensi Pemahaman Warga Belajar PKBM', peneliti mengemukakan hipotesis bahwa penggunaan kuis formatif adaptif berkorelasi linier dengan peningkatan nilai sumatif. Hasil pengujian menunjukkan koefisien determinasi sebesar 0,84 dengan p-value < 0,05.",
+                    pertanyaan: "Interpretasi ilmiah yang paling valid berdasarkan data kesimpulan di atas adalah ...",
+                    opsi: [
+                        { key: "A", text: "Modul interaktif tidak memberikan dampak signifikan terhadap retensi belajar siswa" },
+                        { key: "B", text: "Penggunaan kuis formatif adaptif berkontribusi kuat (84%) dan signifikan secara statistik terhadap peningkatan nilai pemahaman siswa" },
+                        { key: "C", text: "Nilai sumatif siswa hanya ditentukan oleh faktor keberuntungan semata tanpa pengaruh media" },
+                        { key: "D", text: "Seluruh peserta didik merasa kesulitan mengerjakan kuis formatif di platform LMS" },
+                        { key: "E", text: "Penelitian harus diulang karena angka koefisien determinasi belum mencapai 100% sempurna" }
+                    ],
+                    kunci: "B"
+                },
+                {
+                    id: 4,
+                    bacaan: "Dalam novel 'Bumi Manusia' karya Pramoedya Ananta Toer, tokoh Minke digambarkan sebagai seorang pemuda pribumi terpelajar yang mengalami pergulatan identitas di tengah hegemoni kolonial Hindia Belanda. Ia menggunakan pena dan tulisan berbahasa Belanda sebagai senjata perlawanan intelektual melawan ketidakadilan sistem hukum yang diskriminatif.",
+                    pertanyaan: "Analisis kritik sastra berpendekatan sosiologis yang tepat terhadap karakterisasi Minke adalah ...",
+                    opsi: [
+                        { key: "A", text: "Minke adalah gambaran pemuda lemah yang menyerah tanpa syarat pada budaya kolonial" },
+                        { key: "B", text: "Karakter Minke merefleksikan kebangkitan kesadaran nasionalisme awal melalui pendidikan modern dan advokasi literasi pers perjuangan" },
+                        { key: "C", text: "Pramoedya menolak keberadaan pemuda terpelajar di era pergerakan nasional" },
+                        { key: "D", text: "Perjuangan Minke dinilai sia-sia karena tidak menggunakan senjata tajam dan kekuatan fisik" },
+                        { key: "E", text: "Novel tersebut murni karya roman percintaan remaja tanpa sangkut paut dengan struktur sosial masa kolonial" }
+                    ],
+                    kunci: "B"
+                },
+                {
+                    id: 5,
+                    bacaan: "Cermati kalimat simpulan karya ilmiah berikut:\n'Berdasarkan paparan di atas, dapat ditarik benang merah bahwa penerapan model pembelajaran blended learning di PKBM mampu mendongkrak kemandirian belajar peserta didik hingga mencapai taraf optimal.'",
+                    pertanyaan: "Frasa idiomatis 'menarik benang merah' dalam konteks penulisan ilmiah tersebut bermakna ...",
+                    opsi: [
+                        { key: "A", text: "Memperbaiki jahitan pakaian seragam sekolah yang rusak" },
+                        { key: "B", text: "Menemukan keterkaitan logis atau merumuskan kesimpulan pokok yang mengikat seluruh bahasan" },
+                        { key: "C", text: "Menimbulkan pertikaian sengit antara dua kelompok penelitian yang berbeda" },
+                        { key: "D", text: "Menghapus seluruh hipotesis penelitian yang telah dibuat di bab pendahuluan" },
+                        { key: "E", text: "Menghubungkan kabel instalasi laboratorium komputer di sekolah kesetaraan" }
+                    ],
+                    kunci: "B"
+                }
+            ]
+        };
+
+        // --- 2. STATE MANAGEMENT APLIKASI CBT ---
+        const CBT_STATE = {
+            siswa: {
+                nama: "",
+                nis: "",
+                tingkatKey: "paketB",
+                tingkatLabel: "Paket B (SMP)"
+            },
+            currentSoalIndex: 0,
+            activeQuestions: [],
+            jawabanSiswa: {}, // { 0: 'B', 1: 'C', ... }
+            raguSiswa: {},     // { 0: true, ... }
+            timerInterval: null,
+            waktuSisaDetik: 60 * 60, // 60 menit
+            adminPassword: "Admin123",
+            storageKey: "cbt_alc_results_db"
+        };
+
+        // Helper Selector
+        const $ = (id) => document.getElementById(id);
+
+        // Inisialisasi Database Lokal Peserta
+        function getDatabaseResults() {
+            try {
+                const raw = localStorage.getItem(CBT_STATE.storageKey);
+                if (raw) return JSON.parse(raw);
+            } catch (e) {
+                console.error("Gagal membaca database lokal:", e);
+            }
+            // Seed awal data realistis jika masih kosong
+            const initialSeed = [
+                {
+                    id: "RES-101",
+                    waktuSubmit: "2026-10-27 08:30:15",
+                    nama: "FEBRI HIDAYAT",
+                    nis: "3006440348",
+                    tingkat: "Paket A (SD)",
+                    mapel: "Bahasa Indonesia",
+                    benar: 5,
+                    salah: 0,
+                    totalSoal: 5,
+                    skor: 100,
+                    status: "Tuntas (Lulus)"
+                },
+                {
+                    id: "RES-102",
+                    waktuSubmit: "2026-10-27 08:45:22",
+                    nama: "AHMAD JUMAIDI",
+                    nis: "3889211418",
+                    tingkat: "Paket B (SMP)",
+                    mapel: "Bahasa Indonesia",
+                    benar: 4,
+                    salah: 1,
+                    totalSoal: 5,
+                    skor: 80,
+                    status: "Tuntas (Lulus)"
+                },
+                {
+                    id: "RES-103",
+                    waktuSubmit: "2026-10-27 08:52:10",
+                    nama: "DONI AFRIAN HIDAYAT",
+                    nis: "0072318496",
+                    tingkat: "Paket C (SMA)",
+                    mapel: "Bahasa Indonesia",
+                    benar: 5,
+                    salah: 0,
+                    totalSoal: 5,
+                    skor: 100,
+                    status: "Tuntas (Lulus)"
+                }
+            ];
+            localStorage.setItem(CBT_STATE.storageKey, JSON.stringify(initialSeed));
+            return initialSeed;
+        }
+
+        function saveDatabaseResults(newData) {
+            try {
+                const current = getDatabaseResults();
+                current.unshift(newData); // Masukkan paling atas
+                localStorage.setItem(CBT_STATE.storageKey, JSON.stringify(current));
+            } catch (e) {
+                console.error("Gagal menyimpan ke database:", e);
+            }
+        }
+
+        // --- 3. SISTEM PERPINDAHAN TABS / SPA VIEW ---
+        function switchView(viewName) {
+            const views = {
+                identitas: $('view-identitas'),
+                ujian: $('view-ujian'),
+                sukses: $('view-sukses'),
+                admin: $('view-admin')
+            };
+
+            Object.entries(views).forEach(([name, el]) => {
+                if (name === viewName) {
+                    el.classList.remove('hidden');
+                    el.style.opacity = '1';
+                } else {
+                    el.classList.add('hidden');
+                    el.style.opacity = '0';
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- 4. LOGIKA FORM IDENTITAS & MULAI UJIAN ---
+        $('form-login-siswa').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nama = $('input-nama').value.trim();
+            const nis = $('input-nis').value.trim();
+            const tingkatKey = $('input-tingkat').value;
+
+            if (!nama || !nis || !tingkatKey) {
+                alert("Harap lengkapi seluruh formulir data peserta!");
+                return;
+            }
+
+            const labelMap = {
+                paketA: "Paket A (SD)",
+                paketB: "Paket B (SMP)",
+                paketC: "Paket C (SMA)"
+            };
+
+            CBT_STATE.siswa = {
+                nama,
+                nis,
+                tingkatKey,
+                tingkatLabel: labelMap[tingkatKey] || "Paket B (SMP)"
+            };
+
+            // Muat soal sesuai jenjang
+            CBT_STATE.activeQuestions = CBT_QUESTIONS[tingkatKey] || CBT_QUESTIONS.paketB;
+            CBT_STATE.currentSoalIndex = 0;
+            CBT_STATE.jawabanSiswa = {};
+            CBT_STATE.raguSiswa = {};
+
+            // Update UI Header Ujian
+            $('display-nama-siswa').textContent = nama;
+            $('display-nis-siswa').textContent = nis;
+            $('display-tingkat-siswa').textContent = CBT_STATE.siswa.tingkatLabel;
+
+            // Mulai Timer & Render Ujian
+            startTimer(60 * 60); // 60 menit
+            renderSoal();
+            renderGridNomor();
+            switchView('ujian');
+        });
+
+        // --- 5. LOGIKA RENDER SOAL & OPSI PILIHAN GANDA ---
+        function renderSoal() {
+            const index = CBT_STATE.currentSoalIndex;
+            const soal = CBT_STATE.activeQuestions[index];
+            const total = CBT_STATE.activeQuestions.length;
+
+            if (!soal) return;
+
+            // Update Nomor Soal & Kategori
+            $('soal-nomor-badge').textContent = index + 1;
+            $('soal-kategori-badge').textContent = `${CBT_STATE.siswa.tingkatLabel} · Soal ${index + 1} dari ${total}`;
+
+            // Render Bacaan Stimulus
+            if (soal.bacaan && soal.bacaan.trim()) {
+                $('soal-bacaan-wrapper').classList.remove('hidden');
+                $('soal-bacaan-content').textContent = soal.bacaan;
+            } else {
+                $('soal-bacaan-wrapper').classList.add('hidden');
+            }
+
+            // Pertanyaan
+            $('soal-pertanyaan').textContent = soal.pertanyaan;
+
+            // Render Pilihan Jawaban
+            const containerOpsi = $('soal-opsi-container');
+            containerOpsi.innerHTML = "";
+
+            const selectedKey = CBT_STATE.jawabanSiswa[index];
+
+            soal.opsi.forEach(opt => {
+                const isSelected = selectedKey === opt.key;
+                const btnOpsi = document.createElement('button');
+                btnOpsi.type = "button";
+                btnOpsi.className = `w-full text-left p-3.5 sm:p-4 rounded-xl border transition flex items-start gap-3.5 cursor-pointer ${
+                    isSelected 
+                        ? 'border-blue-600 bg-blue-50/80 shadow-xs ring-1 ring-blue-600' 
+                        : 'border-slate-200 hover:border-blue-300 hover:bg-slate-50'
+                }`;
+
+                btnOpsi.innerHTML = `
+                    <span class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 transition ${
+                        isSelected 
+                            ? 'bg-blue-700 text-white' 
+                            : 'bg-slate-100 text-slate-700 border border-slate-300'
+                    }">
+                        ${opt.key}
+                    </span>
+                    <span class="text-xs sm:text-sm leading-relaxed text-slate-800 font-medium pt-1">
+                        ${escapeHtml(opt.text)}
+                    </span>
+                `;
+
+                btnOpsi.addEventListener('click', () => {
+                    pilihJawaban(index, opt.key);
+                });
+
+                containerOpsi.appendChild(btnOpsi);
+            });
+
+            // Update Status Tombol Navigasi Bawah
+            $('btn-prev').disabled = index === 0;
+            $('btn-prev').classList.toggle('opacity-50', index === 0);
+            $('btn-prev').classList.toggle('cursor-not-allowed', index === 0);
+
+            // Tombol Ragu-ragu
+            const isRagu = CBT_STATE.raguSiswa[index];
+            $('label-ragu').textContent = isRagu ? 'Hapus Ragu' : 'Ragu-ragu';
+            $('btn-ragu').classList.toggle('bg-amber-200', !!isRagu);
+
+            // Tombol Berikutnya / Selesai
+            const isLast = index === total - 1;
+            $('label-next').textContent = isLast ? 'Selesai' : 'Selanjutnya';
+            if (isLast) {
+                $('btn-next').classList.remove('bg-blue-700', 'hover:bg-blue-800');
+                $('btn-next').classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+            } else {
+                $('btn-next').classList.add('bg-blue-700', 'hover:bg-blue-800');
+                $('btn-next').classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+            }
+
+            renderGridNomor();
+            updateCounterTerjawab();
+        }
+
+        function pilihJawaban(soalIndex, key) {
+            CBT_STATE.jawabanSiswa[soalIndex] = key;
+            renderSoal();
+        }
+
+        // Event Navigasi
+        $('btn-prev').addEventListener('click', () => {
+            if (CBT_STATE.currentSoalIndex > 0) {
+                CBT_STATE.currentSoalIndex--;
+                renderSoal();
+            }
+        });
+
+        $('btn-next').addEventListener('click', () => {
+            const total = CBT_STATE.activeQuestions.length;
+            if (CBT_STATE.currentSoalIndex < total - 1) {
+                CBT_STATE.currentSoalIndex++;
+                renderSoal();
+            } else {
+                // Soal terakhir -> buka modal konfirmasi submit
+                bukaModalKonfirmasi();
+            }
+        });
+
+        $('btn-ragu').addEventListener('click', () => {
+            const index = CBT_STATE.currentSoalIndex;
+            CBT_STATE.raguSiswa[index] = !CBT_STATE.raguSiswa[index];
+            renderSoal();
+        });
+
+        // --- 6. GRID NOMOR SOAL & STATUS ---
+        function renderGridNomor() {
+            const gridContainer = $('grid-nomor-soal');
+            gridContainer.innerHTML = "";
+            const total = CBT_STATE.activeQuestions.length;
+
+            for (let i = 0; i < total; i++) {
+                const isCurrent = i === CBT_STATE.currentSoalIndex;
+                const isAnswered = CBT_STATE.jawabanSiswa[i] !== undefined;
+                const isRagu = CBT_STATE.raguSiswa[i];
+
+                let bgClass = "bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200";
+                if (isAnswered && !isRagu) {
+                    bgClass = "bg-blue-700 text-white border-blue-700 hover:bg-blue-800";
+                } else if (isRagu) {
+                    bgClass = "bg-amber-400 text-slate-900 border-amber-500 font-bold hover:bg-amber-500";
+                }
+
+                if (isCurrent) {
+                    bgClass += " ring-2 ring-blue-500 ring-offset-2";
+                }
+
+                const btn = document.createElement('button');
+                btn.type = "button";
+                btn.className = `h-11 rounded-xl font-bold text-xs sm:text-sm border transition flex flex-col items-center justify-center cursor-pointer shadow-xs ${bgClass}`;
+                
+                const answerLetter = CBT_STATE.jawabanSiswa[i] ? `· ${CBT_STATE.jawabanSiswa[i]}` : '';
+                btn.innerHTML = `<span>${i + 1}</span><span class="text-[9px] opacity-80 leading-none">${answerLetter}</span>`;
+
+                btn.addEventListener('click', () => {
+                    CBT_STATE.currentSoalIndex = i;
+                    renderSoal();
+                });
+
+                gridContainer.appendChild(btn);
+            }
+        }
+
+        function updateCounterTerjawab() {
+            const total = CBT_STATE.activeQuestions.length;
+            const answeredCount = Object.keys(CBT_STATE.jawabanSiswa).length;
+            $('counter-terjawab').textContent = `${answeredCount} / ${total} Selesai`;
+        }
+
+        // --- 7. MODAL KONFIRMASI & SUBMIT AUTO-GRADING ---
+        $('btn-kumpul-final').addEventListener('click', bukaModalKonfirmasi);
+
+        function bukaModalKonfirmasi() {
+            const total = CBT_STATE.activeQuestions.length;
+            const answeredCount = Object.keys(CBT_STATE.jawabanSiswa).length;
+            let raguCount = 0;
+            Object.values(CBT_STATE.raguSiswa).forEach(v => { if (v) raguCount++; });
+            const belumCount = total - answeredCount;
+
+            $('ringkas-jawab').textContent = `${answeredCount} Soal`;
+            $('ringkas-ragu').textContent = `${raguCount} Soal`;
+            $('ringkas-belum').textContent = `${belumCount} Soal`;
+
+            if (belumCount > 0) {
+                $('konfirmasi-desc').textContent = `Masih ada ${belumCount} soal yang belum dijawab. Apakah Anda yakin ingin mengumpulkan lembar jawaban sekarang?`;
+            } else {
+                $('konfirmasi-desc').textContent = "Semua soal telah terjawab. Apakah Anda yakin ingin menyelesaikan ujian?";
+            }
+
+            $('modal-konfirmasi').classList.remove('hidden');
+        }
+
+        $('btn-batal-kumpul').addEventListener('click', () => {
+            $('modal-konfirmasi').classList.add('hidden');
+        });
+
+        $('btn-lanjut-kumpul').addEventListener('click', () => {
+            $('modal-konfirmasi').classList.add('hidden');
+            selesaikanUjian();
+        });
+
+        function selesaikanUjian() {
+            // Hentikan Timer
+            clearInterval(CBT_STATE.timerInterval);
+
+            // Auto-grading: Hitung Skor Otomatis
+            const questions = CBT_STATE.activeQuestions;
+            let benar = 0;
+            let salah = 0;
+
+            questions.forEach((q, idx) => {
+                const userAns = CBT_STATE.jawabanSiswa[idx];
+                if (userAns && userAns === q.kunci) {
+                    benar++;
+                } else {
+                    salah++;
+                }
+            });
+
+            const total = questions.length;
+            const skorAkhir = Math.round((benar / total) * 100);
+            const statusLulus = skorAkhir >= 75 ? "Tuntas (Lulus)" : "Remedial";
+
+            const now = new Date();
+            const waktuString = now.getFullYear() + "-" +
+                String(now.getMonth() + 1).padStart(2, '0') + "-" +
+                String(now.getDate()).padStart(2, '0') + " " +
+                String(now.getHours()).padStart(2, '0') + ":" +
+                String(now.getMinutes()).padStart(2, '0') + ":" +
+                String(now.getSeconds()).padStart(2, '0');
+
+            // Simpan ke database hasil ujian
+            const recordHasil = {
+                id: "RES-" + Date.now().toString().slice(-5),
+                waktuSubmit: waktuString,
+                nama: CBT_STATE.siswa.nama,
+                nis: CBT_STATE.siswa.nis,
+                tingkat: CBT_STATE.siswa.tingkatLabel,
+                mapel: "Bahasa Indonesia",
+                benar,
+                salah,
+                totalSoal: total,
+                skor: skorAkhir,
+                status: statusLulus
+            };
+
+            saveDatabaseResults(recordHasil);
+
+            // Update UI Halaman Sukses
+            $('sukses-nama').textContent = CBT_STATE.siswa.nama;
+            $('sukses-nis').textContent = CBT_STATE.siswa.nis;
+            $('sukses-tingkat').textContent = CBT_STATE.siswa.tingkatLabel;
+            $('sukses-waktu').textContent = waktuString;
+
+            switchView('sukses');
+        }
+
+        $('btn-kembali-portal').addEventListener('click', () => {
+            $('form-login-siswa').reset();
+            switchView('identitas');
+        });
+
+        // --- 8. COUNTDOWN TIMER ENGINE ---
+        function startTimer(durasiDetik) {
+            clearInterval(CBT_STATE.timerInterval);
+            CBT_STATE.waktuSisaDetik = durasiDetik;
+
+            function tick() {
+                const m = Math.floor(CBT_STATE.waktuSisaDetik / 60);
+                const s = CBT_STATE.waktuSisaDetik % 60;
+                $('cbt-timer').textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+
+                if (CBT_STATE.waktuSisaDetik <= 300) { // 5 menit sisa
+                    $('cbt-timer').classList.add('text-rose-400');
+                } else {
+                    $('cbt-timer').classList.remove('text-rose-400');
+                }
+
+                if (CBT_STATE.waktuSisaDetik <= 0) {
+                    clearInterval(CBT_STATE.timerInterval);
+                    alert("Waktu ujian telah berakhir! Sistem otomatis mengumpulkan lembar jawaban Anda.");
+                    selesaikanUjian();
+                } else {
+                    CBT_STATE.waktuSisaDetik--;
+                }
+            }
+
+            tick();
+            CBT_STATE.timerInterval = setInterval(tick, 1000);
+        }
+
+        // --- 9. PANEL ADMIN (PENGURUS / TUTOR) ---
+        $('btn-switch-admin').addEventListener('click', () => {
+            $('modal-auth-admin').classList.remove('hidden');
+            $('input-admin-pin').value = "";
+            $('error-admin-pin').classList.add('hidden');
+            setTimeout(() => $('input-admin-pin').focus(), 100);
+        });
+
+        $('btn-close-auth-admin').addEventListener('click', () => {
+            $('modal-auth-admin').classList.add('hidden');
+        });
+
+        $('form-admin-auth').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const pin = $('input-admin-pin').value.trim();
+            if (pin === CBT_STATE.adminPassword || pin.toLowerCase() === CBT_STATE.adminPassword.toLowerCase()) {
+                $('modal-auth-admin').classList.add('hidden');
+                bukaPanelAdmin();
+            } else {
+                $('error-admin-pin').classList.remove('hidden');
+            }
+        });
+
+        $('btn-exit-admin').addEventListener('click', () => {
+            switchView('identitas');
+        });
+
+        function bukaPanelAdmin() {
+            renderTableAdmin();
+            switchView('admin');
+        }
+
+        function renderTableAdmin() {
+            const list = getDatabaseResults();
+            const q = $('admin-search-input').value.trim().toLowerCase();
+            const tingkatFilter = $('admin-filter-tingkat').value;
+
+            const filtered = list.filter(item => {
+                const matchQ = !q || item.nama.toLowerCase().includes(q) || item.nis.toLowerCase().includes(q);
+                const matchTingkat = !tingkatFilter || item.tingkat === tingkatFilter;
+                return matchQ && matchTingkat;
+            });
+
+            // Update Statistik Admin
+            const total = list.length;
+            $('stat-total-peserta').textContent = total;
+
+            if (total > 0) {
+                const avg = Math.round(list.reduce((acc, curr) => acc + curr.skor, 0) / total);
+                const tuntasCount = list.filter(item => item.skor >= 75).length;
+                const remCount = total - tuntasCount;
+
+                $('stat-avg-skor').textContent = avg;
+                $('stat-tuntas').textContent = tuntasCount;
+                $('stat-remedial').textContent = remCount;
+            } else {
+                $('stat-avg-skor').textContent = "0";
+                $('stat-tuntas').textContent = "0";
+                $('stat-remedial').textContent = "0";
+            }
+
+            // Render Baris Tabel
+            const tbody = $('admin-table-body');
+            tbody.innerHTML = "";
+
+            $('admin-empty-table').classList.toggle('hidden', filtered.length > 0);
+
+            filtered.forEach((row, idx) => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50 transition";
+
+                const isTuntas = row.skor >= 75;
+                const statusBadge = isTuntas
+                    ? '<span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-0.5 text-xs font-bold"><i class="fa-solid fa-check text-[10px]"></i> Tuntas</span>'
+                    : '<span class="inline-flex items-center gap-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 px-2.5 py-0.5 text-xs font-bold"><i class="fa-solid fa-rotate-left text-[10px]"></i> Remedial</span>';
+
+                tr.innerHTML = `
+                    <td class="py-3 px-4 text-slate-400 font-mono text-xs">${idx + 1}</td>
+                    <td class="py-3 px-4 font-mono text-xs text-slate-500">${escapeHtml(row.waktuSubmit)}</td>
+                    <td class="py-3 px-4 font-bold text-slate-900">${escapeHtml(row.nama)}</td>
+                    <td class="py-3 px-4 font-mono text-xs text-slate-600">${escapeHtml(row.nis)}</td>
+                    <td class="py-3 px-4 text-xs font-semibold text-blue-800">${escapeHtml(row.tingkat)}</td>
+                    <td class="py-3 px-4 text-xs text-slate-600">${escapeHtml(row.mapel)}</td>
+                    <td class="py-3 px-4 text-center text-xs">
+                        <span class="text-emerald-700 font-bold">${row.benar}B</span> / 
+                        <span class="text-rose-600 font-bold">${row.salah}S</span>
+                    </td>
+                    <td class="py-3 px-4 text-center font-black text-sm ${isTuntas ? 'text-emerald-700' : 'text-amber-700'}">
+                        ${row.skor}
+                    </td>
+                    <td class="py-3 px-4 text-center">${statusBadge}</td>
+                `;
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Listener Filter & Search Admin
+        $('admin-search-input').addEventListener('input', renderTableAdmin);
+        $('admin-filter-tingkat').addEventListener('change', renderTableAdmin);
+
+        // Reset Data Percobaan
+        $('btn-reset-db').addEventListener('click', () => {
+            if (confirm("Apakah Anda yakin ingin mereset seluruh data riwayat ujian peserta ke data awal?")) {
+                localStorage.removeItem(CBT_STATE.storageKey);
+                renderTableAdmin();
+                alert("Data riwayat ujian berhasil direset!");
+            }
+        });
+
+        // --- 10. FITUR EXPORT SPREADSHEET (CSV / EXCEL COMPATIBLE) ---
+        $('btn-export-excel').addEventListener('click', exportSpreadsheet);
+
+        function exportSpreadsheet() {
+            const data = getDatabaseResults();
+            if (!data || data.length === 0) {
+                alert("Belum ada data nilai ujian untuk diekspor!");
+                return;
+            }
+
+            const headers = [
+                "ID Ujian",
+                "Waktu Submit",
+                "Nama Peserta",
+                "Nomor Induk Siswa (NIS)",
+                "Tingkatan",
+                "Mata Pelajaran",
+                "Jawaban Benar",
+                "Jawaban Salah",
+                "Total Soal",
+                "Skor Akhir",
+                "Status Kelulusan"
+            ];
+
+            const rows = [headers.join(",")];
+
+            data.forEach(item => {
+                const rowValues = [
+                    item.id,
+                    item.waktuSubmit,
+                    item.nama,
+                    item.nis,
+                    item.tingkat,
+                    item.mapel,
+                    item.benar,
+                    item.salah,
+                    item.totalSoal,
+                    item.skor,
+                    item.status
+                ];
+                // Bungkus setiap nilai dengan quotes agar format Excel aman dari koma
+                rows.push(rowValues.map(val => `"${String(val).replace(/"/g, '""')}"`).join(","));
+            });
+
+            // Gunakan UTF-8 BOM agar terbaca sempurna di Microsoft Excel Indonesia
+            const csvContent = '\uFEFF' + rows.join('\r\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            
+            const dateStr = new Date().toISOString().slice(0, 10);
+            a.href = url;
+            a.download = `rekap-nilai-cbt-pkbm-alc-${dateStr}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Helper Escape HTML
+        function escapeHtml(str) {
+            return String(str).replace(/[&<>"']/g, s => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[s]));
+        }
+
+        // Cek URL parameter: jika ada ?admin=true langsung buka panel admin
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('admin') === 'true' || urlParams.get('mode') === 'admin') {
+                bukaPanelAdmin();
+            }
+        });
+    </script>
+</body>
+</html>
